@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Schemas - Unit 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit2.html">← Back to Unit 2</a>
+        <a href="unit2-dhtml.html">Previous Topic</a>
+        <a href="unit2-object-models.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>XML Schemas</h1>
+            <p>Unit 2 | Topic 08</p>
+            <p>Learn how XML Schemas define the structure and rules of XML documents.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to XML</h2>
+            <p>
+                XML stands for Extensible Markup Language. It is a markup
+                language designed to store, organize and transport data.
+                XML allows users to create their own tags according to
+                their requirements.
+            </p>
+
+            <div class="important-points">
+                <h3>Important Points</h3>
+                <ul>
+                    <li>XML stands for Extensible Markup Language.</li>
+                    <li>It is used to store and transport structured data.</li>
+                    <li>XML tags are user-defined.</li>
+                    <li>XML is both human-readable and machine-readable.</li>
+                    <li>XML is case-sensitive.</li>
+                    <li>XML documents must follow proper syntax rules.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>2. What is an XML Schema?</h2>
+            <p>
+                An XML Schema defines the structure, elements,
+                attributes and data types allowed in an XML document.
+                It specifies the rules that an XML document must follow.
+            </p>
+            <p>
+                XML Schema is commonly written using XML Schema
+                Definition (XSD).
+            </p>
+
+            <h3>Purpose of XML Schema</h3>
+            <ul>
+                <li>Defines valid elements and attributes.</li>
+                <li>Specifies the data types of elements.</li>
+                <li>Defines the order of elements.</li>
+                <li>Specifies minimum and maximum occurrences.</li>
+                <li>Helps validate XML documents.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Introduction to XSD</h2>
+            <p>
+                XSD stands for XML Schema Definition. It is a language
+                used to describe the structure and rules of an XML document.
+            </p>
+
+            <div class="code-box">
+                <h3>Basic XSD Structure</h3>
+                <pre><code>&lt;xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+
+    &lt;xs:element name="student"
+                type="xs:string"/&gt;
+
+&lt;/xs:schema&gt;</code></pre>
+            </div>
+
+            <p>
+                The XML Schema namespace identifies the XML Schema
+                vocabulary. The prefix xs is commonly used for
+                XML Schema elements and data types.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>4. XML Schema Elements</h2>
+            <p>
+                Elements represent the data items in an XML document.
+                The xs:element declaration defines an element and
+                optionally specifies its data type.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;xs:element name="name" type="xs:string"/&gt;
+
+&lt;xs:element name="age" type="xs:integer"/&gt;
+
+&lt;xs:element name="price" type="xs:decimal"/&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. XML Schema Data Types</h2>
+            <p>
+                XML Schema provides built-in data types to specify
+                the kind of values that an XML element or attribute
+                can contain.
+            </p>
+
+            <h3>Common Built-in Data Types</h3>
+            <ul>
+                <li><b>xs:string:</b> Stores text values.</li>
+                <li><b>xs:integer:</b> Stores whole numbers.</li>
+                <li><b>xs:decimal:</b> Stores decimal numbers.</li>
+                <li><b>xs:boolean:</b> Stores true or false values.</li>
+                <li><b>xs:date:</b> Stores date values.</li>
+                <li><b>xs:time:</b> Stores time values.</li>
+                <li><b>xs:float:</b> Stores floating-point values.</li>
+                <li><b>xs:double:</b> Stores double-precision values.</li>
+                <li><b>xs:anyURI:</b> Stores URI values.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;xs:element name="studentName"
+            type="xs:string"/&gt;
+
+&lt;xs:element name="rollNumber"
+            type="xs:integer"/&gt;
+
+&lt;xs:element name="marks"
+            type="xs:decimal"/&gt;
+
+&lt;xs:element name="isActive"
+            type="xs:boolean"/&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Simple Types</h2>
+            <p>
+                A simple type contains only text values. It cannot
+                contain child elements or attributes.
+            </p>
+
+            <h3>Example</h3>
+            <div class="code-box">
+                <pre><code>&lt;xs:element name="age" type="xs:integer"/&gt;</code></pre>
+            </div>
+
+            <p>
+                In this example, the age element can contain
+                an integer value.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Complex Types</h2>
+            <p>
+                A complex type is used when an XML element contains
+                child elements, attributes or both.
+            </p>
+
+            <h3>Example</h3>
+            <div class="code-box">
+                <pre><code>&lt;xs:element name="student"&gt;
+    &lt;xs:complexType&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="name" type="xs:string"/&gt;
+            &lt;xs:element name="age" type="xs:integer"/&gt;
+            &lt;xs:element name="course" type="xs:string"/&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>8. XML Schema Attributes</h2>
+            <p>
+                Attributes provide additional information about
+                XML elements. The xs:attribute declaration defines
+                an attribute in an XML Schema.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;xs:element name="student"&gt;
+    &lt;xs:complexType&gt;
+        &lt;xs:attribute name="id"
+                      type="xs:integer"
+                      use="required"/&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</code></pre>
+            </div>
+
+            <p>
+                The use attribute can specify whether an attribute
+                is required, optional or prohibited.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>9. XML Schema Occurrence Indicators</h2>
+            <p>
+                Occurrence indicators define how many times an
+                element can appear in an XML document.
+            </p>
+
+            <ul>
+                <li><b>minOccurs:</b> Specifies the minimum number of occurrences.</li>
+                <li><b>maxOccurs:</b> Specifies the maximum number of occurrences.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;xs:element name="subject"
+            type="xs:string"
+            minOccurs="1"
+            maxOccurs="5"/&gt;</code></pre>
+            </div>
+
+            <p>
+                In this example, the subject element can appear
+                at least once and at most five times.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>10. XML Schema Indicators</h2>
+            <p>
+                Indicators are used to control the order and
+                number of elements in an XML document.
+            </p>
+
+            <h3>A. Sequence Indicator</h3>
+            <p>
+                The xs:sequence indicator requires child elements
+                to appear in the specified order.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;xs:sequence&gt;
+    &lt;xs:element name="name" type="xs:string"/&gt;
+    &lt;xs:element name="age" type="xs:integer"/&gt;
+&lt;/xs:sequence&gt;</code></pre>
+            </div>
+
+            <h3>B. Choice Indicator</h3>
+            <p>
+                The xs:choice indicator allows one element from
+                a specified group to appear.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;xs:choice&gt;
+    &lt;xs:element name="email" type="xs:string"/&gt;
+    &lt;xs:element name="phone" type="xs:string"/&gt;
+&lt;/xs:choice&gt;</code></pre>
+            </div>
+
+            <h3>C. All Indicator</h3>
+            <p>
+                The xs:all indicator allows the specified child
+                elements to appear in any order, subject to its
+                occurrence rules.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;xs:all&gt;
+    &lt;xs:element name="name" type="xs:string"/&gt;
+    &lt;xs:element name="age" type="xs:integer"/&gt;
+&lt;/xs:all&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>11. XML Schema Restrictions</h2>
+            <p>
+                Restrictions are used to limit the values that
+                an XML element or attribute can contain.
+            </p>
+
+            <h3>Common Restriction Facets</h3>
+            <ul>
+                <li><b>minInclusive:</b> Defines a minimum allowed value.</li>
+                <li><b>maxInclusive:</b> Defines a maximum allowed value.</li>
+                <li><b>minLength:</b> Defines minimum text length.</li>
+                <li><b>maxLength:</b> Defines maximum text length.</li>
+                <li><b>length:</b> Defines an exact length.</li>
+                <li><b>enumeration:</b> Allows only specified values.</li>
+                <li><b>pattern:</b> Restricts values using a regular expression.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example: Age Restriction</h3>
+                <pre><code>&lt;xs:element name="age"&gt;
+    &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:integer"&gt;
+            &lt;xs:minInclusive value="18"/&gt;
+            &lt;xs:maxInclusive value="60"/&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+&lt;/xs:element&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>12. XML Schema Validation</h2>
+            <p>
+                XML validation checks whether an XML document
+                follows the structure and rules defined in its
+                associated XML Schema.
+            </p>
+
+            <h3>Steps of Validation</h3>
+            <ol>
+                <li>Create an XML document.</li>
+                <li>Create an XSD schema file.</li>
+                <li>Connect the XML document to the schema.</li>
+                <li>Use an XML validator or parser.</li>
+                <li>Check whether the XML document follows the schema rules.</li>
+            </ol>
+
+            <h3>Linking an XML Document with XSD</h3>
+            <div class="code-box">
+                <pre><code>&lt;student
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="student.xsd"&gt;
+
+    &lt;name&gt;Manish&lt;/name&gt;
+    &lt;age&gt;21&lt;/age&gt;
+    &lt;course&gt;CSE&lt;/course&gt;
+
+&lt;/student&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Complete XML Schema Example</h2>
+            <p>
+                The following example demonstrates an XML document
+                and its corresponding XSD file.
+            </p>
+
+            <h3>XML File: student.xml</h3>
+            <div class="code-box">
+                <pre><code>&lt;student
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="student.xsd"&gt;
+
+    &lt;name&gt;Manish&lt;/name&gt;
+    &lt;age&gt;21&lt;/age&gt;
+    &lt;course&gt;Computer Science&lt;/course&gt;
+
+&lt;/student&gt;</code></pre>
+            </div>
+
+            <h3>XSD File: student.xsd</h3>
+            <div class="code-box">
+                <pre><code>&lt;xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+
+    &lt;xs:element name="student"&gt;
+        &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="name" type="xs:string"/&gt;
+                &lt;xs:element name="age" type="xs:integer"/&gt;
+                &lt;xs:element name="course" type="xs:string"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+
+&lt;/xs:schema&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>14. Advantages of XML Schema</h2>
+            <ul>
+                <li>Defines the structure of XML documents.</li>
+                <li>Supports different data types.</li>
+                <li>Helps validate XML data.</li>
+                <li>Supports restrictions and occurrence rules.</li>
+                <li>Provides better control over XML document structure.</li>
+                <li>Supports namespaces.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>15. Difference Between DTD and XML Schema</h2>
+            <table>
+                <tr>
+                    <th>DTD</th>
+                    <th>XML Schema (XSD)</th>
+                </tr>
+                <tr>
+                    <td>DTD stands for Document Type Definition.</td>
+                    <td>XSD stands for XML Schema Definition.</td>
+                </tr>
+                <tr>
+                    <td>Uses its own non-XML syntax.</td>
+                    <td>Uses XML syntax.</td>
+                </tr>
+                <tr>
+                    <td>Provides limited data types.</td>
+                    <td>Supports many built-in data types.</td>
+                </tr>
+                <tr>
+                    <td>Has limited value restrictions.</td>
+                    <td>Supports detailed value restrictions.</td>
+                </tr>
+                <tr>
+                    <td>Has limited namespace support.</td>
+                    <td>Supports XML namespaces.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>16. Important Exam Questions</h2>
+            <ol>
+                <li>What is XML? Explain its features.</li>
+                <li>What is an XML Schema?</li>
+                <li>Define XSD and explain its structure.</li>
+                <li>Explain simple types and complex types.</li>
+                <li>Describe different XML Schema data types.</li>
+                <li>Explain sequence, choice and all indicators.</li>
+                <li>What are minOccurs and maxOccurs?</li>
+                <li>Explain XML Schema restrictions with examples.</li>
+                <li>How is an XML document validated using XSD?</li>
+                <li>Differentiate between DTD and XML Schema.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <ul>
+                <li>XML – Extensible Markup Language.</li>
+                <li>XSD – XML Schema Definition.</li>
+                <li>Schema – Defines XML document structure and rules.</li>
+                <li>xs:element – Declares an XML element.</li>
+                <li>xs:attribute – Declares an XML attribute.</li>
+                <li>Simple Type – Contains text values.</li>
+                <li>Complex Type – Can contain child elements and attributes.</li>
+                <li>xs:sequence – Defines element order.</li>
+                <li>xs:choice – Allows a choice between elements.</li>
+                <li>minOccurs – Minimum number of occurrences.</li>
+                <li>maxOccurs – Maximum number of occurrences.</li>
+                <li>Validation – Checks XML against schema rules.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology | Unit 2 | XML Schemas</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MIME | Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="topic-navigation">
+        <a href="unit1.html">← Back to Unit 1</a>
+
+        <div>
+            <span>UNIT 01 • TOPIC 07</span>
+            <h1>MIME</h1>
+        </div>
+    </nav>
+
+    <main class="topic-page">
+
+        <!-- Topic Header -->
+        <section class="topic-header">
+            <p class="topic-label">TOPIC 07</p>
+
+            <h2>Multipurpose Internet Mail Extensions</h2>
+
+            <p>
+                Learn how MIME allows email systems to transfer
+                multimedia content such as images, audio, video,
+                documents, and attachments.
+            </p>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <p class="section-label">01 • INTRODUCTION</p>
+
+            <h3>What is MIME?</h3>
+
+            <p>
+                MIME stands for Multipurpose Internet Mail Extensions.
+                It is an Internet standard that extends the format
+                of email messages to support different types of
+                content beyond plain ASCII text.
+            </p>
+
+            <p>
+                MIME allows users to send images, audio, video,
+                PDF documents, HTML content, and other attachments
+                through email.
+            </p>
+
+            <div class="important-points">
+                <h4>Important Points</h4>
+                <ul>
+                    <li>MIME stands for Multipurpose Internet Mail Extensions.</li>
+                    <li>It extends traditional email message formats.</li>
+                    <li>It supports multimedia attachments.</li>
+                    <li>It specifies the content type and encoding of messages.</li>
+                    <li>It is commonly used with SMTP.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Need of MIME -->
+        <section class="content-section">
+            <p class="section-label">02 • PURPOSE</p>
+
+            <h3>Why is MIME Needed?</h3>
+
+            <p>
+                Traditional email systems were originally designed
+                mainly for 7-bit ASCII text. They could not directly
+                represent many types of multimedia and international
+                text content.
+            </p>
+
+            <p>
+                MIME was introduced to overcome these limitations
+                by describing the structure, content type, and
+                transfer encoding of email messages.
+            </p>
+
+            <ul>
+                <li>Supports non-ASCII text.</li>
+                <li>Allows sending images and documents.</li>
+                <li>Supports audio and video attachments.</li>
+                <li>Allows multiple content parts in one email.</li>
+                <li>Supports HTML-formatted emails.</li>
+            </ul>
+        </section>
+
+        <!-- Working -->
+        <section class="content-section">
+            <p class="section-label">03 • WORKING</p>
+
+            <h3>How Does MIME Work?</h3>
+
+            <p>
+                MIME adds special headers to email messages
+                that describe the type and format of their content.
+            </p>
+
+            <div class="sequence">
+                <p>1. User creates an email with text or attachments.</p>
+                <p>2. Email client identifies the content types.</p>
+                <p>3. MIME headers describe the message parts.</p>
+                <p>4. Attachments are encoded when necessary.</p>
+                <p>5. SMTP transfers the email message.</p>
+                <p>6. Receiver decodes and displays the content.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>Remember</h4>
+                <p>
+                    MIME describes and formats email content,
+                    while SMTP is responsible for transferring
+                    email between mail servers.
+                </p>
+            </div>
+        </section>
+
+        <!-- MIME Headers -->
+        <section class="content-section">
+            <p class="section-label">04 • MIME HEADERS</p>
+
+            <h3>Important MIME Headers</h3>
+
+            <ul>
+                <li>
+                    <strong>MIME-Version:</strong>
+                    Specifies the MIME version, usually 1.0.
+                </li>
+
+                <li>
+                    <strong>Content-Type:</strong>
+                    Describes the type of data in the message.
+                </li>
+
+                <li>
+                    <strong>Content-Transfer-Encoding:</strong>
+                    Specifies how content is encoded for transmission.
+                </li>
+
+                <li>
+                    <strong>Content-Disposition:</strong>
+                    Indicates whether content is displayed inline
+                    or treated as an attachment.
+                </li>
+
+                <li>
+                    <strong>Content-ID:</strong>
+                    Provides an identifier for a message part,
+                    often used for embedded content.
+                </li>
+            </ul>
+        </section>
+
+        <!-- MIME Types -->
+        <section class="content-section">
+            <p class="section-label">05 • MIME TYPES</p>
+
+            <h3>Common MIME Content Types</h3>
+
+            <p>
+                A MIME type tells the receiving application
+                what kind of content is being transmitted.
+            </p>
+
+            <div class="code-box">
+                <pre><code>text/plain
+text/html
+image/jpeg
+image/png
+audio/mpeg
+video/mp4
+application/pdf
+application/json
+multipart/mixed</code></pre>
+            </div>
+
+            <div class="important-points">
+                <h4>Examples</h4>
+                <ul>
+                    <li>text/plain – Plain text</li>
+                    <li>text/html – HTML document</li>
+                    <li>image/jpeg – JPEG image</li>
+                    <li>application/pdf – PDF file</li>
+                    <li>multipart/mixed – Multiple message parts, often with attachments</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Example -->
+        <section class="content-section">
+            <p class="section-label">06 • PRACTICAL EXAMPLE</p>
+
+            <h3>Example of a MIME Email</h3>
+
+            <div class="code-box">
+                <pre><code>From: sender@example.com
+To: receiver@example.com
+Subject: MIME Example
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+
+&lt;html&gt;
+&lt;body&gt;
+    &lt;h2&gt;Hello Student!&lt;/h2&gt;
+    &lt;p&gt;Welcome to Web Technology.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <p>
+                In this example, the Content-Type header tells
+                the email client that the message body contains
+                HTML content.
+            </p>
+        </section>
+
+        <!-- MIME vs SMTP -->
+        <section class="content-section">
+            <p class="section-label">07 • COMPARISON</p>
+
+            <h3>Difference Between MIME and SMTP</h3>
+
+            <div class="important-points">
+                <h4>MIME</h4>
+                <ul>
+                    <li>Defines email content format.</li>
+                    <li>Supports multimedia and attachments.</li>
+                    <li>Specifies content types and encoding.</li>
+                </ul>
+            </div>
+
+            <div class="important-points">
+                <h4>SMTP</h4>
+                <ul>
+                    <li>Transfers outgoing email messages.</li>
+                    <li>Communicates between mail servers.</li>
+                    <li>Uses commands for mail delivery.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Advantages -->
+        <section class="content-section">
+            <p class="section-label">08 • ADVANTAGES</p>
+
+            <h3>Advantages of MIME</h3>
+
+            <ul>
+                <li>Supports multimedia email messages.</li>
+                <li>Allows multiple attachments.</li>
+                <li>Supports international character sets.</li>
+                <li>Enables HTML email formatting.</li>
+                <li>Provides standardized content identification.</li>
+            </ul>
+        </section>
+
+        <!-- Exam Questions -->
+        <section class="content-section">
+            <p class="section-label">09 • EXAM PREPARATION</p>
+
+            <h3>Important Exam Questions</h3>
+
+            <div class="important-points">
+                <h4>Short Answer Questions</h4>
+                <ol>
+                    <li>What is MIME?</li>
+                    <li>Write the full form of MIME.</li>
+                    <li>Why is MIME required?</li>
+                    <li>What is a MIME content type?</li>
+                    <li>What is the purpose of MIME-Version?</li>
+                </ol>
+            </div>
+
+            <div class="important-points">
+                <h4>Long Answer Questions</h4>
+                <ol>
+                    <li>Explain MIME and its working in detail.</li>
+                    <li>Describe different MIME headers with examples.</li>
+                    <li>Explain common MIME content types.</li>
+                    <li>Differentiate between MIME and SMTP.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Quick Revision -->
+        <section class="revision-box">
+            <h3>Quick Revision</h3>
+
+            <p><strong>Full Form:</strong>
+                Multipurpose Internet Mail Extensions
+            </p>
+
+            <p><strong>Purpose:</strong>
+                Supports multimedia and non-ASCII email content.
+            </p>
+
+            <p><strong>Important Header:</strong>
+                Content-Type
+            </p>
+
+            <p><strong>Version:</strong>
+                MIME-Version: 1.0
+            </p>
+
+            <p><strong>Used With:</strong>
+                SMTP and email applications
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology • CS35302</p>
+        <p>Topic 07 • MIME</p>
+    </footer>
+
+</body>
+</html>

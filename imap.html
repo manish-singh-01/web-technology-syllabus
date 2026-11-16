@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAP | Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit1.html">← Back to Unit 1</a>
+        <div>
+            <span>UNIT 01 • TOPIC 08</span>
+            <h1>IMAP</h1>
+        </div>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <p class="topic-label">TOPIC 08</p>
+            <h2>Internet Message Access Protocol</h2>
+            <p>
+                Learn how IMAP allows users to access, manage, and
+                synchronize email messages across multiple devices.
+            </p>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <p class="section-label">01 • INTRODUCTION</p>
+            <h3>What is IMAP?</h3>
+
+            <p>
+                IMAP stands for Internet Message Access Protocol.
+                It is an email protocol that allows users to access
+                and manage their emails stored on a mail server.
+            </p>
+
+            <p>
+                With IMAP, emails generally remain on the server,
+                and changes such as reading, deleting, or moving
+                messages can synchronize across connected devices.
+            </p>
+
+            <div class="important-points">
+                <h4>Important Points</h4>
+                <ul>
+                    <li>Full form: Internet Message Access Protocol.</li>
+                    <li>Used to access and manage emails on a server.</li>
+                    <li>Supports synchronization across multiple devices.</li>
+                    <li>Allows users to organize messages into folders.</li>
+                    <li>Works with an email client and a mail server.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Need -->
+        <section class="content-section">
+            <p class="section-label">02 • PURPOSE</p>
+            <h3>Why is IMAP Needed?</h3>
+
+            <p>
+                Users often check their email using multiple devices,
+                such as laptops, smartphones, and tablets. IMAP helps
+                keep their email view consistent across these devices.
+            </p>
+
+            <ul>
+                <li>Access emails from different devices.</li>
+                <li>Keep messages stored on the mail server.</li>
+                <li>Synchronize read and unread status.</li>
+                <li>Organize emails into folders.</li>
+                <li>Manage messages without downloading every email permanently.</li>
+            </ul>
+        </section>
+
+        <!-- Working -->
+        <section class="content-section">
+            <p class="section-label">03 • WORKING</p>
+            <h3>How Does IMAP Work?</h3>
+
+            <div class="sequence">
+                <p>1. The user opens an email application.</p>
+                <p>2. The application connects to the mail server using IMAP.</p>
+                <p>3. The server provides the mailbox information.</p>
+                <p>4. The user reads, searches, or organizes emails.</p>
+                <p>5. Changes are synchronized with the server.</p>
+                <p>6. Other connected devices can see the updated mailbox.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>Example</h4>
+                <p>
+                    Suppose you read an email on your laptop. When you
+                    open the same mailbox on your phone, that email
+                    can already appear as read because the status
+                    was synchronized through IMAP.
+                </p>
+            </div>
+        </section>
+
+        <!-- Ports -->
+        <section class="content-section">
+            <p class="section-label">04 • PORT NUMBERS</p>
+            <h3>IMAP Port Numbers</h3>
+
+            <div class="important-points">
+                <ul>
+                    <li>
+                        <strong>Port 143:</strong>
+                        Standard IMAP port, commonly used without
+                        implicit TLS; STARTTLS may be supported.
+                    </li>
+                    <li>
+                        <strong>Port 993:</strong>
+                        IMAP over implicit TLS, providing an encrypted connection.
+                    </li>
+                </ul>
+            </div>
+
+            <p>
+                Remember: 143 is the standard IMAP port, while 993
+                is commonly used for IMAP with TLS encryption.
+            </p>
+        </section>
+
+        <!-- Features -->
+        <section class="content-section">
+            <p class="section-label">05 • FEATURES</p>
+            <h3>Main Features of IMAP</h3>
+
+            <ul>
+                <li>Server-based email storage.</li>
+                <li>Access to the same mailbox from multiple devices.</li>
+                <li>Email folder and mailbox management.</li>
+                <li>Synchronization of message status and changes.</li>
+                <li>Search and selective message retrieval.</li>
+            </ul>
+        </section>
+
+        <!-- POP3 vs IMAP -->
+        <section class="content-section">
+            <p class="section-label">06 • COMPARISON</p>
+            <h3>Difference Between IMAP and POP3</h3>
+
+            <div class="important-points">
+                <h4>IMAP</h4>
+                <ul>
+                    <li>Manages email while keeping the mailbox on the server.</li>
+                    <li>Synchronizes changes across devices.</li>
+                    <li>Supports server-side folders and mailbox organization.</li>
+                    <li>Common ports: 143 and 993.</li>
+                </ul>
+            </div>
+
+            <div class="important-points">
+                <h4>POP3</h4>
+                <ul>
+                    <li>Typically downloads messages to an email client.</li>
+                    <li>May remove messages from the server, depending on settings.</li>
+                    <li>Does not provide IMAP-style mailbox synchronization.</li>
+                    <li>Common ports: 110 and 995.</li>
+                </ul>
+            </div>
+
+            <p>
+                <strong>Exam tip:</strong>
+                IMAP is generally preferred when the same email account
+                is used on multiple devices.
+            </p>
+        </section>
+
+        <!-- Advantages -->
+        <section class="content-section">
+            <p class="section-label">07 • ADVANTAGES</p>
+            <h3>Advantages of IMAP</h3>
+
+            <ul>
+                <li>Emails can be accessed from multiple devices.</li>
+                <li>Mailbox changes are synchronized.</li>
+                <li>Messages remain available on the server.</li>
+                <li>Emails can be organized into folders.</li>
+                <li>Users can retrieve selected messages when needed.</li>
+            </ul>
+        </section>
+
+        <!-- Limitations -->
+        <section class="content-section">
+            <p class="section-label">08 • LIMITATIONS</p>
+            <h3>Limitations of IMAP</h3>
+
+            <ul>
+                <li>Internet access is generally needed for full synchronization.</li>
+                <li>Server storage limits may apply.</li>
+                <li>Large mailboxes can take time to synchronize.</li>
+                <li>Offline access depends on what the email client has cached or downloaded.</li>
+            </ul>
+        </section>
+
+        <!-- Exam Questions -->
+        <section class="content-section">
+            <p class="section-label">09 • EXAM PREPARATION</p>
+            <h3>Important Exam Questions</h3>
+
+            <div class="important-points">
+                <h4>Short Answer Questions</h4>
+                <ol>
+                    <li>What is IMAP? Write its full form.</li>
+                    <li>Which ports are used by IMAP?</li>
+                    <li>What is the purpose of IMAP?</li>
+                    <li>How does IMAP synchronize emails?</li>
+                    <li>Write two advantages of IMAP.</li>
+                </ol>
+            </div>
+
+            <div class="important-points">
+                <h4>Long Answer Questions</h4>
+                <ol>
+                    <li>Explain IMAP and its working with an example.</li>
+                    <li>Differentiate between IMAP and POP3.</li>
+                    <li>Explain the features, advantages, and limitations of IMAP.</li>
+                    <li>Describe the role of IMAP in email communication.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Revision -->
+        <section class="revision-box">
+            <h3>Quick Revision</h3>
+
+            <p><strong>Full Form:</strong>
+                Internet Message Access Protocol
+            </p>
+
+            <p><strong>Purpose:</strong>
+                Access and manage emails stored on a mail server.
+            </p>
+
+            <p><strong>Port 143:</strong>
+                Standard IMAP
+            </p>
+
+            <p><strong>Port 993:</strong>
+                IMAP over implicit TLS
+            </p>
+
+            <p><strong>Main Benefit:</strong>
+                Email synchronization across devices
+            </p>
+
+            <p><strong>Related Protocol:</strong>
+                POP3
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology • CS35302</p>
+        <p>Topic 08 • IMAP</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Frames - Unit 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit2.html">← Back to Unit 2</a>
+        <a href="unit2-forms.html">Previous Topic</a>
+        <a href="unit2-css.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>HTML Frames</h1>
+            <p>Unit 2 | Topic 05</p>
+            <p>Learn how HTML frames and inline frames display multiple web documents.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to HTML Frames</h2>
+            <p>
+                HTML Frames were used to divide a browser window into
+                multiple sections. Each section could display a separate
+                HTML document.
+            </p>
+            <p>
+                Frames allowed different web pages to appear in the same
+                browser window.
+            </p>
+
+            <div class="important-points">
+                <h3>Important Points</h3>
+                <ul>
+                    <li>Frames divide a browser window into sections.</li>
+                    <li>Each frame can display a separate HTML document.</li>
+                    <li>Frames were commonly used in older websites.</li>
+                    <li>The traditional frame and frameset elements are obsolete in HTML5.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Types of Frames</h2>
+
+            <h3>A. Frame</h3>
+            <p>
+                The &lt;frame&gt; element was used to define an individual
+                frame inside a frameset. It could load a separate HTML page.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;frame src="home.html" name="mainFrame"&gt;</code></pre>
+            </div>
+
+            <h3>B. Frameset</h3>
+            <p>
+                The &lt;frameset&gt; element was used instead of the
+                &lt;body&gt; element to define how the browser window
+                should be divided into frames.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;frameset cols="30%,70%"&gt;
+    &lt;frame src="menu.html"&gt;
+    &lt;frame src="content.html"&gt;
+&lt;/frameset&gt;</code></pre>
+            </div>
+
+            <h3>C. Inline Frame (iframe)</h3>
+            <p>
+                The &lt;iframe&gt; element is used to embed another HTML
+                document or supported web content inside the current page.
+                Unlike the old frame element, iframe is supported in HTML5.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;iframe src="about.html"
+        width="500"
+        height="300"
+        title="About Page"&gt;
+&lt;/iframe&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Attributes of Frames</h2>
+            <p>Some important attributes of the old frame element are:</p>
+
+            <ul>
+                <li><b>src:</b> Specifies the HTML document to display.</li>
+                <li><b>name:</b> Assigns a name to the frame.</li>
+                <li><b>scrolling:</b> Controls the scroll bar in older frame implementations.</li>
+                <li><b>noresize:</b> Prevents resizing of a frame in older implementations.</li>
+                <li><b>frameborder:</b> Controls the frame border in older implementations.</li>
+            </ul>
+
+            <p>
+                These attributes belong to the obsolete frame system
+                and should not be used in modern HTML projects.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Attributes of iframe</h2>
+            <p>Important attributes of the modern iframe element include:</p>
+
+            <ul>
+                <li><b>src:</b> Specifies the URL of the embedded document.</li>
+                <li><b>width:</b> Sets the width of the iframe.</li>
+                <li><b>height:</b> Sets the height of the iframe.</li>
+                <li><b>title:</b> Provides an accessible description.</li>
+                <li><b>name:</b> Assigns a name to the iframe.</li>
+                <li><b>loading:</b> Controls loading behavior, such as lazy loading.</li>
+                <li><b>allow:</b> Specifies permissions for supported features.</li>
+                <li><b>sandbox:</b> Applies restrictions to embedded content.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;iframe
+    src="page.html"
+    width="600"
+    height="400"
+    title="Embedded Page"
+    loading="lazy"&gt;
+&lt;/iframe&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Difference Between Frame and iframe</h2>
+
+            <table>
+                <tr>
+                    <th>Frame</th>
+                    <th>iframe</th>
+                </tr>
+                <tr>
+                    <td>Used with the frameset element.</td>
+                    <td>Used directly inside the body.</td>
+                </tr>
+                <tr>
+                    <td>Divided the browser window into sections.</td>
+                    <td>Embeds content inside a page.</td>
+                </tr>
+                <tr>
+                    <td>Obsolete in HTML5.</td>
+                    <td>Supported in HTML5.</td>
+                </tr>
+                <tr>
+                    <td>Cannot be used as a modern HTML frame layout.</td>
+                    <td>Can embed another HTML document.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Practical Example of iframe</h2>
+            <p>
+                The following example displays another HTML document
+                inside the current webpage.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Iframe Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h2&gt;My Website&lt;/h2&gt;
+
+    &lt;p&gt;Below is an embedded webpage:&lt;/p&gt;
+
+    &lt;iframe
+        src="about.html"
+        width="500"
+        height="300"
+        title="About Us Page"&gt;
+    &lt;/iframe&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Opening Links Inside an iframe</h2>
+            <p>
+                The name attribute can be used to target an iframe
+                when a link is clicked.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;iframe
+    src="home.html"
+    name="myFrame"
+    title="Content Frame"&gt;
+&lt;/iframe&gt;
+
+&lt;a href="about.html" target="myFrame"&gt;
+    Open About Page
+&lt;/a&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Advantages of Frames</h2>
+            <ul>
+                <li>Allowed multiple documents to appear in one browser window.</li>
+                <li>Made it possible to keep navigation separate from content.</li>
+                <li>Individual frame content could be updated independently.</li>
+                <li>iframes allow external or separate content to be embedded in a page.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Disadvantages of Traditional Frames</h2>
+            <ul>
+                <li>Traditional frames are not supported in HTML5.</li>
+                <li>They can create navigation and usability problems.</li>
+                <li>Search engines may have difficulty understanding framed pages.</li>
+                <li>They can make responsive design difficult.</li>
+                <li>They may create accessibility problems.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Modern Alternatives to Frames</h2>
+            <p>
+                Modern websites generally use CSS and JavaScript instead
+                of traditional frames to create page layouts.
+            </p>
+
+            <ul>
+                <li><b>CSS Flexbox:</b> Creates flexible one-dimensional layouts.</li>
+                <li><b>CSS Grid:</b> Creates rows and columns for page layouts.</li>
+                <li><b>iframe:</b> Embeds another document when required.</li>
+                <li><b>JavaScript:</b> Updates webpage content dynamically.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Important Exam Questions</h2>
+            <ol>
+                <li>What are HTML Frames?</li>
+                <li>Explain the frame and frameset elements.</li>
+                <li>What is an iframe? Explain with an example.</li>
+                <li>Differentiate between frame and iframe.</li>
+                <li>Explain the important attributes of iframe.</li>
+                <li>Write the advantages and disadvantages of frames.</li>
+                <li>How can links be opened inside an iframe?</li>
+                <li>Why are traditional frames obsolete in HTML5?</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <ul>
+                <li>&lt;frame&gt; – Defines an individual traditional frame.</li>
+                <li>&lt;frameset&gt; – Divides a browser window into frames.</li>
+                <li>&lt;iframe&gt; – Embeds another document in a webpage.</li>
+                <li>src – Specifies the document URL.</li>
+                <li>name – Assigns a name to a frame or iframe.</li>
+                <li>target – Specifies where a linked document opens.</li>
+                <li>Traditional frame and frameset elements are obsolete in HTML5.</li>
+                <li>iframe is supported in modern HTML.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology | Unit 2 | HTML Frames</p>
+    </footer>
+
+</body>
+</html>

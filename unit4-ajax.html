@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX - Asynchronous JavaScript and XML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit4.html">← Back to Unit 4</a>
+        <a href="unit4-web2-technologies.html">Previous Topic</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>AJAX – Asynchronous JavaScript and XML</h1>
+            <p>Unit 4 – Web 2.0, Web 3.0 and Emerging Web Technologies</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to AJAX</h2>
+
+            <p>
+                AJAX stands for Asynchronous JavaScript and XML.
+                It is a web development technique used to create
+                interactive and dynamic web applications.
+            </p>
+
+            <p>
+                AJAX allows a web page to communicate with a server
+                in the background and update selected parts of the
+                page without reloading the entire webpage.
+            </p>
+
+            <p>
+                AJAX is not a programming language. It is a combination
+                of technologies such as JavaScript, HTML, CSS,
+                XMLHttpRequest or Fetch API, and data formats like
+                JSON and XML.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Meaning of Asynchronous Communication</h2>
+
+            <p>
+                Asynchronous communication means that a browser can
+                send a request to a server and continue performing
+                other tasks while waiting for the response.
+            </p>
+
+            <p>
+                The webpage does not need to stop working until the
+                server sends the requested data.
+            </p>
+
+            <p><strong>Example:</strong> When a user searches for a
+            product, search suggestions can appear while typing
+            without refreshing the complete webpage.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Main Components of AJAX</h2>
+
+            <h3>1. HTML and CSS</h3>
+            <p>
+                HTML provides the structure of the webpage, while
+                CSS controls its design and appearance.
+            </p>
+
+            <h3>2. JavaScript</h3>
+            <p>
+                JavaScript handles user interactions and processes
+                server responses.
+            </p>
+
+            <h3>3. XMLHttpRequest</h3>
+            <p>
+                XMLHttpRequest is a browser object used to send
+                HTTP requests and receive data from a server
+                asynchronously.
+            </p>
+
+            <h3>4. DOM (Document Object Model)</h3>
+            <p>
+                DOM allows JavaScript to access and update webpage
+                elements dynamically.
+            </p>
+
+            <h3>5. XML and JSON</h3>
+            <p>
+                XML and JSON are data formats that can be used
+                to exchange information between the browser
+                and server. JSON is widely used in modern web APIs.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Working of AJAX</h2>
+
+            <p>
+                AJAX works through a request-response process
+                between the browser and the web server.
+            </p>
+
+            <ol>
+                <li>The user performs an action on a webpage.</li>
+                <li>JavaScript detects the user action.</li>
+                <li>An asynchronous request is sent to the server.</li>
+                <li>The server processes the request.</li>
+                <li>The server sends a response to the browser.</li>
+                <li>JavaScript receives and processes the response.</li>
+                <li>The DOM updates the required part of the webpage.</li>
+            </ol>
+
+            <div class="code-box">
+                <pre>
+        USER ACTION
+             |
+             v
+       JAVASCRIPT
+             |
+             v
+      AJAX REQUEST
+             |
+             v
+        WEB SERVER
+             |
+             v
+      SERVER RESPONSE
+             |
+             v
+       JAVASCRIPT
+             |
+             v
+        UPDATE DOM
+             |
+             v
+       WEBPAGE UPDATED
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Example of AJAX</h2>
+
+            <p>
+                The following example uses the Fetch API to request
+                data from a server without reloading the webpage.
+            </p>
+
+            <div class="code-box">
+                <pre>
+&lt;button onclick="loadData()"&gt;
+    Load Data
+&lt;/button&gt;
+
+&lt;p id="result"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+async function loadData() {
+    try {
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/users/1"
+        );
+
+        if (!response.ok) {
+            throw new Error("Request failed");
+        }
+
+        const data = await response.json();
+
+        document.getElementById("result").textContent =
+            data.name;
+    } catch (error) {
+        document.getElementById("result").textContent =
+            "Unable to load data";
+    }
+}
+&lt;/script&gt;
+                </pre>
+            </div>
+
+            <p>
+                <strong>Explanation:</strong> When the user clicks
+                the button, JavaScript sends a request to the server.
+                The received JSON data is processed and the user's
+                name is displayed on the webpage.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>6. AJAX Using XMLHttpRequest</h2>
+
+            <p>
+                XMLHttpRequest is a traditional technique used
+                to perform AJAX requests.
+            </p>
+
+            <div class="code-box">
+                <pre>
+const xhr = new XMLHttpRequest();
+
+xhr.open(
+    "GET",
+    "https://jsonplaceholder.typicode.com/users/1",
+    true
+);
+
+xhr.onload = function () {
+    if (xhr.status === 200) {
+        const data = JSON.parse(xhr.responseText);
+        console.log(data.name);
+    }
+};
+
+xhr.onerror = function () {
+    console.log("Request failed");
+};
+
+xhr.send();
+                </pre>
+            </div>
+
+            <p>
+                In this example, XMLHttpRequest sends a GET request
+                and processes the server response when it arrives.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Advantages of AJAX</h2>
+
+            <ul>
+                <li>Reduces unnecessary full-page reloading.</li>
+                <li>Provides faster and smoother user interaction.</li>
+                <li>Allows background communication with servers.</li>
+                <li>Updates selected parts of a webpage.</li>
+                <li>Improves the user experience.</li>
+                <li>Supports dynamic web applications.</li>
+                <li>Can reduce unnecessary data transfer.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Disadvantages of AJAX</h2>
+
+            <ul>
+                <li>Requires JavaScript support in the browser.</li>
+                <li>Debugging asynchronous operations can be difficult.</li>
+                <li>Security risks may occur if data is not handled properly.</li>
+                <li>Search engines may have difficulty indexing some dynamically generated content.</li>
+                <li>Browser history and navigation need additional handling in some applications.</li>
+                <li>It depends on server availability and network connectivity.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Applications of AJAX</h2>
+
+            <ul>
+                <li><strong>Search Suggestions:</strong> Displaying suggestions while typing.</li>
+                <li><strong>Online Forms:</strong> Validating form data without reloading a page.</li>
+                <li><strong>Social Media:</strong> Loading new posts and comments dynamically.</li>
+                <li><strong>Online Shopping:</strong> Updating shopping cart information.</li>
+                <li><strong>Maps:</strong> Loading map information dynamically.</li>
+                <li><strong>Email Applications:</strong> Updating inbox content in the background.</li>
+                <li><strong>Dashboards:</strong> Refreshing selected data without reloading the complete page.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Difference Between AJAX and Traditional Web Applications</h2>
+
+            <table>
+                <tr>
+                    <th>AJAX Application</th>
+                    <th>Traditional Web Application</th>
+                </tr>
+
+                <tr>
+                    <td>Updates selected parts of a page.</td>
+                    <td>Often reloads the complete page.</td>
+                </tr>
+
+                <tr>
+                    <td>Supports asynchronous communication.</td>
+                    <td>Often uses page-by-page request-response navigation.</td>
+                </tr>
+
+                <tr>
+                    <td>Provides smoother interaction.</td>
+                    <td>May involve more visible page reloads.</td>
+                </tr>
+
+                <tr>
+                    <td>Uses JavaScript with APIs such as Fetch or XMLHttpRequest.</td>
+                    <td>Can work through ordinary browser form submissions and navigation.</td>
+                </tr>
+
+                <tr>
+                    <td>Example: Live search suggestions.</td>
+                    <td>Example: A search page that reloads after submission.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Security Considerations in AJAX</h2>
+
+            <ul>
+                <li>Use HTTPS to protect data during transmission.</li>
+                <li>Validate user input on the server.</li>
+                <li>Protect applications against Cross-Site Scripting (XSS).</li>
+                <li>Use proper authentication and authorization.</li>
+                <li>Apply CSRF protection where required.</li>
+                <li>Never expose passwords or secret API keys in frontend code.</li>
+            </ul>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+
+            <ul>
+                <li>AJAX stands for Asynchronous JavaScript and XML.</li>
+                <li>AJAX is a web development technique, not a programming language.</li>
+                <li>It allows background communication with a server.</li>
+                <li>It can update webpage content without a full-page reload.</li>
+                <li>XMLHttpRequest is used for asynchronous HTTP requests.</li>
+                <li>Fetch API is a modern way to make network requests.</li>
+                <li>DOM is used to update webpage elements.</li>
+                <li>JSON is widely used for exchanging data in modern applications.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Important Exam Questions</h2>
+
+            <ol>
+                <li>What is AJAX? Explain its full form.</li>
+                <li>Explain the working of AJAX with a diagram.</li>
+                <li>Describe the main components of AJAX.</li>
+                <li>Explain the advantages and disadvantages of AJAX.</li>
+                <li>Differentiate between AJAX and traditional web applications.</li>
+                <li>Explain XMLHttpRequest with an example.</li>
+                <li>Write the applications of AJAX.</li>
+                <li>How does AJAX improve webpage performance?</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+
+            <p><strong>AJAX:</strong> Asynchronous JavaScript and XML.</p>
+            <p><strong>Purpose:</strong> Update webpage content without full-page reload.</p>
+            <p><strong>JavaScript:</strong> Handles requests and responses.</p>
+            <p><strong>XMLHttpRequest:</strong> Traditional AJAX request object.</p>
+            <p><strong>Fetch API:</strong> Modern interface for network requests.</p>
+            <p><strong>DOM:</strong> Updates webpage elements.</p>
+            <p><strong>JSON:</strong> Common data format for server communication.</p>
+            <p><strong>Example:</strong> Live search suggestions.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit4-web2-technologies.html">← Previous Topic</a>
+            <a href="unit4.html">Back to Unit 4</a>
+            <a href="unit4-rss.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 4</p>
+    </footer>
+
+</body>
+</html>

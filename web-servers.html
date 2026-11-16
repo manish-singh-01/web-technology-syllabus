@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Servers | Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit1.html">← Back to Unit 1</a>
+        <div>
+            <span>UNIT 01 • TOPIC 11</span>
+            <h1>Web Servers</h1>
+        </div>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <p class="topic-label">TOPIC 11</p>
+            <h2>Introduction to Web Servers</h2>
+            <p>
+                Learn how web servers receive HTTP requests,
+                process them, and deliver webpages and other
+                resources to web browsers.
+            </p>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <p class="section-label">01 • INTRODUCTION</p>
+            <h3>What is a Web Server?</h3>
+
+            <p>
+                A web server is software, and the computer running
+                that software, that serves web content to clients
+                using HTTP or HTTPS.
+            </p>
+
+            <p>
+                When a user opens a website, the browser sends a
+                request to a web server. The server processes the
+                request and returns a response containing the
+                requested resource or an appropriate error.
+            </p>
+
+            <div class="important-points">
+                <h4>Important Points</h4>
+                <ul>
+                    <li>Web servers handle HTTP and HTTPS requests.</li>
+                    <li>They deliver HTML, CSS, JavaScript, images, and other files.</li>
+                    <li>They can serve static and dynamic content.</li>
+                    <li>They may work with application servers and databases.</li>
+                    <li>Examples include Apache HTTP Server, Nginx, and Microsoft IIS.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Need -->
+        <section class="content-section">
+            <p class="section-label">02 • PURPOSE</p>
+            <h3>Why Do We Need Web Servers?</h3>
+
+            <ul>
+                <li>To make websites available to users over a network.</li>
+                <li>To receive and respond to browser requests.</li>
+                <li>To deliver website files and media.</li>
+                <li>To support dynamic web applications.</li>
+                <li>To manage connections, access rules, and request logging.</li>
+            </ul>
+        </section>
+
+        <!-- Working -->
+        <section class="content-section">
+            <p class="section-label">03 • WORKING</p>
+            <h3>How Does a Web Server Work?</h3>
+
+            <div class="sequence">
+                <p>1. The user enters a website URL in the browser.</p>
+                <p>2. DNS helps the browser find the server's IP address.</p>
+                <p>3. The browser establishes a connection to the server.</p>
+                <p>4. The browser sends an HTTP or HTTPS request.</p>
+                <p>5. The web server processes the request.</p>
+                <p>6. The server returns an HTTP response.</p>
+                <p>7. The browser renders the received content.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>Example</h4>
+                <p>
+                    When you open a college website, the browser
+                    requests a page from its server. The server
+                    returns the required files, and the browser
+                    displays the webpage.
+                </p>
+            </div>
+        </section>
+
+        <!-- Types of content -->
+        <section class="content-section">
+            <p class="section-label">04 • TYPES OF CONTENT</p>
+            <h3>Static vs Dynamic Content</h3>
+
+            <div class="important-points">
+                <h4>Static Content</h4>
+                <p>
+                    Static content is delivered as stored, without
+                    generating a new page for each request.
+                </p>
+                <ul>
+                    <li>Examples: HTML files, CSS files, images.</li>
+                    <li>The same resource can be served to many users.</li>
+                    <li>Often simple and fast to deliver.</li>
+                </ul>
+            </div>
+
+            <div class="important-points">
+                <h4>Dynamic Content</h4>
+                <p>
+                    Dynamic content is generated or selected
+                    according to a request, user, or application data.
+                </p>
+                <ul>
+                    <li>Examples: dashboards, account pages, search results.</li>
+                    <li>May involve server-side code or databases.</li>
+                    <li>Different users may receive different responses.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Software -->
+        <section class="content-section">
+            <p class="section-label">05 • WEB SERVER SOFTWARE</p>
+            <h3>Types of Web Server Software</h3>
+
+            <div class="important-points">
+                <h4>1. Apache HTTP Server</h4>
+                <p>
+                    A widely used, open-source web server known
+                    for its modular architecture and flexibility.
+                </p>
+            </div>
+
+            <div class="important-points">
+                <h4>2. Nginx</h4>
+                <p>
+                    A web server that can also act as a reverse
+                    proxy and load balancer.
+                </p>
+            </div>
+
+            <div class="important-points">
+                <h4>3. Microsoft IIS</h4>
+                <p>
+                    Internet Information Services is Microsoft's
+                    web server software for Windows.
+                </p>
+            </div>
+
+            <div class="important-points">
+                <h4>4. Node.js HTTP Server</h4>
+                <p>
+                    A web server can also be built using Node.js
+                    and its HTTP APIs or frameworks such as Express.
+                </p>
+            </div>
+        </section>
+
+        <!-- Request response -->
+        <section class="content-section">
+            <p class="section-label">06 • HTTP REQUEST AND RESPONSE</p>
+            <h3>HTTP Request and Response</h3>
+
+            <p>
+                A browser sends an HTTP request, and the web server
+                returns an HTTP response.
+            </p>
+
+            <div class="code-box">
+                <pre><code>GET /index.html HTTP/1.1
+Host: example.com
+
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <div class="important-points">
+                <h4>Explanation</h4>
+                <ul>
+                    <li><strong>GET:</strong> Requests a resource.</li>
+                    <li><strong>Host:</strong> Identifies the target hostname in this HTTP/1.1 request.</li>
+                    <li><strong>200 OK:</strong> Indicates a successful request.</li>
+                    <li><strong>Content-Type:</strong> Describes the response body format.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Ports -->
+        <section class="content-section">
+            <p class="section-label">07 • PORT NUMBERS</p>
+            <h3>Common Web Server Ports</h3>
+
+            <div class="important-points">
+                <ul>
+                    <li>
+                        <strong>Port 80:</strong>
+                        Default port commonly used for HTTP.
+                    </li>
+                    <li>
+                        <strong>Port 443:</strong>
+                        Default port commonly used for HTTPS.
+                    </li>
+                </ul>
+            </div>
+
+            <p>
+                HTTPS uses TLS to protect communication between
+                the client and server.
+            </p>
+        </section>
+
+        <!-- Web server vs browser -->
+        <section class="content-section">
+            <p class="section-label">08 • COMPARISON</p>
+            <h3>Web Server vs Web Browser</h3>
+
+            <div class="important-points">
+                <h4>Web Server</h4>
+                <ul>
+                    <li>Receives requests and sends responses.</li>
+                    <li>Hosts or serves website resources.</li>
+                    <li>Examples: Apache, Nginx, IIS.</li>
+                </ul>
+            </div>
+
+            <div class="important-points">
+                <h4>Web Browser</h4>
+                <ul>
+                    <li>Sends requests to web servers.</li>
+                    <li>Processes and displays web content.</li>
+                    <li>Examples: Chrome, Firefox, Edge, Safari.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Advantages -->
+        <section class="content-section">
+            <p class="section-label">09 • ADVANTAGES</p>
+            <h3>Advantages of Web Servers</h3>
+
+            <ul>
+                <li>Make website resources accessible over networks.</li>
+                <li>Can serve many client requests.</li>
+                <li>Support static and dynamic websites.</li>
+                <li>Provide logging and access-control features.</li>
+                <li>Can support secure HTTPS connections.</li>
+                <li>Can work with caching and load balancing to improve performance.</li>
+            </ul>
+        </section>
+
+        <!-- Exam Questions -->
+        <section class="content-section">
+            <p class="section-label">10 • EXAM PREPARATION</p>
+            <h3>Important Exam Questions</h3>
+
+            <div class="important-points">
+                <h4>Short Answer Questions</h4>
+                <ol>
+                    <li>What is a web server?</li>
+                    <li>Name any three web server software packages.</li>
+                    <li>What are the default HTTP and HTTPS ports?</li>
+                    <li>Differentiate between static and dynamic content.</li>
+                    <li>What is the role of a web server in HTTP communication?</li>
+                </ol>
+            </div>
+
+            <div class="important-points">
+                <h4>Long Answer Questions</h4>
+                <ol>
+                    <li>Explain the working of a web server with an example.</li>
+                    <li>Describe different types of web server software.</li>
+                    <li>Explain HTTP requests and responses.</li>
+                    <li>Differentiate between a web server and a web browser.</li>
+                    <li>Discuss the advantages of web servers.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Revision -->
+        <section class="revision-box">
+            <h3>Quick Revision</h3>
+
+            <p><strong>Definition:</strong> Software that handles web requests and serves web resources.</p>
+            <p><strong>Protocols:</strong> HTTP and HTTPS.</p>
+            <p><strong>Port 80:</strong> HTTP.</p>
+            <p><strong>Port 443:</strong> HTTPS.</p>
+            <p><strong>Examples:</strong> Apache, Nginx, Microsoft IIS.</p>
+            <p><strong>Static Content:</strong> Stored resources delivered without generating a new page for each request.</p>
+            <p><strong>Dynamic Content:</strong> Content generated or selected according to a request or application data.</p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology • CS35302</p>
+        <p>Topic 11 • Web Servers</p>
+    </footer>
+
+</body>
+</html>

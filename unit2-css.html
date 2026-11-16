@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS and Document Styling - Unit 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit2.html">← Back to Unit 2</a>
+        <a href="unit2-frames.html">Previous Topic</a>
+        <a href="unit2-dhtml.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>CSS and Document Styling</h1>
+            <p>Unit 2 | Topic 06</p>
+            <p>Learn how CSS is used to style and design HTML documents.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to CSS</h2>
+            <p>
+                CSS stands for Cascading Style Sheets. It is a stylesheet
+                language used to describe the presentation and appearance
+                of HTML documents.
+            </p>
+            <p>
+                CSS controls the colors, fonts, spacing, borders,
+                backgrounds and layout of webpages.
+            </p>
+
+            <div class="important-points">
+                <h3>Important Points</h3>
+                <ul>
+                    <li>CSS stands for Cascading Style Sheets.</li>
+                    <li>It is used to style HTML elements.</li>
+                    <li>It separates content from presentation.</li>
+                    <li>It helps create attractive and responsive websites.</li>
+                    <li>One CSS file can style multiple HTML pages.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Syntax of CSS</h2>
+            <p>
+                A CSS rule consists of a selector and a declaration block.
+                Each declaration contains a property and a value.
+            </p>
+
+            <div class="code-box">
+                <h3>CSS Syntax</h3>
+                <pre><code>selector {
+    property: value;
+}</code></pre>
+            </div>
+
+            <h3>Example</h3>
+            <div class="code-box">
+                <pre><code>h1 {
+    color: blue;
+    font-size: 30px;
+    text-align: center;
+}</code></pre>
+            </div>
+
+            <ul>
+                <li><b>Selector:</b> Selects the HTML element.</li>
+                <li><b>Property:</b> Defines what style to change.</li>
+                <li><b>Value:</b> Defines the style value.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Types of CSS</h2>
+            <p>CSS can be applied to HTML documents in three main ways.</p>
+
+            <h3>A. Inline CSS</h3>
+            <p>
+                Inline CSS is written directly inside an HTML element
+                using the style attribute.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;h1 style="color: red;"&gt;
+    Welcome to CSS
+&lt;/h1&gt;</code></pre>
+            </div>
+
+            <h3>B. Internal CSS</h3>
+            <p>
+                Internal CSS is written inside the &lt;style&gt; tag
+                in the head section of an HTML document.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;head&gt;
+    &lt;style&gt;
+        p {
+            color: green;
+            font-size: 18px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+            </div>
+
+            <h3>C. External CSS</h3>
+            <p>
+                External CSS is written in a separate .css file and
+                connected to an HTML document using the link element.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+            </div>
+
+            <div class="important-points">
+                <h3>Difference Between Types of CSS</h3>
+                <table>
+                    <tr>
+                        <th>Inline CSS</th>
+                        <th>Internal CSS</th>
+                        <th>External CSS</th>
+                    </tr>
+                    <tr>
+                        <td>Written inside an HTML element.</td>
+                        <td>Written inside the style tag.</td>
+                        <td>Written in a separate CSS file.</td>
+                    </tr>
+                    <tr>
+                        <td>Styles a particular element.</td>
+                        <td>Styles a single HTML page.</td>
+                        <td>Can style multiple pages.</td>
+                    </tr>
+                    <tr>
+                        <td>Useful for quick styling.</td>
+                        <td>Useful for page-level styling.</td>
+                        <td>Best for maintaining large websites.</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>4. CSS Selectors</h2>
+            <p>
+                CSS selectors are used to select HTML elements
+                that need to be styled.
+            </p>
+
+            <h3>A. Element Selector</h3>
+            <p>Selects elements by their HTML tag name.</p>
+            <div class="code-box">
+                <pre><code>p {
+    color: blue;
+}</code></pre>
+            </div>
+
+            <h3>B. ID Selector</h3>
+            <p>Selects an element using its unique ID.</p>
+            <div class="code-box">
+                <pre><code>#heading {
+    color: red;
+}</code></pre>
+            </div>
+
+            <h3>C. Class Selector</h3>
+            <p>Selects elements belonging to a particular class.</p>
+            <div class="code-box">
+                <pre><code>.box {
+    background-color: yellow;
+}</code></pre>
+            </div>
+
+            <h3>D. Universal Selector</h3>
+            <p>Selects all HTML elements.</p>
+            <div class="code-box">
+                <pre><code>* {
+    margin: 0;
+    padding: 0;
+}</code></pre>
+            </div>
+
+            <h3>E. Group Selector</h3>
+            <p>Applies the same styles to multiple selectors.</p>
+            <div class="code-box">
+                <pre><code>h1, h2, p {
+    font-family: Arial;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. CSS Text Properties</h2>
+            <p>
+                Text properties control the appearance and alignment
+                of text on a webpage.
+            </p>
+
+            <ul>
+                <li><b>color:</b> Sets the text color.</li>
+                <li><b>text-align:</b> Aligns text.</li>
+                <li><b>text-decoration:</b> Adds underline or other decoration.</li>
+                <li><b>text-transform:</b> Changes text capitalization.</li>
+                <li><b>line-height:</b> Sets the height of a line.</li>
+                <li><b>letter-spacing:</b> Controls spacing between letters.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>p {
+    color: black;
+    text-align: justify;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>6. CSS Font Properties</h2>
+            <p>
+                Font properties are used to control the appearance
+                and size of text.
+            </p>
+
+            <ul>
+                <li><b>font-family:</b> Specifies the font type.</li>
+                <li><b>font-size:</b> Sets the font size.</li>
+                <li><b>font-weight:</b> Controls the thickness of text.</li>
+                <li><b>font-style:</b> Sets normal or italic text.</li>
+            </ul>
+
+            <div class="code-box">
+                <pre><code>h1 {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>7. CSS Background Properties</h2>
+            <p>
+                Background properties are used to set the background
+                color or image of HTML elements.
+            </p>
+
+            <ul>
+                <li><b>background-color:</b> Sets the background color.</li>
+                <li><b>background-image:</b> Sets a background image.</li>
+                <li><b>background-repeat:</b> Controls image repetition.</li>
+                <li><b>background-position:</b> Sets the image position.</li>
+                <li><b>background-size:</b> Sets the image size.</li>
+            </ul>
+
+            <div class="code-box">
+                <pre><code>body {
+    background-color: lightblue;
+}
+
+.container {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>8. CSS Border Properties</h2>
+            <p>
+                The border property is used to create a border
+                around an HTML element.
+            </p>
+
+            <ul>
+                <li><b>border-width:</b> Sets border thickness.</li>
+                <li><b>border-style:</b> Sets border style.</li>
+                <li><b>border-color:</b> Sets border color.</li>
+                <li><b>border-radius:</b> Creates rounded corners.</li>
+            </ul>
+
+            <div class="code-box">
+                <pre><code>.box {
+    border: 2px solid black;
+    border-radius: 10px;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>9. CSS Margin and Padding</h2>
+
+            <h3>Margin</h3>
+            <p>
+                Margin is the space outside an element's border.
+                It creates distance between elements.
+            </p>
+
+            <h3>Padding</h3>
+            <p>
+                Padding is the space between an element's content
+                and its border.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>.box {
+    margin: 20px;
+    padding: 15px;
+    border: 2px solid black;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>10. CSS Box Model</h2>
+            <p>
+                The CSS Box Model describes how every HTML element
+                is represented as a rectangular box.
+            </p>
+
+            <p>It consists of four main parts:</p>
+
+            <ol>
+                <li><b>Content:</b> The actual text or image.</li>
+                <li><b>Padding:</b> Space around the content.</li>
+                <li><b>Border:</b> The boundary around padding and content.</li>
+                <li><b>Margin:</b> Space outside the border.</li>
+            </ol>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>.box {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 15px;
+}</code></pre>
+            </div>
+
+            <div class="important-points">
+                <h3>Remember</h3>
+                <p>
+                    By default, the total width of a box includes
+                    content, left and right padding, and left and
+                    right borders. Margin adds extra outside space.
+                </p>
+                <p>
+                    The box-sizing: border-box property makes the
+                    declared width include content, padding and border.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>11. CSS Display Property</h2>
+            <p>
+                The display property specifies how an HTML element
+                is displayed on a webpage.
+            </p>
+
+            <ul>
+                <li><b>block:</b> Starts on a new line and generally takes available width.</li>
+                <li><b>inline:</b> Appears within the same line.</li>
+                <li><b>inline-block:</b> Appears inline while allowing width and height.</li>
+                <li><b>none:</b> Hides the element and removes its layout space.</li>
+                <li><b>flex:</b> Creates a flexible layout.</li>
+                <li><b>grid:</b> Creates a grid layout.</li>
+            </ul>
+
+            <div class="code-box">
+                <pre><code>.container {
+    display: flex;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>12. CSS Position Property</h2>
+            <p>
+                The position property controls how an element
+                is positioned in a webpage.
+            </p>
+
+            <ul>
+                <li><b>static:</b> Default positioning.</li>
+                <li><b>relative:</b> Positioned relative to its normal position.</li>
+                <li><b>absolute:</b> Positioned relative to its nearest positioned ancestor.</li>
+                <li><b>fixed:</b> Positioned relative to the viewport.</li>
+                <li><b>sticky:</b> Switches between relative and fixed-like positioning.</li>
+            </ul>
+
+            <div class="code-box">
+                <pre><code>.box {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Advantages of CSS</h2>
+            <ul>
+                <li>Improves the appearance of websites.</li>
+                <li>Saves time by reusing stylesheets.</li>
+                <li>Separates content from design.</li>
+                <li>Makes website maintenance easier.</li>
+                <li>Supports responsive web design.</li>
+                <li>Provides better control over webpage layout.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>14. Practical Example of CSS</h2>
+            <p>
+                This example demonstrates how CSS styles
+                an HTML document.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;CSS Example&lt;/title&gt;
+
+    &lt;style&gt;
+        body {
+            background-color: lightgray;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        p {
+            color: black;
+            font-size: 18px;
+        }
+
+        .box {
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Welcome to CSS&lt;/h1&gt;
+
+    &lt;div class="box"&gt;
+        &lt;p&gt;
+            CSS makes webpages attractive and beautiful.
+        &lt;/p&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>15. Important Exam Questions</h2>
+            <ol>
+                <li>What is CSS? Explain its importance.</li>
+                <li>Explain the syntax of CSS with an example.</li>
+                <li>Describe the three types of CSS.</li>
+                <li>Differentiate between inline, internal and external CSS.</li>
+                <li>Explain different CSS selectors.</li>
+                <li>What are CSS font and text properties?</li>
+                <li>Explain CSS background and border properties.</li>
+                <li>Differentiate between margin and padding.</li>
+                <li>Explain the CSS Box Model with its components.</li>
+                <li>Explain the display and position properties.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <ul>
+                <li>CSS – Cascading Style Sheets.</li>
+                <li>Inline CSS – Written inside an HTML element.</li>
+                <li>Internal CSS – Written inside the style tag.</li>
+                <li>External CSS – Written in a separate CSS file.</li>
+                <li>Selector – Selects HTML elements.</li>
+                <li>Color – Changes text color.</li>
+                <li>Background – Sets the background.</li>
+                <li>Margin – Space outside the border.</li>
+                <li>Padding – Space between content and border.</li>
+                <li>Box Model – Content, Padding, Border and Margin.</li>
+                <li>Display – Controls how an element is displayed.</li>
+                <li>Position – Controls element positioning.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology | Unit 2 | CSS and Document Styling</p>
+    </footer>
+
+</body>
+</html>

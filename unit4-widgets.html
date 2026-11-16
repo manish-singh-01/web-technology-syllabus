@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widgets in Web Development</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit4.html">← Back to Unit 4</a>
+        <a href="unit4-web3-semantic-web.html">Previous Topic</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Widgets</h1>
+            <p>Unit 4 – Web 2.0, Web 3.0 and Emerging Web Technologies</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to Widgets</h2>
+
+            <p>
+                A widget is a small, independent software component
+                that performs a specific function and can be added
+                to a website, desktop or mobile application.
+            </p>
+
+            <p>
+                Web widgets provide useful features without requiring
+                users to open a separate application. They can display
+                information, provide tools or allow users to interact
+                with website content.
+            </p>
+
+            <p>
+                Widgets are commonly used in Web 2.0 applications
+                to improve user interaction and provide additional
+                functionality.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Features of Widgets</h2>
+
+            <ul>
+                <li><strong>Small Components:</strong> Widgets usually perform a specific task.</li>
+                <li><strong>Reusable:</strong> A widget can often be used on different webpages.</li>
+                <li><strong>Interactive:</strong> Users can interact with widget features.</li>
+                <li><strong>Easy Integration:</strong> Widgets can be embedded into websites or applications.</li>
+                <li><strong>Customizable:</strong> Their appearance and functionality can often be modified.</li>
+                <li><strong>Independent Functionality:</strong> Many widgets work as separate components within a larger application.</li>
+                <li><strong>Dynamic Content:</strong> Some widgets display information that updates automatically.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Types of Widgets</h2>
+
+            <h3>1. Web Widgets</h3>
+            <p>
+                Web widgets are small components embedded in websites.
+                They provide functions such as search, weather
+                information, calendars and social media sharing.
+            </p>
+
+            <h3>2. Desktop Widgets</h3>
+            <p>
+                Desktop widgets run on a computer's desktop and
+                provide quick access to information such as clocks,
+                calendars and system information.
+            </p>
+
+            <h3>3. Mobile Widgets</h3>
+            <p>
+                Mobile widgets provide quick information or shortcuts
+                directly on a smartphone's home screen.
+            </p>
+
+            <h3>4. Social Media Widgets</h3>
+            <p>
+                Social media widgets allow websites to display
+                social content, sharing options and links to
+                social networking platforms.
+            </p>
+
+            <h3>5. Interactive Widgets</h3>
+            <p>
+                Interactive widgets allow users to perform tasks
+                such as searching, calculating values, selecting
+                dates or submitting information.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Examples of Widgets</h2>
+
+            <ul>
+                <li><strong>Weather Widget:</strong> Displays current weather information.</li>
+                <li><strong>Clock Widget:</strong> Shows the current time.</li>
+                <li><strong>Calendar Widget:</strong> Displays dates and upcoming events.</li>
+                <li><strong>Search Widget:</strong> Allows users to search website content.</li>
+                <li><strong>Social Sharing Widget:</strong> Provides options to share content.</li>
+                <li><strong>Map Widget:</strong> Displays location and map information.</li>
+                <li><strong>News Widget:</strong> Displays recent news headlines.</li>
+                <li><strong>Chat Widget:</strong> Allows visitors to communicate with support teams.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Working of Web Widgets</h2>
+
+            <p>
+                Web widgets are added to a webpage using code,
+                scripts or embedding methods. The widget displays
+                its content inside a defined area of the webpage.
+            </p>
+
+            <ol>
+                <li>A developer selects or creates a widget.</li>
+                <li>The widget code is added to a webpage.</li>
+                <li>The browser loads the widget resources.</li>
+                <li>The widget displays its content or interface.</li>
+                <li>The user interacts with the widget.</li>
+                <li>The widget performs its function and displays the result.</li>
+            </ol>
+
+            <div class="code-box">
+                <pre>
+       WEBSITE
+          |
+          v
+     WIDGET CODE
+          |
+          v
+      WEB BROWSER
+          |
+          v
+    DISPLAY WIDGET
+          |
+          v
+    USER INTERACTION
+          |
+          v
+     WIDGET ACTION
+          |
+          v
+      SHOW RESULT
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Technologies Used in Widgets</h2>
+
+            <ul>
+                <li><strong>HTML:</strong> Defines the structure of a widget.</li>
+                <li><strong>CSS:</strong> Controls the appearance and layout.</li>
+                <li><strong>JavaScript:</strong> Adds interactive behaviour.</li>
+                <li><strong>APIs:</strong> Allow widgets to retrieve data from external services.</li>
+                <li><strong>JSON:</strong> Commonly used to exchange data.</li>
+                <li><strong>AJAX and Fetch:</strong> Allow background data requests.</li>
+                <li><strong>iFrames:</strong> Can embed external webpage content inside another webpage.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Simple Example of a Web Widget</h2>
+
+            <p>
+                The following example creates a simple clock widget
+                using HTML, CSS and JavaScript.
+            </p>
+
+            <div class="code-box">
+                <pre>
+&lt;div id="clock"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+function showTime() {
+    const now = new Date();
+
+    document.getElementById("clock")
+        .textContent = now.toLocaleTimeString();
+}
+
+showTime();
+setInterval(showTime, 1000);
+&lt;/script&gt;
+                </pre>
+            </div>
+
+            <p>
+                <strong>Explanation:</strong> JavaScript obtains
+                the current time and displays it inside the clock
+                element. The time is updated every second.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Advantages of Widgets</h2>
+
+            <ul>
+                <li>Provide useful information quickly.</li>
+                <li>Improve website functionality.</li>
+                <li>Increase user interaction.</li>
+                <li>Save development time through reusable components.</li>
+                <li>Can be integrated into existing websites.</li>
+                <li>Improve the overall user experience.</li>
+                <li>Provide easy access to specific tools and services.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Disadvantages of Widgets</h2>
+
+            <ul>
+                <li><strong>Performance:</strong> Too many widgets can slow down a webpage.</li>
+                <li><strong>Security:</strong> Untrusted third-party widgets may create security risks.</li>
+                <li><strong>Compatibility:</strong> Some widgets may not work properly on every device or browser.</li>
+                <li><strong>External Dependency:</strong> Some widgets depend on external services.</li>
+                <li><strong>Privacy:</strong> Third-party widgets may collect user information.</li>
+                <li><strong>Maintenance:</strong> Widgets may need updates when their services or APIs change.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Applications of Widgets</h2>
+
+            <ul>
+                <li><strong>News Websites:</strong> Displaying recent headlines.</li>
+                <li><strong>Educational Websites:</strong> Showing calendars and learning tools.</li>
+                <li><strong>E-commerce:</strong> Displaying product recommendations and shopping cart information.</li>
+                <li><strong>Business Websites:</strong> Providing customer support chat.</li>
+                <li><strong>Social Media:</strong> Displaying sharing and social content options.</li>
+                <li><strong>Weather Websites:</strong> Showing weather conditions.</li>
+                <li><strong>Travel Websites:</strong> Displaying maps and booking information.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Difference Between Widget and Web Application</h2>
+
+            <table>
+                <tr>
+                    <th>Widget</th>
+                    <th>Web Application</th>
+                </tr>
+
+                <tr>
+                    <td>Usually a small software component.</td>
+                    <td>A complete application accessed through a browser.</td>
+                </tr>
+
+                <tr>
+                    <td>Performs a specific function.</td>
+                    <td>Can perform multiple related functions.</td>
+                </tr>
+
+                <tr>
+                    <td>Can be embedded into a webpage.</td>
+                    <td>Usually has its own application interface.</td>
+                </tr>
+
+                <tr>
+                    <td>Generally has limited functionality.</td>
+                    <td>May contain complex functionality.</td>
+                </tr>
+
+                <tr>
+                    <td>Example: Weather widget.</td>
+                    <td>Example: Online banking application.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+
+            <ul>
+                <li>A widget is a small software component.</li>
+                <li>Widgets perform specific functions.</li>
+                <li>They can be embedded into websites and applications.</li>
+                <li>HTML, CSS and JavaScript are commonly used to develop web widgets.</li>
+                <li>APIs allow widgets to retrieve external data.</li>
+                <li>Weather, clock and calendar are examples of widgets.</li>
+                <li>Widgets improve website functionality and user experience.</li>
+                <li>Third-party widgets may create security and privacy risks.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Important Exam Questions</h2>
+
+            <ol>
+                <li>What is a widget? Explain its features.</li>
+                <li>Describe the different types of widgets.</li>
+                <li>Explain the working of web widgets with a diagram.</li>
+                <li>What technologies are used to develop widgets?</li>
+                <li>Write the advantages and disadvantages of widgets.</li>
+                <li>Explain the applications of widgets in Web 2.0.</li>
+                <li>Differentiate between a widget and a web application.</li>
+                <li>Give examples of different widgets.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+
+            <p><strong>Widget:</strong> A small software component that performs a specific function.</p>
+            <p><strong>Web Widget:</strong> A component embedded in a website.</p>
+            <p><strong>Desktop Widget:</strong> A component displayed on a computer desktop.</p>
+            <p><strong>Mobile Widget:</strong> A component displayed on a mobile home screen.</p>
+            <p><strong>Technologies:</strong> HTML, CSS, JavaScript and APIs.</p>
+            <p><strong>Examples:</strong> Clock, weather, calendar and search widgets.</p>
+            <p><strong>Purpose:</strong> Improve functionality and user experience.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit4-web3-semantic-web.html">← Previous Topic</a>
+            <a href="unit4.html">Back to Unit 4</a>
+            <a href="unit4-mashups.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 4</p>
+    </footer>
+
+</body>
+</html>

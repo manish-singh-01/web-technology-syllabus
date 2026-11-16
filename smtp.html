@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMTP | Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit1.html">← Back to Unit 1</a>
+        <div>
+            <span>UNIT 01 • TOPIC 05</span>
+            <h1>SMTP</h1>
+        </div>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <p class="topic-label">TOPIC 05</p>
+            <h2>SMTP</h2>
+            <p>
+                SMTP stands for Simple Mail Transfer Protocol.
+                It is an application-layer protocol used to send
+                email messages between clients and mail servers
+                and between mail servers.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">01 • INTRODUCTION</p>
+            <h3>What is SMTP?</h3>
+            <p>
+                SMTP is a communication protocol used for sending
+                outgoing emails. When a user sends an email, the
+                email application submits it to a mail server,
+                which can forward it towards the recipient's
+                mail server.
+            </p>
+            <p>
+                SMTP is primarily used for sending messages.
+                Protocols such as POP3 and IMAP are commonly
+                used to retrieve or access received emails.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">02 • WORKING</p>
+            <h3>How SMTP Works</h3>
+
+            <div class="sequence">
+                <span>Sender</span><b>→</b>
+                <span>SMTP Server</span><b>→</b>
+                <span>Recipient Mail Server</span>
+            </div>
+
+            <ul class="important-points">
+                <li>The sender writes an email and clicks Send.</li>
+                <li>The email application submits the message to an outgoing mail server.</li>
+                <li>The sending server locates the recipient's mail server, often using DNS MX records.</li>
+                <li>SMTP transfers the message to the recipient's mail server.</li>
+                <li>The recipient accesses the email using a mail application or webmail.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">03 • PORT NUMBERS</p>
+            <h3>Common SMTP Ports</h3>
+
+            <ul class="important-points">
+                <li><strong>Port 25:</strong> Commonly used for SMTP relay between mail servers.</li>
+                <li><strong>Port 587:</strong> Commonly used for email submission with STARTTLS support.</li>
+                <li><strong>Port 465:</strong> Commonly used for email submission with implicit TLS.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">04 • COMMANDS</p>
+            <h3>Common SMTP Commands</h3>
+
+            <ul class="important-points">
+                <li><strong>EHLO:</strong> Identifies the client and requests server capabilities.</li>
+                <li><strong>MAIL FROM:</strong> Specifies the envelope sender.</li>
+                <li><strong>RCPT TO:</strong> Specifies a recipient.</li>
+                <li><strong>DATA:</strong> Begins the message content transfer.</li>
+                <li><strong>QUIT:</strong> Ends the SMTP session.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">05 • ADVANTAGES AND LIMITATIONS</p>
+            <h3>Advantages of SMTP</h3>
+            <ul class="important-points">
+                <li>Provides a standard method for sending emails.</li>
+                <li>Supports communication between different mail systems.</li>
+                <li>Can relay messages through multiple mail servers.</li>
+            </ul>
+
+            <h3>Limitations of SMTP</h3>
+            <ul class="important-points">
+                <li>SMTP alone is not used to retrieve received emails.</li>
+                <li>Secure transmission requires appropriate TLS configuration.</li>
+                <li>Email delivery may fail because of invalid addresses or server problems.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">06 • EXAM PREPARATION</p>
+            <h3>Important Questions with Answers</h3>
+
+            <details class="question-item">
+                <summary>1. What is SMTP?</summary>
+                <p>
+                    SMTP stands for Simple Mail Transfer Protocol.
+                    It is an application-layer protocol used to send
+                    emails from clients to mail servers and between
+                    mail servers.
+                </p>
+            </details>
+
+            <details class="question-item">
+                <summary>2. Is SMTP used to receive emails?</summary>
+                <p>
+                    SMTP is primarily used to send email. POP3 and
+                    IMAP are commonly used by email clients to
+                    retrieve or access received messages.
+                </p>
+            </details>
+
+            <details class="question-item">
+                <summary>3. Explain the working of SMTP.</summary>
+                <p>
+                    The sender submits an email to an outgoing mail
+                    server. The sending server locates the recipient's
+                    mail server and transfers the message using SMTP.
+                    The recipient can then access the message.
+                </p>
+            </details>
+
+            <details class="question-item">
+                <summary>4. Name three common SMTP ports.</summary>
+                <p>
+                    Port 25 is commonly used for server relay,
+                    port 587 for message submission with STARTTLS,
+                    and port 465 for submission using implicit TLS.
+                </p>
+            </details>
+        </section>
+
+        <section class="revision-box">
+            <p class="section-label">QUICK REVISION</p>
+            <h3>Remember</h3>
+            <div class="sequence">
+                <span>SMTP</span><b>→</b>
+                <span>Send Email</span><b>→</b>
+                <span>Mail Server</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology • CS35302</p>
+        <p>Topic 05 • SMTP</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mashups in Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit4.html">← Back to Unit 4</a>
+        <a href="unit4-widgets.html">Previous Topic</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Mashups</h1>
+            <p>Unit 4 – Web 2.0, Web 3.0 and Emerging Web Technologies</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to Mashups</h2>
+
+            <p>
+                A mashup is a web application or website that combines
+                data, content or functionality from two or more different
+                sources to create a new service or application.
+            </p>
+
+            <p>
+                Mashups commonly use APIs, web services and online data
+                to combine information from different platforms.
+            </p>
+
+            <p>
+                They are an important concept in Web 2.0 because they
+                encourage data sharing, integration and user interaction.
+            </p>
+
+            <p>
+                <strong>Example:</strong> A travel website that combines
+                Google Maps with hotel information to display hotel
+                locations on a map.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Features of Mashups</h2>
+
+            <ul>
+                <li><strong>Data Integration:</strong> Combines information from multiple sources.</li>
+                <li><strong>API Based:</strong> Uses APIs to access external services.</li>
+                <li><strong>Reusability:</strong> Reuses existing online services and data.</li>
+                <li><strong>Interactive Interface:</strong> Allows users to interact with combined information.</li>
+                <li><strong>Dynamic Content:</strong> Can display frequently updated information.</li>
+                <li><strong>Customization:</strong> Combines services to meet specific user needs.</li>
+                <li><strong>Time Saving:</strong> Reduces the need to build every feature from scratch.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Types of Mashups</h2>
+
+            <h3>1. Data Mashups</h3>
+            <p>
+                Data mashups combine information from multiple
+                data sources to provide a unified view.
+            </p>
+            <p><strong>Example:</strong> Combining product prices from different shopping websites.</p>
+
+            <h3>2. Presentation Mashups</h3>
+            <p>
+                Presentation mashups combine content or visual
+                elements from different websites into one interface.
+            </p>
+            <p><strong>Example:</strong> Displaying a map alongside weather information.</p>
+
+            <h3>3. Business Mashups</h3>
+            <p>
+                Business mashups combine business applications
+                and services to improve organizational activities.
+            </p>
+            <p><strong>Example:</strong> Combining customer details,
+                sales data and location information in one dashboard.</p>
+
+            <h3>4. Consumer Mashups</h3>
+            <p>
+                Consumer mashups are designed for general users
+                and combine online services for everyday activities.
+            </p>
+            <p><strong>Example:</strong> A travel planner combining
+                maps, weather and hotel information.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Working of Mashups</h2>
+
+            <p>
+                Mashups collect information from different online
+                sources and combine it into a single application.
+            </p>
+
+            <ol>
+                <li>The developer identifies the required data sources.</li>
+                <li>APIs or web services are selected.</li>
+                <li>The application sends requests to these sources.</li>
+                <li>Data is received in formats such as JSON or XML.</li>
+                <li>The application processes and combines the data.</li>
+                <li>The combined information is displayed to the user.</li>
+            </ol>
+
+            <div class="code-box">
+                <pre>
+       SOURCE 1          SOURCE 2
+       (Maps API)       (Weather API)
+           |                 |
+           v                 v
+       +-------------------------+
+       |       MASHUP APP        |
+       |                         |
+       |   Data Integration      |
+       +-------------------------+
+                   |
+                   v
+           COMBINED DATA
+                   |
+                   v
+            USER INTERFACE
+                   |
+                   v
+              USER VIEW
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Technologies Used in Mashups</h2>
+
+            <ul>
+                <li><strong>HTML:</strong> Creates the structure of the application.</li>
+                <li><strong>CSS:</strong> Designs the user interface.</li>
+                <li><strong>JavaScript:</strong> Handles interaction and data processing.</li>
+                <li><strong>APIs:</strong> Connect the application with external services.</li>
+                <li><strong>AJAX and Fetch:</strong> Retrieve data without reloading the entire page.</li>
+                <li><strong>JSON:</strong> Transfers structured data between services.</li>
+                <li><strong>XML:</strong> Provides another format for exchanging data.</li>
+                <li><strong>Web Services:</strong> Allow different applications to communicate.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Example of a Mashup</h2>
+
+            <p>
+                Consider a travel application that combines:
+            </p>
+
+            <ul>
+                <li>Map API to display locations.</li>
+                <li>Weather API to show weather conditions.</li>
+                <li>Hotel API to display accommodation details.</li>
+            </ul>
+
+            <p>
+                By combining these services, the application helps
+                users plan their journeys from one place.
+            </p>
+
+            <h3>Simple JavaScript Data Integration Example</h3>
+
+            <div class="code-box">
+                <pre>
+&lt;div id="result"&gt;Loading...&lt;/div&gt;
+
+&lt;script&gt;
+const mapData = {
+    location: "Delhi"
+};
+
+const weatherData = {
+    temperature: "28°C"
+};
+
+const combinedData = {
+    ...mapData,
+    ...weatherData
+};
+
+document.getElementById("result").textContent =
+    combinedData.location + " - " +
+    combinedData.temperature;
+&lt;/script&gt;
+                </pre>
+            </div>
+
+            <p>
+                <strong>Explanation:</strong> This basic example
+                combines two JavaScript objects into one result.
+                Real-world mashups commonly retrieve data from
+                external APIs.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Advantages of Mashups</h2>
+
+            <ul>
+                <li>Combines useful information from multiple sources.</li>
+                <li>Improves user experience.</li>
+                <li>Encourages innovation and creativity.</li>
+                <li>Reduces development time and cost.</li>
+                <li>Provides customized services.</li>
+                <li>Promotes data sharing and integration.</li>
+                <li>Can create new services using existing technologies.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Disadvantages of Mashups</h2>
+
+            <ul>
+                <li><strong>API Dependency:</strong> Changes in external APIs can affect the application.</li>
+                <li><strong>Security Risks:</strong> External data sources may introduce security problems.</li>
+                <li><strong>Data Accuracy:</strong> Information from different sources may not always be accurate.</li>
+                <li><strong>Performance:</strong> Multiple API requests may increase loading time.</li>
+                <li><strong>Compatibility:</strong> Different services may use different data formats.</li>
+                <li><strong>Privacy:</strong> Sharing data with external services may create privacy concerns.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Applications of Mashups</h2>
+
+            <ul>
+                <li><strong>Travel:</strong> Combining maps, hotels and weather information.</li>
+                <li><strong>Education:</strong> Combining learning resources from different platforms.</li>
+                <li><strong>Business:</strong> Integrating sales, customer and financial information.</li>
+                <li><strong>Real Estate:</strong> Displaying property details with map locations.</li>
+                <li><strong>Shopping:</strong> Comparing prices and product information.</li>
+                <li><strong>News:</strong> Combining news feeds from multiple sources.</li>
+                <li><strong>Healthcare:</strong> Integrating information from different authorized services.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Difference Between Mashup and API</h2>
+
+            <table>
+                <tr>
+                    <th>API</th>
+                    <th>Mashup</th>
+                </tr>
+
+                <tr>
+                    <td>API stands for Application Programming Interface.</td>
+                    <td>A mashup combines data or services from multiple sources.</td>
+                </tr>
+
+                <tr>
+                    <td>Provides a way for applications to communicate.</td>
+                    <td>Uses APIs and other sources to create a combined application.</td>
+                </tr>
+
+                <tr>
+                    <td>Can provide access to a single service.</td>
+                    <td>Often combines multiple services.</td>
+                </tr>
+
+                <tr>
+                    <td>Example: Weather API.</td>
+                    <td>Example: Travel application combining maps and weather.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Role of Mashups in Web 2.0</h2>
+
+            <p>
+                Mashups play an important role in Web 2.0 by
+                allowing developers to combine online services
+                and create new interactive applications.
+            </p>
+
+            <ul>
+                <li>Encourage collaboration between web services.</li>
+                <li>Support data sharing across platforms.</li>
+                <li>Promote user-friendly applications.</li>
+                <li>Help developers create innovative solutions.</li>
+                <li>Support dynamic and interactive websites.</li>
+            </ul>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+
+            <ul>
+                <li>A mashup combines data or functionality from multiple sources.</li>
+                <li>APIs are commonly used to create mashups.</li>
+                <li>Data, presentation, business and consumer are common mashup categories.</li>
+                <li>JSON and XML are used for data exchange.</li>
+                <li>Travel applications are common examples of mashups.</li>
+                <li>Mashups support data integration and Web 2.0 innovation.</li>
+                <li>API dependency and security are important challenges.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Important Exam Questions</h2>
+
+            <ol>
+                <li>Define mashups in web technology.</li>
+                <li>Explain the features of mashups.</li>
+                <li>Describe different types of mashups.</li>
+                <li>Explain the working of mashups with a diagram.</li>
+                <li>What technologies are used to develop mashups?</li>
+                <li>Write the advantages and disadvantages of mashups.</li>
+                <li>Explain the applications of mashups.</li>
+                <li>Differentiate between an API and a mashup.</li>
+                <li>Explain the role of mashups in Web 2.0.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+
+            <p><strong>Mashup:</strong> An application that combines data or services from multiple sources.</p>
+            <p><strong>Main Technology:</strong> APIs and Web Services.</p>
+            <p><strong>Data Formats:</strong> JSON and XML.</p>
+            <p><strong>Types:</strong> Data, Presentation, Business and Consumer Mashups.</p>
+            <p><strong>Example:</strong> Travel application combining maps and weather.</p>
+            <p><strong>Advantages:</strong> Integration, innovation and better user experience.</p>
+            <p><strong>Challenges:</strong> Security, API dependency and performance.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit4-widgets.html">← Previous Topic</a>
+            <a href="unit4.html">Back to Unit 4</a>
+            <a href="unit4-rdf.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 4</p>
+    </footer>
+
+</body>
+</html>

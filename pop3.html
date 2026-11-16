@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POP3 | Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit1.html">← Back to Unit 1</a>
+        <div>
+            <span>UNIT 01 • TOPIC 06</span>
+            <h1>POP3</h1>
+        </div>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <p class="topic-label">TOPIC 06</p>
+            <h2>POP3</h2>
+            <p>
+                POP3 stands for Post Office Protocol Version 3.
+                It is an application-layer protocol that allows
+                an email client to retrieve messages from a
+                mail server.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">01 • INTRODUCTION</p>
+            <h3>What is POP3?</h3>
+            <p>
+                POP3 is used to download email messages from a
+                mail server to a user's email application.
+                Traditionally, downloaded messages may be removed
+                from the server, depending on the client's settings.
+            </p>
+            <p>
+                POP3 is mainly designed for retrieving emails.
+                SMTP, in contrast, is primarily used for sending them.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">02 • WORKING</p>
+            <h3>How POP3 Works</h3>
+
+            <div class="sequence">
+                <span>Mail Server</span><b>→</b>
+                <span>POP3 Client</span><b>→</b>
+                <span>Downloaded Emails</span>
+            </div>
+
+            <ul class="important-points">
+                <li>The email client connects to the mail server.</li>
+                <li>The user is authenticated.</li>
+                <li>The client checks the available messages.</li>
+                <li>Messages are downloaded to the client.</li>
+                <li>The connection is closed after retrieval.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">03 • PORT NUMBERS</p>
+            <h3>POP3 Ports</h3>
+
+            <ul class="important-points">
+                <li><strong>Port 110:</strong> Standard POP3 port without built-in TLS encryption.</li>
+                <li><strong>Port 995:</strong> Commonly used for POP3 over implicit TLS.</li>
+            </ul>
+
+            <p>
+                Secure email access should use the security
+                configuration supported by the mail provider.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">04 • ADVANTAGES</p>
+            <h3>Advantages of POP3</h3>
+
+            <ul class="important-points">
+                <li>Emails can be downloaded for offline access.</li>
+                <li>Local storage can reduce dependence on continuous server access.</li>
+                <li>It is supported by many email clients.</li>
+            </ul>
+
+            <h3>Limitations of POP3</h3>
+
+            <ul class="important-points">
+                <li>It is less suitable for synchronizing email across multiple devices.</li>
+                <li>Messages stored only on one device may be difficult to access elsewhere.</li>
+                <li>Server copies depend on client settings and provider configuration.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">05 • POP3 VS IMAP</p>
+            <h3>Difference Between POP3 and IMAP</h3>
+
+            <ul class="important-points">
+                <li><strong>POP3:</strong> Commonly downloads messages to a client for local access.</li>
+                <li><strong>IMAP:</strong> Keeps messages on the server and synchronizes mailbox state across devices.</li>
+                <li><strong>POP3:</strong> Useful when simple email downloading is sufficient.</li>
+                <li><strong>IMAP:</strong> Generally more convenient when using several devices.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">06 • EXAM PREPARATION</p>
+            <h3>Important Questions with Answers</h3>
+
+            <details class="question-item">
+                <summary>1. What is POP3?</summary>
+                <p>
+                    POP3 stands for Post Office Protocol Version 3.
+                    It is an application-layer protocol used by
+                    email clients to retrieve messages from a
+                    mail server.
+                </p>
+            </details>
+
+            <details class="question-item">
+                <summary>2. Which ports does POP3 use?</summary>
+                <p>
+                    POP3 commonly uses port 110 for standard
+                    connections and port 995 for connections
+                    using implicit TLS.
+                </p>
+            </details>
+
+            <details class="question-item">
+                <summary>3. What is the main limitation of POP3?</summary>
+                <p>
+                    POP3 is less suited to synchronizing the same
+                    mailbox across multiple devices, especially
+                    when messages are downloaded locally.
+                </p>
+            </details>
+
+            <details class="question-item">
+                <summary>4. Differentiate SMTP and POP3.</summary>
+                <p>
+                    SMTP is primarily used to send emails, whereas
+                    POP3 is used to retrieve or download emails
+                    from a mail server.
+                </p>
+            </details>
+        </section>
+
+        <section class="revision-box">
+            <p class="section-label">QUICK REVISION</p>
+            <h3>Remember</h3>
+            <div class="sequence">
+                <span>SMTP</span><b>→</b>
+                <span>Send Emails</span>
+            </div>
+            <div class="sequence" style="margin-top: 12px;">
+                <span>POP3</span><b>→</b>
+                <span>Download Emails</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology • CS35302</p>
+        <p>Topic 06 • POP3</p>
+    </footer>
+
+</body>
+</html>

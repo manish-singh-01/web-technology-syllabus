@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Images | Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit2.html">← Back to Unit 2</a>
+        <div>
+            <span>UNIT 02 • TOPIC 03</span>
+            <h1>HTML Images</h1>
+        </div>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <p class="topic-label">TOPIC 03</p>
+            <h2>Images in HTML</h2>
+            <p>
+                Learn how to add images to webpages using HTML,
+                control their size, provide alternative text,
+                and create responsive images.
+            </p>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <p class="section-label">01 • INTRODUCTION</p>
+            <h3>What is an HTML Image?</h3>
+
+            <p>
+                Images are visual elements used to make webpages
+                more attractive, informative, and interactive.
+                HTML provides the &lt;img&gt; tag to display images
+                on a webpage.
+            </p>
+
+            <div class="important-points">
+                <h4>Important Points</h4>
+                <ul>
+                    <li>The &lt;img&gt; tag is used to display images.</li>
+                    <li>It is an empty element and does not require a closing tag.</li>
+                    <li>The src attribute specifies the image location.</li>
+                    <li>The alt attribute provides alternative text.</li>
+                    <li>Images can be stored locally or loaded from a URL.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Basic Image -->
+        <section class="content-section">
+            <p class="section-label">02 • BASIC IMAGE TAG</p>
+            <h3>How to Insert an Image?</h3>
+
+            <p>
+                The basic syntax of the HTML image tag is:
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;img src="image.jpg" alt="Description of image"&gt;</code></pre>
+            </div>
+
+            <p>
+                Here, src specifies the image file and alt
+                provides text describing the image.
+            </p>
+
+            <div class="important-points">
+                <h4>Example</h4>
+                <div class="code-box">
+                    <pre><code>&lt;img src="flower.jpg" alt="A beautiful flower"&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Attributes -->
+        <section class="content-section">
+            <p class="section-label">03 • IMAGE ATTRIBUTES</p>
+            <h3>Important Attributes of the Image Tag</h3>
+
+            <div class="important-points">
+                <h4>1. src</h4>
+                <p>Specifies the path or URL of the image.</p>
+                <code>src="photo.jpg"</code>
+            </div>
+
+            <div class="important-points">
+                <h4>2. alt</h4>
+                <p>
+                    Provides alternative text if the image cannot
+                    be displayed and helps screen-reader users.
+                </p>
+                <code>alt="Student using a laptop"</code>
+            </div>
+
+            <div class="important-points">
+                <h4>3. width</h4>
+                <p>Specifies the image width.</p>
+                <code>width="400"</code>
+            </div>
+
+            <div class="important-points">
+                <h4>4. height</h4>
+                <p>Specifies the image height.</p>
+                <code>height="250"</code>
+            </div>
+
+            <div class="important-points">
+                <h4>5. title</h4>
+                <p>Provides additional advisory information about an image.</p>
+                <code>title="College Campus"</code>
+            </div>
+        </section>
+
+        <!-- Height and Width -->
+        <section class="content-section">
+            <p class="section-label">04 • IMAGE SIZE</p>
+            <h3>Setting Image Height and Width</h3>
+
+            <p>
+                HTML allows the width and height of an image
+                to be specified. CSS can also be used to control
+                image dimensions.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;img
+    src="college.jpg"
+    alt="College building"
+    width="400"
+    height="250"
+&gt;</code></pre>
+            </div>
+
+            <p>
+                It is important to maintain the image's original
+                aspect ratio to avoid distortion.
+            </p>
+        </section>
+
+        <!-- Image Paths -->
+        <section class="content-section">
+            <p class="section-label">05 • IMAGE PATHS</p>
+            <h3>Types of Image Paths</h3>
+
+            <div class="important-points">
+                <h4>1. Relative Path</h4>
+                <p>
+                    Specifies the image location relative to
+                    the current HTML file.
+                </p>
+                <code>src="images/photo.jpg"</code>
+            </div>
+
+            <div class="important-points">
+                <h4>2. Parent Folder Path</h4>
+                <p>
+                    Uses ../ to move to the parent directory.
+                </p>
+                <code>src="../images/photo.jpg"</code>
+            </div>
+
+            <div class="important-points">
+                <h4>3. Absolute URL</h4>
+                <p>
+                    Uses the complete URL of an image hosted
+                    on another server.
+                </p>
+                <code>src="https://example.com/photo.jpg"</code>
+            </div>
+
+            <div class="important-points">
+                <h4>Example Folder Structure</h4>
+                <div class="code-box">
+                    <pre><code>web technology/
+│
+├── unit2-images.html
+├── style.css
+│
+└── images/
+    ├── flower.jpg
+    └── college.png</code></pre>
+                </div>
+                <p>
+                    To display flower.jpg from unit2-images.html,
+                    use:
+                </p>
+                <code>src="images/flower.jpg"</code>
+            </div>
+        </section>
+
+        <!-- Figure -->
+        <section class="content-section">
+            <p class="section-label">06 • FIGURE AND FIGCAPTION</p>
+            <h3>Figure and Figcaption Tags</h3>
+
+            <p>
+                The &lt;figure&gt; element groups an image or
+                other self-contained content. The
+                &lt;figcaption&gt; element provides its caption.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;figure&gt;
+    &lt;img src="nature.jpg"
+         alt="Beautiful green forest"&gt;
+
+    &lt;figcaption&gt;
+        A beautiful forest.
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- Responsive Images -->
+        <section class="content-section">
+            <p class="section-label">07 • RESPONSIVE IMAGES</p>
+            <h3>Responsive Images Using CSS</h3>
+
+            <p>
+                Responsive images adjust to fit different
+                screen sizes without overflowing their containers.
+            </p>
+
+            <div class="code-box">
+                <pre><code>img {
+    max-width: 100%;
+    height: auto;
+}</code></pre>
+            </div>
+
+            <p>
+                The max-width property prevents an image from
+                becoming wider than its container, while
+                height: auto maintains its aspect ratio.
+            </p>
+        </section>
+
+        <!-- Picture Element -->
+        <section class="content-section">
+            <p class="section-label">08 • PICTURE ELEMENT</p>
+            <h3>Using the Picture Element</h3>
+
+            <p>
+                The &lt;picture&gt; element allows browsers to
+                select different image sources based on screen
+                size or supported image formats.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;picture&gt;
+    &lt;source
+        media="(max-width: 600px)"
+        srcset="small.jpg"&gt;
+
+    &lt;source
+        media="(min-width: 601px)"
+        srcset="large.jpg"&gt;
+
+    &lt;img src="large.jpg" alt="Nature view"&gt;
+&lt;/picture&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- Image Formats -->
+        <section class="content-section">
+            <p class="section-label">09 • IMAGE FORMATS</p>
+            <h3>Common Image Formats</h3>
+
+            <div class="important-points">
+                <h4>JPEG / JPG</h4>
+                <p>Commonly used for photographs and compressed images.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>PNG</h4>
+                <p>Supports transparency and lossless compression.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>GIF</h4>
+                <p>Supports simple animations and limited colors.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>SVG</h4>
+                <p>A vector format suitable for icons, logos, and illustrations.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>WebP</h4>
+                <p>A modern image format that supports lossy and lossless compression.</p>
+            </div>
+        </section>
+
+        <!-- Practical Example -->
+        <section class="content-section">
+            <p class="section-label">10 • PRACTICAL EXAMPLE</p>
+            <h3>Complete HTML Image Example</h3>
+
+            <div class="code-box">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Image Page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h2&gt;My College&lt;/h2&gt;
+
+    &lt;img
+        src="images/college.jpg"
+        alt="College Building"
+        width="400"
+        height="250"
+    &gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- Exam Questions -->
+        <section class="content-section">
+            <p class="section-label">11 • EXAM PREPARATION</p>
+            <h3>Important Exam Questions</h3>
+
+            <div class="important-points">
+                <h4>Short Answer Questions</h4>
+                <ol>
+                    <li>What is the use of the HTML img tag?</li>
+                    <li>Explain the src and alt attributes.</li>
+                    <li>What is the purpose of width and height?</li>
+                    <li>What is a relative image path?</li>
+                    <li>What are figure and figcaption tags?</li>
+                </ol>
+            </div>
+
+            <div class="important-points">
+                <h4>Long Answer Questions</h4>
+                <ol>
+                    <li>Explain the image tag and its attributes with examples.</li>
+                    <li>Describe different ways of specifying image paths.</li>
+                    <li>Explain responsive images in HTML.</li>
+                    <li>Write an HTML program to display an image with a caption.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Revision -->
+        <section class="revision-box">
+            <h3>Quick Revision</h3>
+
+            <p><strong>Image Tag:</strong> &lt;img&gt;</p>
+            <p><strong>Image Source:</strong> src</p>
+            <p><strong>Alternative Text:</strong> alt</p>
+            <p><strong>Image Dimensions:</strong> width and height</p>
+            <p><strong>Image Group:</strong> &lt;figure&gt;</p>
+            <p><strong>Image Caption:</strong> &lt;figcaption&gt;</p>
+            <p><strong>Responsive Image:</strong> max-width: 100%; height: auto;</p>
+            <p><strong>Multiple Image Sources:</strong> &lt;picture&gt;</p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology • CS35302</p>
+        <p>Unit 02 • Topic 03: HTML Images</p>
+    </footer>
+
+</body>
+</html>

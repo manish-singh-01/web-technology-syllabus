@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOAP - Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit3.html">← Back to Unit 3</a>
+        <a href="unit3-uddi.html">Previous Topic</a>
+        <a href="unit3-wsdl.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>SOAP (Simple Object Access Protocol)</h1>
+            <p>Unit 3 – Web Services, AJAX and CORBA</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to SOAP</h2>
+            <p>
+                SOAP stands for Simple Object Access Protocol. It is an XML-based
+                messaging protocol used for exchanging structured information
+                between applications over a network.
+            </p>
+            <p>
+                SOAP allows applications developed using different programming
+                languages and platforms to communicate with each other.
+                It is commonly used with HTTP or HTTPS.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Purpose of SOAP</h2>
+            <p>The main purpose of SOAP is to provide a standard method for communication between distributed applications.</p>
+            <ul>
+                <li>To exchange data between different applications.</li>
+                <li>To support communication between different platforms.</li>
+                <li>To provide a standard XML-based message format.</li>
+                <li>To support distributed and web-based systems.</li>
+                <li>To enable communication between client and server applications.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Features of SOAP</h2>
+            <ul>
+                <li><strong>XML-Based:</strong> SOAP messages are written in XML format.</li>
+                <li><strong>Platform Independent:</strong> It works across different operating systems.</li>
+                <li><strong>Language Independent:</strong> Applications written in different programming languages can communicate.</li>
+                <li><strong>Extensible:</strong> Additional information can be included through SOAP headers.</li>
+                <li><strong>Transport Independent:</strong> SOAP can work with different transport protocols.</li>
+                <li><strong>Standardized:</strong> It follows defined messaging rules and structure.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. SOAP Architecture</h2>
+            <p>
+                SOAP architecture describes how messages are exchanged between
+                applications. It generally includes a sender, receiver and,
+                when required, intermediaries.
+            </p>
+
+            <div class="code-box">
+                <pre>
++-------------------+
+|   SOAP Sender     |
+|  (Client System)  |
++-------------------+
+          |
+          | SOAP Request
+          v
++-------------------+
+| SOAP Intermediary |
+|   (Optional)      |
++-------------------+
+          |
+          v
++-------------------+
+|   SOAP Receiver   |
+|  (Server System)  |
++-------------------+
+          |
+          | SOAP Response
+          v
++-------------------+
+|   SOAP Sender     |
+|  (Client System)  |
++-------------------+
+                </pre>
+            </div>
+
+            <ul>
+                <li><strong>SOAP Sender:</strong> Creates and sends the SOAP message.</li>
+                <li><strong>SOAP Receiver:</strong> Receives and processes the message.</li>
+                <li><strong>SOAP Intermediary:</strong> An optional system that processes or forwards a SOAP message.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Structure of a SOAP Message</h2>
+            <p>
+                A SOAP message is an XML document. Its main elements are
+                Envelope, Header, Body and Fault.
+            </p>
+
+            <h3>Main Components</h3>
+            <ul>
+                <li><strong>Envelope:</strong> The root element that identifies the XML document as a SOAP message. It is mandatory.</li>
+                <li><strong>Header:</strong> An optional element containing additional information such as authentication or routing details.</li>
+                <li><strong>Body:</strong> A mandatory element containing the actual request or response data.</li>
+                <li><strong>Fault:</strong> An optional element inside the Body used to communicate errors.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>SOAP Message Structure</h3>
+                <pre>
+&lt;soap:Envelope&gt;
+    &lt;soap:Header&gt;
+        Header Information
+    &lt;/soap:Header&gt;
+
+    &lt;soap:Body&gt;
+        Request or Response Data
+
+        &lt;soap:Fault&gt;
+            Error Information
+        &lt;/soap:Fault&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Example of a SOAP Message</h2>
+            <p>
+                The following example shows a SOAP request that asks a server
+                to calculate the sum of two numbers.
+            </p>
+
+            <div class="code-box">
+                <h3>SOAP Request</h3>
+                <pre>
+&lt;?xml version="1.0"?&gt;
+&lt;soap:Envelope
+ xmlns:soap="http://www.w3.org/2003/05/soap-envelope"&gt;
+
+    &lt;soap:Header&gt;
+        &lt;!-- Optional header information --&gt;
+    &lt;/soap:Header&gt;
+
+    &lt;soap:Body&gt;
+        &lt;AddNumbers xmlns="http://example.com/calculator"&gt;
+            &lt;number1&gt;10&lt;/number1&gt;
+            &lt;number2&gt;20&lt;/number2&gt;
+        &lt;/AddNumbers&gt;
+    &lt;/soap:Body&gt;
+
+&lt;/soap:Envelope&gt;
+                </pre>
+            </div>
+
+            <div class="code-box">
+                <h3>SOAP Response</h3>
+                <pre>
+&lt;?xml version="1.0"?&gt;
+&lt;soap:Envelope
+ xmlns:soap="http://www.w3.org/2003/05/soap-envelope"&gt;
+
+    &lt;soap:Body&gt;
+        &lt;AddNumbersResponse
+         xmlns="http://example.com/calculator"&gt;
+            &lt;result&gt;30&lt;/result&gt;
+        &lt;/AddNumbersResponse&gt;
+    &lt;/soap:Body&gt;
+
+&lt;/soap:Envelope&gt;
+                </pre>
+            </div>
+
+            <p>
+                In this example, the client sends two numbers (10 and 20).
+                The server processes the request and returns the result (30).
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Working of SOAP</h2>
+            <p>SOAP communication generally follows these steps:</p>
+            <ol>
+                <li>The client creates a SOAP XML request.</li>
+                <li>The request is sent to the web service.</li>
+                <li>The server receives and processes the SOAP message.</li>
+                <li>The server performs the requested operation.</li>
+                <li>The server creates a SOAP response.</li>
+                <li>The response is sent back to the client.</li>
+                <li>The client reads and uses the response.</li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2>8. SOAP over HTTP</h2>
+            <p>
+                SOAP is commonly used with HTTP because HTTP is widely supported
+                by web servers, browsers and network infrastructure.
+            </p>
+            <ul>
+                <li>The client generally sends a SOAP request using HTTP POST.</li>
+                <li>The message contains XML data.</li>
+                <li>The server processes the request.</li>
+                <li>The server returns a SOAP response.</li>
+                <li>HTTPS can be used to protect communication through encryption.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Advantages of SOAP</h2>
+            <ul>
+                <li>Platform and programming language independent.</li>
+                <li>Uses a standardized XML message format.</li>
+                <li>Supports communication over different transport protocols.</li>
+                <li>Supports extensions for security and reliability.</li>
+                <li>Suitable for enterprise-level applications.</li>
+                <li>Provides a structured way to handle errors using SOAP Fault.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Disadvantages of SOAP</h2>
+            <ul>
+                <li>XML messages can be lengthy.</li>
+                <li>Processing XML may require additional resources.</li>
+                <li>It can be more complex to implement than simpler APIs.</li>
+                <li>Messages may be slower or larger than lightweight alternatives.</li>
+                <li>Requires proper configuration and understanding of SOAP standards.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Difference Between SOAP and REST</h2>
+
+            <table>
+                <tr>
+                    <th>SOAP</th>
+                    <th>REST</th>
+                </tr>
+                <tr>
+                    <td>SOAP is a messaging protocol.</td>
+                    <td>REST is an architectural style.</td>
+                </tr>
+                <tr>
+                    <td>Uses XML-based messages.</td>
+                    <td>Can use JSON, XML and other formats.</td>
+                </tr>
+                <tr>
+                    <td>Defines a strict message structure.</td>
+                    <td>Uses resources and standard HTTP methods.</td>
+                </tr>
+                <tr>
+                    <td>Can work over different transport protocols.</td>
+                    <td>Commonly uses HTTP/HTTPS.</td>
+                </tr>
+                <tr>
+                    <td>Often used in enterprise systems.</td>
+                    <td>Commonly used in web and mobile APIs.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Applications of SOAP</h2>
+            <ul>
+                <li>Banking and financial applications.</li>
+                <li>Enterprise software systems.</li>
+                <li>Payment processing systems.</li>
+                <li>Business-to-business communication.</li>
+                <li>Travel and reservation systems.</li>
+                <li>Applications requiring standardized messaging.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>13. SOAP vs Web Service</h2>
+            <p>
+                A web service is a software system that allows applications
+                to communicate over a network. SOAP is one protocol that can
+                be used to exchange messages in a web service.
+            </p>
+            <p>
+                Therefore, SOAP and web services are related, but they are
+                not the same thing.
+            </p>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+            <ul>
+                <li>SOAP stands for Simple Object Access Protocol.</li>
+                <li>SOAP is an XML-based messaging protocol.</li>
+                <li>SOAP messages use an Envelope as their root element.</li>
+                <li>Header is optional, while Envelope and Body are mandatory.</li>
+                <li>Fault is used for error information inside the Body.</li>
+                <li>SOAP is commonly used with HTTP and HTTPS.</li>
+                <li>SOAP supports platform and language independence.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>14. Important Exam Questions</h2>
+            <ol>
+                <li>What is SOAP? Explain its purpose.</li>
+                <li>Explain the features of SOAP.</li>
+                <li>Describe SOAP architecture with a diagram.</li>
+                <li>Explain the structure of a SOAP message.</li>
+                <li>Write an XML example of a SOAP request and response.</li>
+                <li>Explain how SOAP works over HTTP.</li>
+                <li>Write the advantages and disadvantages of SOAP.</li>
+                <li>Differentiate between SOAP and REST.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <p><strong>SOAP:</strong> XML-based messaging protocol.</p>
+            <p><strong>Envelope:</strong> Root element of SOAP message.</p>
+            <p><strong>Header:</strong> Optional additional information.</p>
+            <p><strong>Body:</strong> Main request or response data.</p>
+            <p><strong>Fault:</strong> Error information.</p>
+            <p><strong>HTTP:</strong> Common transport for SOAP messages.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit3-uddi.html">← Previous Topic</a>
+            <a href="unit3-wsdl.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 3</p>
+    </footer>
+
+</body>
+</html>

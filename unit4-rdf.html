@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDF - Resource Description Framework</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit4.html">← Back to Unit 4</a>
+        <a href="unit4-mashups.html">Previous Topic</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>RDF (Resource Description Framework)</h1>
+            <p>Unit 4 – Web 2.0, Web 3.0 and Emerging Web Technologies</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to RDF</h2>
+
+            <p>
+                RDF stands for Resource Description Framework. It is a
+                standard framework developed by the World Wide Web
+                Consortium (W3C) for representing information about
+                resources on the web.
+            </p>
+
+            <p>
+                RDF is used to describe resources and their relationships
+                in a structured and machine-readable format. It plays an
+                important role in the Semantic Web.
+            </p>
+
+            <p>
+                RDF helps computers understand the meaning and
+                relationships of information instead of simply displaying
+                text to users.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Objectives of RDF</h2>
+
+            <ul>
+                <li>To describe web resources in a structured format.</li>
+                <li>To represent relationships between different resources.</li>
+                <li>To make information understandable by machines.</li>
+                <li>To support data sharing between different applications.</li>
+                <li>To provide a common framework for the Semantic Web.</li>
+                <li>To enable integration of information from multiple sources.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Basic Structure of RDF</h2>
+
+            <p>
+                RDF represents information using three basic components
+                called an RDF triple.
+            </p>
+
+            <h3>1. Subject</h3>
+            <p>
+                The subject identifies the resource being described.
+            </p>
+
+            <h3>2. Predicate</h3>
+            <p>
+                The predicate describes the property or relationship
+                of the subject.
+            </p>
+
+            <h3>3. Object</h3>
+            <p>
+                The object represents the value of the property or
+                another related resource.
+            </p>
+
+            <div class="code-box">
+                <pre>
+          RDF TRIPLE
+
+       SUBJECT
+          |
+          |
+          v
+       PREDICATE
+          |
+          |
+          v
+        OBJECT
+
+Example:
+
+   Manish  ---- studies ----> Computer Science
+
+   Subject:   Manish
+   Predicate: studies
+   Object:    Computer Science
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>4. RDF Example</h2>
+
+            <p>
+                Consider the following statement:
+                "Manish studies Computer Science."
+            </p>
+
+            <p>It can be represented as an RDF triple:</p>
+
+            <ul>
+                <li><strong>Subject:</strong> Manish</li>
+                <li><strong>Predicate:</strong> Studies</li>
+                <li><strong>Object:</strong> Computer Science</li>
+            </ul>
+
+            <p>
+                This structure allows machines to identify the
+                relationship between a person and a subject.
+            </p>
+
+            <div class="code-box">
+                <pre>
+&lt;rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:ex="http://example.org/"&gt;
+
+ &lt;rdf:Description rdf:about="http://example.org/Manish"&gt;
+    &lt;ex:studies&gt;Computer Science&lt;/ex:studies&gt;
+ &lt;/rdf:Description&gt;
+
+&lt;/rdf:RDF&gt;
+                </pre>
+            </div>
+
+            <p>
+                <strong>Explanation:</strong> This is an example of
+                RDF/XML syntax. It describes Manish as a resource
+                and specifies Computer Science as the value of
+                the studies property.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Components of RDF</h2>
+
+            <ul>
+                <li><strong>Resources:</strong> Anything that can be described, such as a person, book or website.</li>
+                <li><strong>Properties:</strong> Characteristics or relationships of resources.</li>
+                <li><strong>Statements:</strong> Information represented using subject, predicate and object.</li>
+                <li><strong>URIs:</strong> Identifiers used to uniquely identify resources and properties.</li>
+                <li><strong>Literals:</strong> Values such as text, numbers and dates.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>6. RDF Data Models</h2>
+
+            <p>
+                RDF uses a graph-based data model to represent
+                information and relationships.
+            </p>
+
+            <ul>
+                <li><strong>Nodes:</strong> Represent resources or literal values.</li>
+                <li><strong>Edges:</strong> Represent relationships between resources.</li>
+                <li><strong>Directed Graph:</strong> Shows relationships using arrows.</li>
+            </ul>
+
+            <div class="code-box">
+                <pre>
+       [Manish]
+           |
+           | studies
+           v
+   [Computer Science]
+
+       [Manish]
+           |
+           | studiesAt
+           v
+   [Quantum University]
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Features of RDF</h2>
+
+            <ul>
+                <li><strong>Machine Readable:</strong> Information can be processed by computers.</li>
+                <li><strong>Flexible:</strong> New resources and relationships can be added.</li>
+                <li><strong>Interoperability:</strong> Supports data exchange between applications.</li>
+                <li><strong>Graph Based:</strong> Represents information through connected resources.</li>
+                <li><strong>Extensible:</strong> Supports different vocabularies and domains.</li>
+                <li><strong>Standardized:</strong> Developed and maintained as a W3C standard.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>8. RDF Serialization Formats</h2>
+
+            <p>
+                RDF information can be written and exchanged using
+                different serialization formats.
+            </p>
+
+            <h3>1. RDF/XML</h3>
+            <p>
+                Represents RDF data using XML syntax.
+            </p>
+
+            <h3>2. Turtle</h3>
+            <p>
+                A compact and human-readable format for writing RDF triples.
+            </p>
+
+            <h3>3. N-Triples</h3>
+            <p>
+                A simple line-based format in which each line
+                represents an RDF triple.
+            </p>
+
+            <h3>4. JSON-LD</h3>
+            <p>
+                A JSON-based format used to represent linked data.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Advantages of RDF</h2>
+
+            <ul>
+                <li>Provides structured representation of information.</li>
+                <li>Helps computers understand relationships between resources.</li>
+                <li>Supports data sharing and integration.</li>
+                <li>Allows information from different sources to be connected.</li>
+                <li>Supports Semantic Web applications.</li>
+                <li>Provides a flexible and extensible data model.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Disadvantages of RDF</h2>
+
+            <ul>
+                <li>Can be complex for beginners.</li>
+                <li>Large RDF graphs may require significant storage.</li>
+                <li>Creating and maintaining RDF data can require additional effort.</li>
+                <li>Incorrect or inconsistent data can affect results.</li>
+                <li>Specialized tools and knowledge may be required.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Applications of RDF</h2>
+
+            <ul>
+                <li><strong>Semantic Web:</strong> Represents meaningful relationships between web resources.</li>
+                <li><strong>Knowledge Graphs:</strong> Connects information about people, places and things.</li>
+                <li><strong>Digital Libraries:</strong> Describes books, authors and publications.</li>
+                <li><strong>E-commerce:</strong> Represents products and their properties.</li>
+                <li><strong>Healthcare:</strong> Supports structured representation of medical information.</li>
+                <li><strong>Search Engines:</strong> Helps organize and connect structured information.</li>
+                <li><strong>Data Integration:</strong> Combines information from different systems.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Difference Between RDF and XML</h2>
+
+            <table>
+                <tr>
+                    <th>RDF</th>
+                    <th>XML</th>
+                </tr>
+
+                <tr>
+                    <td>RDF stands for Resource Description Framework.</td>
+                    <td>XML stands for Extensible Markup Language.</td>
+                </tr>
+
+                <tr>
+                    <td>Represents resources and their relationships.</td>
+                    <td>Defines a structured format for storing and transporting data.</td>
+                </tr>
+
+                <tr>
+                    <td>Uses subject, predicate and object.</td>
+                    <td>Uses tags and elements.</td>
+                </tr>
+
+                <tr>
+                    <td>Supports Semantic Web data models.</td>
+                    <td>Does not inherently define semantic relationships.</td>
+                </tr>
+
+                <tr>
+                    <td>Can be serialized using RDF/XML.</td>
+                    <td>Is itself a markup language.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+
+            <ul>
+                <li>RDF stands for Resource Description Framework.</li>
+                <li>RDF is a W3C standard for representing web resources.</li>
+                <li>RDF is an important technology of the Semantic Web.</li>
+                <li>An RDF statement consists of subject, predicate and object.</li>
+                <li>RDF uses a graph-based data model.</li>
+                <li>URIs help identify resources.</li>
+                <li>RDF supports data sharing and integration.</li>
+                <li>RDF/XML, Turtle, N-Triples and JSON-LD are RDF serialization formats.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Important Exam Questions</h2>
+
+            <ol>
+                <li>What is RDF? Explain its objectives.</li>
+                <li>Explain the basic structure of RDF with an example.</li>
+                <li>What are subject, predicate and object?</li>
+                <li>Explain the RDF graph-based data model.</li>
+                <li>Describe the important features of RDF.</li>
+                <li>Explain different RDF serialization formats.</li>
+                <li>Write the advantages and disadvantages of RDF.</li>
+                <li>Explain the applications of RDF in the Semantic Web.</li>
+                <li>Differentiate between RDF and XML.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+
+            <p><strong>Full Form:</strong> Resource Description Framework.</p>
+            <p><strong>Standard:</strong> W3C.</p>
+            <p><strong>Purpose:</strong> Describes web resources and relationships.</p>
+            <p><strong>Structure:</strong> Subject + Predicate + Object.</p>
+            <p><strong>Data Model:</strong> Graph-based.</p>
+            <p><strong>Formats:</strong> RDF/XML, Turtle, N-Triples and JSON-LD.</p>
+            <p><strong>Applications:</strong> Semantic Web, knowledge graphs and data integration.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit4-mashups.html">← Previous Topic</a>
+            <a href="unit4.html">Back to Unit 4</a>
+            <a href="unit4-web-information-systems.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 4</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet of Things (IoT) in Web Development</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit5.html">← Back to Unit 5</a>
+        <a href="unit5-blockchain-integration.html">Previous Topic</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Internet of Things (IoT) in Web Development</h1>
+            <p>Unit 5 – Emerging Web Technologies and Future of Web</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to IoT</h2>
+
+            <p>
+                The Internet of Things (IoT) refers to a network of
+                physical devices connected to the Internet that
+                collect, exchange and process data.
+            </p>
+
+            <p>
+                These devices include sensors, smart appliances,
+                vehicles, cameras and industrial machines.
+                They use network connectivity to communicate
+                with other devices and applications.
+            </p>
+
+            <p>
+                In web development, IoT allows developers to create
+                websites and web applications that monitor,
+                control and manage connected devices.
+            </p>
+
+            <p>
+                <strong>Example:</strong> A web application that
+                allows users to monitor room temperature and
+                control smart lights using the Internet.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Features of IoT</h2>
+
+            <ul>
+                <li><strong>Connectivity:</strong> Devices connect through networks such as Wi-Fi, Bluetooth and cellular networks.</li>
+                <li><strong>Sensing:</strong> Sensors collect information from the physical environment.</li>
+                <li><strong>Data Exchange:</strong> Connected devices exchange information.</li>
+                <li><strong>Automation:</strong> Devices can perform actions automatically based on predefined conditions.</li>
+                <li><strong>Remote Monitoring:</strong> Users can monitor devices from different locations.</li>
+                <li><strong>Real-Time Data:</strong> IoT systems can provide updated information quickly.</li>
+                <li><strong>Scalability:</strong> IoT systems can support many connected devices.</li>
+                <li><strong>Intelligence:</strong> AI and analytics can help IoT systems make useful decisions.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Components of IoT</h2>
+
+            <ul>
+                <li><strong>Sensors:</strong> Collect data such as temperature, humidity, movement and pressure.</li>
+                <li><strong>Actuators:</strong> Perform physical actions such as switching lights or opening valves.</li>
+                <li><strong>Connectivity:</strong> Transfers data between devices and systems.</li>
+                <li><strong>Data Processing:</strong> Analyzes the collected information.</li>
+                <li><strong>Cloud Platform:</strong> Provides storage, processing and device management services.</li>
+                <li><strong>User Interface:</strong> A website or application through which users monitor and control devices.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. IoT Architecture</h2>
+
+            <p>
+                IoT architecture describes how connected devices,
+                communication networks, data processing systems
+                and user applications work together.
+            </p>
+
+            <h3>1. Perception Layer</h3>
+            <p>
+                This layer contains sensors and devices that
+                collect information from the environment.
+            </p>
+
+            <h3>2. Network Layer</h3>
+            <p>
+                It transfers data between devices, gateways
+                and processing systems.
+            </p>
+
+            <h3>3. Processing Layer</h3>
+            <p>
+                This layer stores and processes the collected
+                information using edge or cloud systems.
+            </p>
+
+            <h3>4. Application Layer</h3>
+            <p>
+                It provides services to users through web
+                applications and other software interfaces.
+            </p>
+
+            <div class="code-box">
+                <pre>
+        APPLICATION LAYER
+       (Web / Mobile Apps)
+                |
+                v
+        PROCESSING LAYER
+        (Cloud / Edge)
+                |
+                v
+          NETWORK LAYER
+       (Wi-Fi / Internet)
+                |
+                v
+        PERCEPTION LAYER
+       (Sensors / Devices)
+                |
+                v
+        PHYSICAL WORLD
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Role of IoT in Web Development</h2>
+
+            <p>
+                IoT plays an important role in modern web development
+                by allowing websites to interact with physical
+                devices and real-world data.
+            </p>
+
+            <ul>
+                <li>Developing dashboards to monitor connected devices.</li>
+                <li>Displaying real-time sensor information.</li>
+                <li>Controlling smart home appliances through browsers.</li>
+                <li>Managing industrial equipment remotely.</li>
+                <li>Sending notifications when specific conditions occur.</li>
+                <li>Integrating IoT devices with cloud-based services.</li>
+                <li>Visualizing collected data using charts and reports.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Technologies Used in IoT Web Development</h2>
+
+            <ul>
+                <li><strong>HTML:</strong> Creates the structure of IoT dashboards.</li>
+                <li><strong>CSS:</strong> Designs the appearance of web interfaces.</li>
+                <li><strong>JavaScript:</strong> Adds interactivity to web applications.</li>
+                <li><strong>Python:</strong> Used for device programming, data processing and IoT applications.</li>
+                <li><strong>Node.js:</strong> Supports server-side applications and real-time communication.</li>
+                <li><strong>MQTT:</strong> A lightweight messaging protocol commonly used in IoT.</li>
+                <li><strong>HTTP:</strong> Allows devices and web services to exchange information.</li>
+                <li><strong>WebSocket:</strong> Supports two-way communication between browsers and servers.</li>
+                <li><strong>Cloud Computing:</strong> Provides storage and computing resources for IoT systems.</li>
+                <li><strong>Databases:</strong> Store sensor readings and device information.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Communication Protocols in IoT</h2>
+
+            <h3>MQTT</h3>
+            <p>
+                MQTT is a lightweight publish-subscribe messaging
+                protocol designed for communication between
+                connected devices.
+            </p>
+
+            <h3>HTTP</h3>
+            <p>
+                HTTP is used for communication between web clients
+                and servers. IoT devices can use HTTP APIs to send
+                and receive information.
+            </p>
+
+            <h3>CoAP</h3>
+            <p>
+                CoAP is a lightweight web transfer protocol designed
+                for constrained devices and networks.
+            </p>
+
+            <h3>WebSocket</h3>
+            <p>
+                WebSocket enables continuous two-way communication
+                between a web browser and a server.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Working of IoT-Based Web Application</h2>
+
+            <ol>
+                <li>Sensors collect information from the physical environment.</li>
+                <li>Connected devices transmit the data through a network.</li>
+                <li>An edge device or cloud platform receives the data.</li>
+                <li>The system processes and stores the information.</li>
+                <li>The web application retrieves updated information through APIs or real-time connections.</li>
+                <li>The user views data on a dashboard.</li>
+                <li>The user can send commands to control supported devices.</li>
+            </ol>
+
+            <div class="code-box">
+                <pre>
+        IoT SENSORS
+             |
+             v
+       NETWORK CONNECTION
+             |
+             v
+       CLOUD / EDGE SERVER
+             |
+             v
+       DATA PROCESSING
+             |
+             v
+       WEB APPLICATION
+             |
+             v
+        USER DASHBOARD
+             |
+             v
+       DEVICE CONTROL
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Example of IoT in Web Development</h2>
+
+            <p>
+                Consider a smart home system. Temperature sensors
+                collect room temperature and send it to a server.
+                A web dashboard displays the latest temperature.
+                Users can then control an air conditioner or
+                other connected devices.
+            </p>
+
+            <p><strong>Example HTML dashboard:</strong></p>
+
+            <div class="code-box">
+                <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;IoT Dashboard&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Smart Home Dashboard&lt;/h1&gt;
+
+    &lt;p&gt;Temperature: 28°C&lt;/p&gt;
+    &lt;p&gt;Humidity: 60%&lt;/p&gt;
+
+    &lt;button&gt;Turn ON Light&lt;/button&gt;
+    &lt;button&gt;Turn OFF Light&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+            </div>
+
+            <p>
+                This is a static interface example. Actual IoT
+                communication requires a connected device,
+                backend or API, and appropriate communication
+                protocols.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Applications of IoT in Web Development</h2>
+
+            <ul>
+                <li><strong>Smart Homes:</strong> Control lights, fans, cameras and appliances through websites.</li>
+                <li><strong>Healthcare:</strong> Monitor information from connected medical devices.</li>
+                <li><strong>Agriculture:</strong> Monitor soil moisture and environmental conditions.</li>
+                <li><strong>Smart Cities:</strong> Monitor traffic, lighting and environmental sensors.</li>
+                <li><strong>Industry:</strong> Monitor machines and equipment performance.</li>
+                <li><strong>Transportation:</strong> Track vehicles and monitor fleet information.</li>
+                <li><strong>Retail:</strong> Monitor inventory and connected store systems.</li>
+                <li><strong>Energy Management:</strong> Monitor electricity consumption and smart meters.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Advantages of IoT in Web Development</h2>
+
+            <ul>
+                <li>Enables remote monitoring and control.</li>
+                <li>Provides real-time information.</li>
+                <li>Supports automation of daily activities.</li>
+                <li>Improves operational efficiency.</li>
+                <li>Helps businesses make data-driven decisions.</li>
+                <li>Connects physical devices with digital applications.</li>
+                <li>Supports predictive maintenance.</li>
+                <li>Improves user convenience.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Challenges of IoT in Web Development</h2>
+
+            <ul>
+                <li><strong>Security:</strong> Connected devices can be targeted by cyberattacks.</li>
+                <li><strong>Privacy:</strong> Sensors may collect sensitive personal information.</li>
+                <li><strong>Connectivity:</strong> IoT applications may depend on reliable network connections.</li>
+                <li><strong>Compatibility:</strong> Devices from different manufacturers may use different standards.</li>
+                <li><strong>Scalability:</strong> Managing large numbers of devices can be difficult.</li>
+                <li><strong>Data Management:</strong> IoT systems can generate large amounts of information.</li>
+                <li><strong>Maintenance:</strong> Devices require updates and regular monitoring.</li>
+                <li><strong>Cost:</strong> Hardware, connectivity and infrastructure can increase expenses.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>13. IoT vs Traditional Web Applications</h2>
+
+            <table>
+                <tr>
+                    <th>Traditional Web Application</th>
+                    <th>IoT-Based Web Application</th>
+                </tr>
+
+                <tr>
+                    <td>Mainly handles digital information and user requests.</td>
+                    <td>Works with data from connected physical devices.</td>
+                </tr>
+
+                <tr>
+                    <td>Users interact through a browser.</td>
+                    <td>Users interact through a browser and connected devices.</td>
+                </tr>
+
+                <tr>
+                    <td>May not require sensor hardware.</td>
+                    <td>Often uses sensors, gateways and actuators.</td>
+                </tr>
+
+                <tr>
+                    <td>Commonly uses HTTP APIs and databases.</td>
+                    <td>May use MQTT, HTTP, WebSocket and other protocols.</td>
+                </tr>
+
+                <tr>
+                    <td>Example: Online shopping website.</td>
+                    <td>Example: Smart home monitoring dashboard.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>14. Security in IoT Web Applications</h2>
+
+            <ul>
+                <li>Use strong passwords and authentication.</li>
+                <li>Encrypt sensitive communication.</li>
+                <li>Keep device firmware and software updated.</li>
+                <li>Use secure APIs and HTTPS.</li>
+                <li>Apply access control to devices and dashboards.</li>
+                <li>Monitor unusual device activity.</li>
+                <li>Collect only necessary user information.</li>
+                <li>Change default device passwords.</li>
+            </ul>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+
+            <ul>
+                <li>IoT stands for Internet of Things.</li>
+                <li>IoT connects physical devices to the Internet.</li>
+                <li>Sensors collect data and actuators perform actions.</li>
+                <li>IoT architecture includes perception, network, processing and application layers.</li>
+                <li>MQTT is a lightweight messaging protocol used in IoT.</li>
+                <li>Web applications can monitor and control connected devices.</li>
+                <li>IoT is used in smart homes, healthcare, agriculture and industries.</li>
+                <li>Security, privacy and compatibility are major challenges.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>15. Important Exam Questions</h2>
+
+            <ol>
+                <li>What is the Internet of Things (IoT)? Explain its features.</li>
+                <li>Describe the main components of IoT.</li>
+                <li>Explain IoT architecture with a diagram.</li>
+                <li>Explain the role of IoT in web development.</li>
+                <li>Describe the technologies used in IoT web development.</li>
+                <li>Explain MQTT, HTTP and WebSocket protocols.</li>
+                <li>Explain the working of an IoT-based web application.</li>
+                <li>Write the applications of IoT in web development.</li>
+                <li>Explain the advantages and challenges of IoT.</li>
+                <li>Discuss security considerations in IoT applications.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+
+            <p><strong>IoT:</strong> A network of connected physical devices.</p>
+            <p><strong>Sensors:</strong> Collect information from the environment.</p>
+            <p><strong>Actuators:</strong> Perform physical actions.</p>
+            <p><strong>Architecture:</strong> Perception, Network, Processing and Application layers.</p>
+            <p><strong>MQTT:</strong> Lightweight messaging protocol.</p>
+            <p><strong>WebSocket:</strong> Supports two-way communication.</p>
+            <p><strong>Applications:</strong> Smart homes, healthcare, agriculture and smart cities.</p>
+            <p><strong>Challenges:</strong> Security, privacy, connectivity and compatibility.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit5-blockchain-integration.html">← Previous Topic</a>
+            <a href="unit5.html">Back to Unit 5</a>
+            <a href="unit5-ar-vr.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 5</p>
+    </footer>
+
+</body>
+</html>

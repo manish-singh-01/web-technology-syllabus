@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables | Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit2.html">← Back to Unit 2</a>
+        <div>
+            <span>UNIT 02 • TOPIC 02</span>
+            <h1>HTML Tables</h1>
+        </div>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <p class="topic-label">TOPIC 02</p>
+            <h2>Tables in HTML</h2>
+            <p>
+                Learn to organize data into rows and columns using
+                HTML tables, headings, captions, colspan, and rowspan.
+            </p>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <p class="section-label">01 • INTRODUCTION</p>
+            <h3>What is an HTML Table?</h3>
+
+            <p>
+                An HTML table is used to display structured data
+                in rows and columns. Tables are useful for showing
+                student marks, timetables, product details, and
+                other tabular information.
+            </p>
+
+            <div class="important-points">
+                <h4>Important Table Tags</h4>
+                <ul>
+                    <li><code>&lt;table&gt;</code> — Creates a table.</li>
+                    <li><code>&lt;tr&gt;</code> — Creates a table row.</li>
+                    <li><code>&lt;th&gt;</code> — Creates a header cell.</li>
+                    <li><code>&lt;td&gt;</code> — Creates a data cell.</li>
+                    <li><code>&lt;caption&gt;</code> — Adds a table caption.</li>
+                    <li><code>&lt;thead&gt;</code> — Groups header rows.</li>
+                    <li><code>&lt;tbody&gt;</code> — Groups the main data rows.</li>
+                    <li><code>&lt;tfoot&gt;</code> — Groups footer rows.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Basic Table -->
+        <section class="content-section">
+            <p class="section-label">02 • BASIC TABLE</p>
+            <h3>Creating a Simple Table</h3>
+
+            <div class="code-box">
+                <pre><code>&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Course&lt;/th&gt;
+        &lt;th&gt;Marks&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Aman&lt;/td&gt;
+        &lt;td&gt;B.Tech&lt;/td&gt;
+        &lt;td&gt;85&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Riya&lt;/td&gt;
+        &lt;td&gt;B.Tech&lt;/td&gt;
+        &lt;td&gt;90&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="important-points">
+                <h4>Expected Output</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Marks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Aman</td>
+                            <td>B.Tech</td>
+                            <td>85</td>
+                        </tr>
+                        <tr>
+                            <td>Riya</td>
+                            <td>B.Tech</td>
+                            <td>90</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                Note: The <code>border</code> attribute is shown
+                for a basic learning example. CSS is the recommended
+                way to style modern HTML tables.
+            </p>
+        </section>
+
+        <!-- Table Structure -->
+        <section class="content-section">
+            <p class="section-label">03 • TABLE STRUCTURE</p>
+            <h3>Rows, Columns, Headers and Cells</h3>
+
+            <ul>
+                <li><strong>Row:</strong> A horizontal group of cells.</li>
+                <li><strong>Column:</strong> A vertical group of cells.</li>
+                <li><strong>Header cell:</strong> A heading, normally created with <code>&lt;th&gt;</code>.</li>
+                <li><strong>Data cell:</strong> A regular cell, created with <code>&lt;td&gt;</code>.</li>
+            </ul>
+
+            <div class="code-box">
+                <pre><code>&lt;table&gt;
+    &lt;caption&gt;Student Records&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Roll No.&lt;/th&gt;
+            &lt;th scope="col"&gt;Name&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;101&lt;/td&gt;
+            &lt;td&gt;Aman&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- Colspan -->
+        <section class="content-section">
+            <p class="section-label">04 • COLSPAN</p>
+            <h3>What is Colspan?</h3>
+
+            <p>
+                The <code>colspan</code> attribute allows one table
+                cell to span across multiple columns.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th colspan="2"&gt;Student Details&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Aman&lt;/td&gt;
+        &lt;td&gt;B.Tech&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="important-points">
+                <h4>Remember</h4>
+                <p><code>colspan="2"</code> makes a cell span two columns.</p>
+            </div>
+        </section>
+
+        <!-- Rowspan -->
+        <section class="content-section">
+            <p class="section-label">05 • ROWSPAN</p>
+            <h3>What is Rowspan?</h3>
+
+            <p>
+                The <code>rowspan</code> attribute allows one table
+                cell to span across multiple rows.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Department&lt;/th&gt;
+        &lt;th&gt;Student&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;CSE&lt;/td&gt;
+        &lt;td&gt;Aman&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Riya&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="important-points">
+                <h4>Remember</h4>
+                <p><code>rowspan="2"</code> makes a cell span two rows.</p>
+            </div>
+        </section>
+
+        <!-- CSS Styling -->
+        <section class="content-section">
+            <p class="section-label">06 • CSS STYLING</p>
+            <h3>Styling Tables with CSS</h3>
+
+            <p>
+                CSS controls table borders, spacing, text alignment,
+                and background colors.
+            </p>
+
+            <div class="code-box">
+                <pre><code>table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #888;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #eeeeee;
+}</code></pre>
+            </div>
+
+            <ul>
+                <li><code>border-collapse</code> combines adjacent borders.</li>
+                <li><code>padding</code> adds space inside cells.</li>
+                <li><code>text-align</code> controls horizontal alignment.</li>
+                <li><code>width</code> controls the table's width.</li>
+            </ul>
+        </section>
+
+        <!-- Practical Example -->
+        <section class="content-section">
+            <p class="section-label">07 • PRACTICAL EXAMPLE</p>
+            <h3>Student Marks Table</h3>
+
+            <div class="code-box">
+                <pre><code>&lt;table&gt;
+    &lt;caption&gt;Student Marks&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Roll No.&lt;/th&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Marks&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;Aman&lt;/td&gt;
+            &lt;td&gt;85&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;Riya&lt;/td&gt;
+            &lt;td&gt;92&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;Rahul&lt;/td&gt;
+            &lt;td&gt;78&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- Exam Questions -->
+        <section class="content-section">
+            <p class="section-label">08 • EXAM PREPARATION</p>
+            <h3>Important Exam Questions</h3>
+
+            <div class="important-points">
+                <h4>Short Answer Questions</h4>
+                <ol>
+                    <li>What is an HTML table?</li>
+                    <li>What are the uses of <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code>?</li>
+                    <li>What is the purpose of the caption tag?</li>
+                    <li>Define colspan and rowspan.</li>
+                    <li>What is the use of border-collapse in CSS?</li>
+                </ol>
+            </div>
+
+            <div class="important-points">
+                <h4>Long Answer Questions</h4>
+                <ol>
+                    <li>Explain HTML tables with a suitable example.</li>
+                    <li>Write HTML code to create a student marks table.</li>
+                    <li>Explain colspan and rowspan with examples.</li>
+                    <li>Explain how CSS is used to style HTML tables.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Revision -->
+        <section class="revision-box">
+            <h3>Quick Revision</h3>
+            <p><strong>Table:</strong> &lt;table&gt;</p>
+            <p><strong>Row:</strong> &lt;tr&gt;</p>
+            <p><strong>Header Cell:</strong> &lt;th&gt;</p>
+            <p><strong>Data Cell:</strong> &lt;td&gt;</p>
+            <p><strong>Caption:</strong> &lt;caption&gt;</p>
+            <p><strong>Merge Columns:</strong> colspan</p>
+            <p><strong>Merge Rows:</strong> rowspan</p>
+            <p><strong>CSS Borders:</strong> border and border-collapse</p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology • CS35302</p>
+        <p>Unit 02 • Topic 02: HTML Tables</p>
+    </footer>
+
+</body>
+</html>

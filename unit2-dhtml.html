@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic HTML with JavaScript - Unit 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit2.html">← Back to Unit 2</a>
+        <a href="unit2-css.html">Previous Topic</a>
+        <a href="unit2-xml-schemas.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Dynamic HTML with JavaScript</h1>
+            <p>Unit 2 | Topic 07</p>
+            <p>Learn how JavaScript makes webpages interactive and dynamic.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to Dynamic HTML</h2>
+            <p>
+                Dynamic HTML (DHTML) is a combination of HTML, CSS,
+                JavaScript and the Document Object Model (DOM) used
+                to create interactive and dynamic webpages.
+            </p>
+            <p>
+                It allows webpage content, style and layout to change
+                dynamically without reloading the entire webpage.
+            </p>
+
+            <div class="important-points">
+                <h3>Important Points</h3>
+                <ul>
+                    <li>DHTML stands for Dynamic HTML.</li>
+                    <li>It is not a separate programming language.</li>
+                    <li>It combines HTML, CSS, JavaScript and DOM.</li>
+                    <li>It makes webpages interactive.</li>
+                    <li>It can update content without a full page reload.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Components of DHTML</h2>
+
+            <h3>A. HTML</h3>
+            <p>
+                HTML provides the basic structure and content
+                of a webpage.
+            </p>
+
+            <h3>B. CSS</h3>
+            <p>
+                CSS controls the design, colors, fonts and layout
+                of webpage elements.
+            </p>
+
+            <h3>C. JavaScript</h3>
+            <p>
+                JavaScript is a scripting language used to add
+                functionality and interactive behavior to webpages.
+            </p>
+
+            <h3>D. DOM</h3>
+            <p>
+                The Document Object Model represents an HTML document
+                as a tree of objects. JavaScript can use the DOM to
+                access and modify webpage elements.
+            </p>
+
+            <div class="code-box">
+                <h3>Components Summary</h3>
+                <pre><code>DHTML =
+HTML + CSS + JavaScript + DOM</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Introduction to JavaScript</h2>
+            <p>
+                JavaScript is a high-level scripting language commonly
+                used to make websites interactive. It runs in web
+                browsers and can respond to user actions.
+            </p>
+
+            <h3>Features of JavaScript</h3>
+            <ul>
+                <li>Lightweight and flexible scripting language.</li>
+                <li>Supports event handling.</li>
+                <li>Can modify HTML and CSS dynamically.</li>
+                <li>Supports functions and objects.</li>
+                <li>Can validate user input.</li>
+                <li>Can communicate with web servers.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Adding JavaScript to HTML</h2>
+            <p>JavaScript can be added to HTML in three main ways.</p>
+
+            <h3>A. Inline JavaScript</h3>
+            <p>
+                JavaScript code is written directly inside an HTML
+                event attribute.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;button onclick="alert('Hello!')"&gt;
+    Click Me
+&lt;/button&gt;</code></pre>
+            </div>
+
+            <h3>B. Internal JavaScript</h3>
+            <p>
+                JavaScript is written inside the &lt;script&gt; tag
+                in an HTML document.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;script&gt;
+    alert("Welcome to JavaScript");
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <h3>C. External JavaScript</h3>
+            <p>
+                JavaScript is stored in a separate .js file and
+                connected to HTML using the script tag.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. JavaScript Variables</h2>
+            <p>
+                Variables are used to store data values in JavaScript.
+                JavaScript provides three commonly used declarations:
+            </p>
+
+            <ul>
+                <li><b>var:</b> Function-scoped variable declaration.</li>
+                <li><b>let:</b> Block-scoped variable declaration.</li>
+                <li><b>const:</b> Block-scoped declaration that cannot be reassigned.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>var name = "Manish";
+
+let age = 21;
+
+const course = "CSE";
+
+document.write(name);</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>6. JavaScript Functions</h2>
+            <p>
+                A function is a reusable block of code that performs
+                a particular task. It executes when it is called.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>function greet() {
+    alert("Welcome to DHTML!");
+}
+
+greet();</code></pre>
+            </div>
+
+            <h3>Advantages of Functions</h3>
+            <ul>
+                <li>Reduce code repetition.</li>
+                <li>Make programs easier to understand.</li>
+                <li>Improve code organization.</li>
+                <li>Allow code to be reused.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>7. JavaScript Events</h2>
+            <p>
+                Events are actions or occurrences that happen in
+                the browser. JavaScript can respond to these events.
+            </p>
+
+            <h3>Common JavaScript Events</h3>
+            <ul>
+                <li><b>onclick:</b> Occurs when an element is clicked.</li>
+                <li><b>ondblclick:</b> Occurs when an element is double-clicked.</li>
+                <li><b>onmouseover:</b> Occurs when the mouse pointer moves over an element.</li>
+                <li><b>onmouseout:</b> Occurs when the mouse pointer leaves an element.</li>
+                <li><b>onkeydown:</b> Occurs when a keyboard key is pressed.</li>
+                <li><b>onchange:</b> Occurs when an input value is changed and committed.</li>
+                <li><b>onload:</b> Occurs when a resource or page finishes loading.</li>
+                <li><b>onsubmit:</b> Occurs when a form is submitted.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;button onclick="alert('Button Clicked')"&gt;
+    Click Here
+&lt;/button&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Event Handling</h2>
+            <p>
+                Event handling means executing JavaScript code
+                in response to a particular event.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;button id="myButton"&gt;
+    Click Me
+&lt;/button&gt;
+
+&lt;script&gt;
+    document.getElementById("myButton")
+        .addEventListener("click", function() {
+            alert("Welcome to DHTML!");
+        });
+&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Document Object Model (DOM)</h2>
+            <p>
+                DOM stands for Document Object Model. It represents
+                an HTML document as a tree structure of objects.
+            </p>
+            <p>
+                JavaScript uses the DOM to access, change, add
+                or remove HTML elements and their attributes.
+            </p>
+
+            <h3>Common DOM Methods</h3>
+            <ul>
+                <li><b>getElementById():</b> Selects an element by its ID.</li>
+                <li><b>getElementsByClassName():</b> Selects elements by class name.</li>
+                <li><b>getElementsByTagName():</b> Selects elements by tag name.</li>
+                <li><b>querySelector():</b> Selects the first matching CSS selector.</li>
+                <li><b>querySelectorAll():</b> Selects all matching CSS selectors.</li>
+                <li><b>createElement():</b> Creates a new HTML element.</li>
+                <li><b>remove():</b> Removes an element.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>document.getElementById("heading")
+    .innerHTML = "Welcome to DHTML";</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Changing HTML Content Dynamically</h2>
+            <p>
+                JavaScript can change the content of HTML elements
+                using properties such as innerHTML and textContent.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;h2 id="heading"&gt;Old Text&lt;/h2&gt;
+
+&lt;button onclick="changeText()"&gt;
+    Change Text
+&lt;/button&gt;
+
+&lt;script&gt;
+function changeText() {
+    document.getElementById("heading")
+        .textContent = "New Text";
+}
+&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Changing CSS Dynamically</h2>
+            <p>
+                JavaScript can change the CSS style of an HTML
+                element through the DOM style property.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;p id="text"&gt;Hello World&lt;/p&gt;
+
+&lt;button onclick="changeColor()"&gt;
+    Change Color
+&lt;/button&gt;
+
+&lt;script&gt;
+function changeColor() {
+    document.getElementById("text")
+        .style.color = "red";
+}
+&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Creating HTML Elements Dynamically</h2>
+            <p>
+                JavaScript can create new HTML elements using
+                the createElement() method.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;div id="container"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+let para = document.createElement("p");
+
+para.textContent = "This is a new paragraph.";
+
+document.getElementById("container")
+    .appendChild(para);
+&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Form Validation Using JavaScript</h2>
+            <p>
+                JavaScript can validate user input before a form
+                is submitted. It helps check whether required
+                information has been entered correctly.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;form onsubmit="return validateForm()"&gt;
+
+    &lt;input type="text" id="username"
+           placeholder="Enter Name"&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+
+&lt;/form&gt;
+
+&lt;script&gt;
+function validateForm() {
+
+    let name = document.getElementById("username").value;
+
+    if (name === "") {
+        alert("Please enter your name");
+        return false;
+    }
+
+    alert("Form submitted successfully");
+    return true;
+}
+&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>14. Advantages of DHTML</h2>
+            <ul>
+                <li>Makes webpages interactive and attractive.</li>
+                <li>Allows dynamic changes to webpage content.</li>
+                <li>Can update elements without a full page reload.</li>
+                <li>Supports event-based interaction.</li>
+                <li>Improves user experience.</li>
+                <li>Can be used to create animations and interactive menus.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>15. Applications of DHTML</h2>
+            <ul>
+                <li>Interactive navigation menus.</li>
+                <li>Form validation.</li>
+                <li>Image sliders and animations.</li>
+                <li>Dynamic content updates.</li>
+                <li>Interactive buttons and pop-up messages.</li>
+                <li>Interactive web applications.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>16. Important Exam Questions</h2>
+            <ol>
+                <li>What is DHTML? Explain its components.</li>
+                <li>Explain the features of JavaScript.</li>
+                <li>Describe the three ways of adding JavaScript to HTML.</li>
+                <li>What are JavaScript events? Explain common events.</li>
+                <li>Explain event handling with an example.</li>
+                <li>What is the DOM? Explain its importance.</li>
+                <li>How can JavaScript change HTML content dynamically?</li>
+                <li>Explain how JavaScript changes CSS dynamically.</li>
+                <li>Write a JavaScript program for form validation.</li>
+                <li>Explain the advantages and applications of DHTML.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <ul>
+                <li>DHTML – Dynamic HTML.</li>
+                <li>HTML – Defines webpage structure.</li>
+                <li>CSS – Controls webpage design.</li>
+                <li>JavaScript – Adds functionality and interaction.</li>
+                <li>DOM – Represents HTML as a tree of objects.</li>
+                <li>Event – An action or occurrence in the browser.</li>
+                <li>onclick – Handles mouse click events.</li>
+                <li>getElementById() – Selects an element by ID.</li>
+                <li>innerHTML – Reads or changes HTML content.</li>
+                <li>textContent – Reads or changes text content.</li>
+                <li>style – Changes an element's inline CSS styles.</li>
+                <li>createElement() – Creates a new HTML element.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology | Unit 2 | Dynamic HTML with JavaScript</p>
+    </footer>
+
+</body>
+</html>

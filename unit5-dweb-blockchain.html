@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decentralized Web and Blockchain Integration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit5.html">← Back to Unit 5</a>
+        <a href="unit5-web4-ai.html">Previous Topic</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Decentralized Web (DWeb) and Blockchain Integration</h1>
+            <p>Unit 5 – Emerging Web Technologies and Future of Web</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to Decentralized Web</h2>
+
+            <p>
+                The Decentralized Web, also known as DWeb, is an
+                approach to building the Internet where data,
+                applications and services are distributed across
+                multiple computers instead of depending entirely
+                on centralized servers.
+            </p>
+
+            <p>
+                Traditional websites generally depend on servers
+                controlled by particular organizations. DWeb aims
+                to distribute control and provide users with
+                greater ownership of their digital information.
+            </p>
+
+            <p>
+                It uses technologies such as peer-to-peer networks,
+                distributed storage, cryptography and blockchain.
+            </p>
+
+            <p>
+                <strong>Example:</strong> A distributed file-sharing
+                system where users can share files directly without
+                depending on a single central server.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. What is Centralized Web?</h2>
+
+            <p>
+                In a centralized web architecture, websites and
+                applications depend on servers managed by a central
+                organization or service provider.
+            </p>
+
+            <ul>
+                <li>Data is stored on centralized servers.</li>
+                <li>Organizations manage the infrastructure.</li>
+                <li>Users access services through the provider.</li>
+                <li>Server failure can affect service availability.</li>
+                <li>The organization generally controls access to its platform.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Features of Decentralized Web</h2>
+
+            <ul>
+                <li><strong>Decentralization:</strong> Data and services are distributed across multiple network participants.</li>
+                <li><strong>Peer-to-Peer Communication:</strong> Devices can communicate directly without always depending on a central server.</li>
+                <li><strong>Data Ownership:</strong> Users can have greater control over their digital information.</li>
+                <li><strong>Distributed Storage:</strong> Data can be stored across multiple locations.</li>
+                <li><strong>Transparency:</strong> Some decentralized systems provide publicly verifiable records.</li>
+                <li><strong>Resilience:</strong> Distributed infrastructure can reduce dependence on a single point of failure.</li>
+                <li><strong>Cryptographic Security:</strong> Cryptography helps protect communication and transactions.</li>
+                <li><strong>Open Participation:</strong> Some decentralized networks allow participants to join without centralized approval.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. How Decentralized Web Works</h2>
+
+            <ol>
+                <li>A user connects to a decentralized network.</li>
+                <li>The request is shared with participating nodes.</li>
+                <li>Nodes communicate and locate the required information or service.</li>
+                <li>Data is retrieved from available network participants.</li>
+                <li>Cryptographic techniques may verify data integrity.</li>
+                <li>The requested information is delivered to the user.</li>
+            </ol>
+
+            <div class="code-box">
+                <pre>
+          USER
+            |
+            v
+    DECENTRALIZED NETWORK
+            |
+      +-----+-----+
+      |     |     |
+      v     v     v
+    NODE  NODE  NODE
+      |     |     |
+      +-----+-----+
+            |
+            v
+      DATA DELIVERY
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. What is Blockchain?</h2>
+
+            <p>
+                Blockchain is a distributed ledger technology
+                that records transactions in a sequence of
+                cryptographically linked blocks.
+            </p>
+
+            <p>
+                Copies of the ledger can be maintained by multiple
+                participants in a network. Depending on the
+                blockchain design, participants use consensus
+                mechanisms to agree on valid records.
+            </p>
+
+            <ul>
+                <li>Stores information in blocks.</li>
+                <li>Connects blocks using cryptographic hashes.</li>
+                <li>Supports distributed record keeping.</li>
+                <li>Can provide transparent and verifiable transactions.</li>
+                <li>Can support smart contracts.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Role of Blockchain in Decentralized Web</h2>
+
+            <p>
+                Blockchain can support decentralized web applications
+                by providing a shared and verifiable record of
+                transactions and digital activities.
+            </p>
+
+            <ul>
+                <li><strong>Digital Identity:</strong> Supports systems for managing verifiable digital credentials.</li>
+                <li><strong>Smart Contracts:</strong> Executes predefined rules automatically.</li>
+                <li><strong>Digital Ownership:</strong> Helps record ownership and transfers of digital assets.</li>
+                <li><strong>Decentralized Finance:</strong> Supports financial applications that operate through blockchain networks.</li>
+                <li><strong>Data Verification:</strong> Helps verify the integrity of recorded information.</li>
+                <li><strong>Distributed Applications:</strong> Supports applications that use blockchain-based infrastructure.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Blockchain Integration in Web Applications</h2>
+
+            <p>
+                Blockchain integration means connecting a website
+                or web application with a blockchain network to
+                use blockchain-based features and services.
+            </p>
+
+            <p>Common components include:</p>
+
+            <ul>
+                <li><strong>Frontend:</strong> The user interface built using HTML, CSS and JavaScript.</li>
+                <li><strong>Wallet:</strong> Allows users to manage blockchain accounts and approve transactions.</li>
+                <li><strong>Web3 Library:</strong> Helps the application communicate with blockchain networks.</li>
+                <li><strong>Smart Contract:</strong> Contains programmed rules and functions.</li>
+                <li><strong>Blockchain Network:</strong> Processes and records supported transactions.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Working of Blockchain-Integrated Web Application</h2>
+
+            <ol>
+                <li>The user opens a decentralized web application.</li>
+                <li>The user connects a supported digital wallet.</li>
+                <li>The frontend communicates with the blockchain through a suitable library or provider.</li>
+                <li>The application interacts with a smart contract.</li>
+                <li>The user reviews and approves a transaction when required.</li>
+                <li>The blockchain network processes the transaction.</li>
+                <li>The application displays the transaction result.</li>
+            </ol>
+
+            <div class="code-box">
+                <pre>
+          USER
+            |
+            v
+      WEB APPLICATION
+            |
+            v
+      DIGITAL WALLET
+            |
+            v
+      SMART CONTRACT
+            |
+            v
+     BLOCKCHAIN NETWORK
+            |
+            v
+     TRANSACTION RESULT
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Smart Contracts</h2>
+
+            <p>
+                A smart contract is a program stored and executed
+                on a blockchain network. It automatically performs
+                predefined actions when specified conditions are met.
+            </p>
+
+            <p><strong>Example:</strong> A smart contract can release
+                payment automatically after a required delivery
+                confirmation is recorded.
+            </p>
+
+            <ul>
+                <li>Automates predefined agreements.</li>
+                <li>Reduces manual processing.</li>
+                <li>Can improve transparency.</li>
+                <li>Executes according to programmed conditions.</li>
+                <li>Requires careful development and security testing.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Examples of Decentralized Web Technologies</h2>
+
+            <ul>
+                <li><strong>IPFS:</strong> A peer-to-peer protocol and network for distributed file storage and sharing.</li>
+                <li><strong>Ethereum:</strong> A blockchain platform that supports smart contracts and decentralized applications.</li>
+                <li><strong>Filecoin:</strong> A decentralized storage network.</li>
+                <li><strong>ENS:</strong> A naming system that maps human-readable names to blockchain-related resources.</li>
+                <li><strong>Peer-to-Peer Networks:</strong> Networks in which participating devices can share resources directly.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Advantages of Decentralized Web</h2>
+
+            <ul>
+                <li>Reduces dependence on centralized service providers.</li>
+                <li>Can improve resilience through distributed infrastructure.</li>
+                <li>Provides opportunities for greater user control over data.</li>
+                <li>Supports peer-to-peer communication.</li>
+                <li>Enables decentralized applications.</li>
+                <li>Can provide transparent and verifiable transactions.</li>
+                <li>Supports new digital ownership models.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Challenges of Decentralized Web</h2>
+
+            <ul>
+                <li><strong>Scalability:</strong> Some networks face performance limitations as usage increases.</li>
+                <li><strong>Complexity:</strong> Decentralized systems can be difficult for beginners to understand.</li>
+                <li><strong>Security:</strong> Smart contracts and wallets may contain vulnerabilities.</li>
+                <li><strong>Storage:</strong> Distributed storage systems require reliable data management.</li>
+                <li><strong>User Experience:</strong> Wallet setup and transaction management may be complicated.</li>
+                <li><strong>Regulation:</strong> Legal requirements differ across countries.</li>
+                <li><strong>Cost:</strong> Some blockchain operations involve transaction fees.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Centralized Web vs Decentralized Web</h2>
+
+            <table>
+                <tr>
+                    <th>Centralized Web</th>
+                    <th>Decentralized Web</th>
+                </tr>
+
+                <tr>
+                    <td>Depends on centralized servers.</td>
+                    <td>Uses distributed network infrastructure.</td>
+                </tr>
+
+                <tr>
+                    <td>Control is generally managed by a central organization.</td>
+                    <td>Control can be distributed among participants.</td>
+                </tr>
+
+                <tr>
+                    <td>Data is commonly stored in centralized systems.</td>
+                    <td>Data can be distributed across multiple nodes.</td>
+                </tr>
+
+                <tr>
+                    <td>Users depend on the service provider.</td>
+                    <td>Users may have greater control through decentralized tools.</td>
+                </tr>
+
+                <tr>
+                    <td>Example: Traditional hosted website.</td>
+                    <td>Example: A decentralized application using blockchain.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>14. Applications of Decentralized Web</h2>
+
+            <ul>
+                <li><strong>Decentralized Finance:</strong> Blockchain-based financial services.</li>
+                <li><strong>Digital Identity:</strong> Verifiable digital credentials.</li>
+                <li><strong>File Sharing:</strong> Distributed file storage and retrieval.</li>
+                <li><strong>Digital Marketplaces:</strong> Platforms for exchanging digital assets.</li>
+                <li><strong>Supply Chain:</strong> Recording and verifying product information.</li>
+                <li><strong>Decentralized Social Networks:</strong> Social platforms with distributed infrastructure.</li>
+                <li><strong>Gaming:</strong> Blockchain-based digital assets and game economies.</li>
+            </ul>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+
+            <ul>
+                <li>DWeb stands for Decentralized Web.</li>
+                <li>DWeb distributes data and services across network participants.</li>
+                <li>Peer-to-peer communication is an important DWeb concept.</li>
+                <li>Blockchain is a distributed ledger technology.</li>
+                <li>Smart contracts execute predefined rules.</li>
+                <li>IPFS supports distributed file sharing and storage.</li>
+                <li>Ethereum supports smart contracts and decentralized applications.</li>
+                <li>Scalability, security and usability are important challenges.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>15. Important Exam Questions</h2>
+
+            <ol>
+                <li>What is Decentralized Web (DWeb)? Explain its features.</li>
+                <li>Differentiate between centralized and decentralized web.</li>
+                <li>Explain the working of a decentralized network.</li>
+                <li>What is Blockchain? Explain its role in DWeb.</li>
+                <li>What is blockchain integration in web applications?</li>
+                <li>Explain the working of a blockchain-integrated web application.</li>
+                <li>Define smart contracts and explain their uses.</li>
+                <li>Write examples of decentralized web technologies.</li>
+                <li>Explain the advantages and challenges of DWeb.</li>
+                <li>Discuss the applications of Decentralized Web.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+
+            <p><strong>DWeb:</strong> A distributed approach to building Internet services.</p>
+            <p><strong>Peer-to-Peer:</strong> Direct communication between network participants.</p>
+            <p><strong>Blockchain:</strong> A distributed ledger that records transactions.</p>
+            <p><strong>Smart Contract:</strong> A program that executes predefined rules on a blockchain.</p>
+            <p><strong>IPFS:</strong> A protocol and network for distributed file storage and sharing.</p>
+            <p><strong>Ethereum:</strong> A blockchain platform supporting smart contracts.</p>
+            <p><strong>Benefits:</strong> Distributed control, resilience and verifiable records.</p>
+            <p><strong>Challenges:</strong> Scalability, security, complexity and cost.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit5-web4-ai.html">← Previous Topic</a>
+            <a href="unit5.html">Back to Unit 5</a>
+            <a href="unit5-blockchain-integration.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 5</p>
+    </footer>
+
+</body>
+</html>

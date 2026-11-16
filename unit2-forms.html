@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms - Unit 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit2.html">← Back to Unit 2</a>
+        <a href="unit2-images.html">Previous Topic</a>
+        <a href="unit2-frames.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>HTML Forms</h1>
+            <p>Unit 2 | Topic 04</p>
+            <p>Learn how to collect user information using HTML forms and form elements.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to HTML Forms</h2>
+            <p>
+                HTML Forms are used to collect information from users.
+                They allow users to enter data such as name, email,
+                password, phone number and other details.
+            </p>
+            <p>
+                Forms are commonly used in login pages, registration
+                pages, contact forms, feedback forms and online surveys.
+            </p>
+
+            <div class="important-points">
+                <h3>Important Points</h3>
+                <ul>
+                    <li>Forms collect user input.</li>
+                    <li>The form element is represented by the &lt;form&gt; tag.</li>
+                    <li>Forms contain input fields and buttons.</li>
+                    <li>Form data can be sent to a server for processing.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>2. The HTML Form Element</h2>
+            <p>
+                The &lt;form&gt; tag defines an HTML form.
+                It acts as a container for different form controls.
+            </p>
+
+            <div class="code-box">
+                <h3>Syntax</h3>
+                <pre><code>&lt;form action="submit.php" method="post"&gt;
+    Form elements go here
+&lt;/form&gt;</code></pre>
+            </div>
+
+            <h3>Important Form Attributes</h3>
+            <ul>
+                <li><b>action:</b> Specifies where the form data is sent.</li>
+                <li><b>method:</b> Specifies how the data is submitted.</li>
+                <li><b>target:</b> Specifies where to display the response.</li>
+                <li><b>autocomplete:</b> Controls automatic form completion.</li>
+                <li><b>enctype:</b> Specifies how form data is encoded.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. GET and POST Methods</h2>
+            <p>
+                HTML forms mainly use two methods to send data:
+                GET and POST.
+            </p>
+
+            <h3>GET Method</h3>
+            <ul>
+                <li>Form data is appended to the URL.</li>
+                <li>Data can be visible in the browser address bar.</li>
+                <li>It is useful for search forms and retrieving information.</li>
+                <li>It is not suitable for sensitive information.</li>
+            </ul>
+
+            <h3>POST Method</h3>
+            <ul>
+                <li>Form data is sent in the request body.</li>
+                <li>Data is not displayed in the URL.</li>
+                <li>It is commonly used for registration and login forms.</li>
+                <li>HTTPS is still required to protect sensitive information.</li>
+            </ul>
+
+            <div class="important-points">
+                <h3>Difference Between GET and POST</h3>
+                <table>
+                    <tr>
+                        <th>GET</th>
+                        <th>POST</th>
+                    </tr>
+                    <tr>
+                        <td>Data is sent through the URL.</td>
+                        <td>Data is sent in the request body.</td>
+                    </tr>
+                    <tr>
+                        <td>Suitable for retrieving data.</td>
+                        <td>Suitable for submitting data.</td>
+                    </tr>
+                    <tr>
+                        <td>Can be bookmarked with query parameters.</td>
+                        <td>Form submission is generally not bookmarked.</td>
+                    </tr>
+                    <tr>
+                        <td>Not suitable for sensitive data.</td>
+                        <td>Better suited for sensitive data when used with HTTPS.</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>4. HTML Input Types</h2>
+            <p>
+                The &lt;input&gt; tag is used to create different types
+                of input fields in an HTML form.
+            </p>
+
+            <ul>
+                <li><b>text:</b> Accepts single-line text.</li>
+                <li><b>password:</b> Accepts a password.</li>
+                <li><b>email:</b> Accepts an email address.</li>
+                <li><b>number:</b> Accepts numeric values.</li>
+                <li><b>radio:</b> Allows selection of one option from a group.</li>
+                <li><b>checkbox:</b> Allows selection of multiple options.</li>
+                <li><b>date:</b> Allows selection of a date.</li>
+                <li><b>file:</b> Allows file uploads.</li>
+                <li><b>submit:</b> Submits the form.</li>
+                <li><b>reset:</b> Resets form fields.</li>
+                <li><b>tel:</b> Accepts telephone numbers.</li>
+                <li><b>url:</b> Accepts a URL.</li>
+                <li><b>hidden:</b> Stores data that is not displayed as a visible field.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;input type="text" name="username"&gt;
+&lt;input type="password" name="password"&gt;
+&lt;input type="email" name="email"&gt;
+&lt;input type="number" name="age"&gt;
+&lt;input type="date" name="dob"&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Important Input Attributes</h2>
+            <ul>
+                <li><b>name:</b> Identifies the field when form data is submitted.</li>
+                <li><b>value:</b> Sets the input's initial or submitted value.</li>
+                <li><b>placeholder:</b> Displays a hint inside the field.</li>
+                <li><b>required:</b> Makes the field compulsory.</li>
+                <li><b>readonly:</b> Prevents the user from editing the field.</li>
+                <li><b>disabled:</b> Disables the input field.</li>
+                <li><b>maxlength:</b> Sets the maximum number of characters.</li>
+                <li><b>min and max:</b> Set minimum and maximum values.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;input type="text"
+       name="username"
+       placeholder="Enter your name"
+       required
+       maxlength="30"&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Label Element</h2>
+            <p>
+                The &lt;label&gt; tag defines a label for an input field.
+                It improves usability and accessibility.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Select and Option Elements</h2>
+            <p>
+                The &lt;select&gt; element creates a drop-down list.
+                The &lt;option&gt; element defines its choices.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;label for="course"&gt;Choose Course:&lt;/label&gt;
+
+&lt;select id="course" name="course"&gt;
+    &lt;option value="cse"&gt;Computer Science&lt;/option&gt;
+    &lt;option value="it"&gt;Information Technology&lt;/option&gt;
+    &lt;option value="ece"&gt;Electronics&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Textarea Element</h2>
+            <p>
+                The &lt;textarea&gt; tag creates a multi-line text field.
+                It is useful for comments, messages and feedback.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;textarea name="message"
+          rows="5"
+          cols="30"
+          placeholder="Enter your message"&gt;
+&lt;/textarea&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Button Element</h2>
+            <p>
+                The &lt;button&gt; tag creates a clickable button.
+                It can be used to submit, reset or perform other actions.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;button type="reset"&gt;Reset&lt;/button&gt;
+&lt;button type="button"&gt;Click Me&lt;/button&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Fieldset and Legend</h2>
+            <p>
+                The &lt;fieldset&gt; tag groups related form elements.
+                The &lt;legend&gt; tag provides a title for that group.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;fieldset&gt;
+    &lt;legend&gt;Personal Details&lt;/legend&gt;
+
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+&lt;/fieldset&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>11. HTML Form Validation</h2>
+            <p>
+                Form validation checks whether the information entered
+                by a user meets specified conditions.
+            </p>
+
+            <h3>Common Validation Attributes</h3>
+            <ul>
+                <li><b>required:</b> Makes an input compulsory.</li>
+                <li><b>minlength:</b> Sets the minimum text length.</li>
+                <li><b>maxlength:</b> Sets the maximum text length.</li>
+                <li><b>min:</b> Sets the minimum numeric value.</li>
+                <li><b>max:</b> Sets the maximum numeric value.</li>
+                <li><b>pattern:</b> Defines a pattern for input validation.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>&lt;input type="email" required&gt;
+
+&lt;input type="password"
+       minlength="8"
+       required&gt;
+
+&lt;input type="number"
+       min="1"
+       max="100"&gt;</code></pre>
+            </div>
+
+            <p>
+                HTML validation provides basic client-side checks.
+                Important information must also be validated on the server.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Practical Example: Student Registration Form</h2>
+            <p>
+                The following example demonstrates how different
+                HTML form elements work together.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Student Registration&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Student Registration Form&lt;/h2&gt;
+
+&lt;form action="#" method="post"&gt;
+
+    &lt;label for="name"&gt;Full Name:&lt;/label&gt;
+    &lt;input type="text" id="name"
+           name="name" required&gt;
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email"
+           name="email" required&gt;
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password"
+           name="password" required&gt;
+    &lt;br&gt;&lt;br&gt;
+
+    Gender:
+    &lt;input type="radio" name="gender" value="male"&gt; Male
+    &lt;input type="radio" name="gender" value="female"&gt; Female
+    &lt;br&gt;&lt;br&gt;
+
+    Skills:
+    &lt;input type="checkbox" name="skill" value="html"&gt; HTML
+    &lt;input type="checkbox" name="skill" value="css"&gt; CSS
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;label for="course"&gt;Course:&lt;/label&gt;
+    &lt;select id="course" name="course"&gt;
+        &lt;option value="cse"&gt;CSE&lt;/option&gt;
+        &lt;option value="it"&gt;IT&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;label for="message"&gt;Address:&lt;/label&gt;
+    &lt;textarea id="message" name="address"&gt;&lt;/textarea&gt;
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+    &lt;button type="reset"&gt;Clear&lt;/button&gt;
+
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Advantages of HTML Forms</h2>
+            <ul>
+                <li>Easy collection of user information.</li>
+                <li>Useful for login and registration systems.</li>
+                <li>Supports different input types.</li>
+                <li>Provides basic built-in validation.</li>
+                <li>Can be connected to backend technologies.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>14. Important Exam Questions</h2>
+            <ol>
+                <li>What are HTML Forms? Explain their uses.</li>
+                <li>Explain the &lt;form&gt; tag and its attributes.</li>
+                <li>Differentiate between GET and POST methods.</li>
+                <li>Explain different types of HTML input elements.</li>
+                <li>What is the use of the label element?</li>
+                <li>Explain select, option and textarea elements.</li>
+                <li>What are fieldset and legend elements?</li>
+                <li>Explain HTML form validation with an example.</li>
+                <li>Create a student registration form using HTML.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <ul>
+                <li>&lt;form&gt; – Creates an HTML form.</li>
+                <li>&lt;input&gt; – Creates an input field.</li>
+                <li>&lt;label&gt; – Defines an input label.</li>
+                <li>&lt;select&gt; – Creates a drop-down list.</li>
+                <li>&lt;option&gt; – Defines a drop-down option.</li>
+                <li>&lt;textarea&gt; – Creates a multi-line text field.</li>
+                <li>&lt;button&gt; – Creates a clickable button.</li>
+                <li>&lt;fieldset&gt; – Groups related form controls.</li>
+                <li>&lt;legend&gt; – Defines a fieldset caption.</li>
+                <li>GET and POST – HTTP methods used for form submission.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology | Unit 2 | HTML Forms</p>
+    </footer>
+
+</body>
+</html>

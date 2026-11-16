@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommender Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit4.html">← Back to Unit 4</a>
+        <a href="unit4-search-engines.html">Previous Topic</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Recommender Systems</h1>
+            <p>Unit 4 – Web 2.0, Web 3.0 and Emerging Web Technologies</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to Recommender Systems</h2>
+
+            <p>
+                A recommender system is a software application that
+                suggests products, services, movies, music or other
+                content to users based on their interests, preferences
+                and behaviour.
+            </p>
+
+            <p>
+                These systems analyze user data and identify items
+                that may be relevant to a particular user.
+            </p>
+
+            <p>
+                Recommender systems are widely used in e-commerce,
+                entertainment, education and social media platforms.
+            </p>
+
+            <p>
+                <strong>Example:</strong> Netflix recommends movies
+                and shows based on a user's viewing history and
+                preferences.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Objectives of Recommender Systems</h2>
+
+            <ul>
+                <li>To suggest relevant products and services.</li>
+                <li>To understand user interests and preferences.</li>
+                <li>To improve user experience.</li>
+                <li>To reduce the time required to find suitable content.</li>
+                <li>To increase user engagement.</li>
+                <li>To help businesses improve product discovery and sales.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Features of Recommender Systems</h2>
+
+            <ul>
+                <li><strong>Personalization:</strong> Provides suggestions according to individual preferences.</li>
+                <li><strong>User Profiling:</strong> Builds user profiles using available information.</li>
+                <li><strong>Data Analysis:</strong> Analyzes user activity and item characteristics.</li>
+                <li><strong>Prediction:</strong> Estimates which items a user may prefer.</li>
+                <li><strong>Dynamic Recommendations:</strong> Suggestions can change as user behaviour changes.</li>
+                <li><strong>Automation:</strong> Automatically generates recommendations.</li>
+                <li><strong>Improved Discovery:</strong> Helps users discover new products and content.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Types of Recommender Systems</h2>
+
+            <h3>1. Content-Based Filtering</h3>
+
+            <p>
+                Content-based filtering recommends items similar
+                to those a user has liked or selected in the past.
+                It analyzes item features and user preferences.
+            </p>
+
+            <p><strong>Example:</strong> If a user watches action movies,
+            the system may recommend other action movies.</p>
+
+            <h3>2. Collaborative Filtering</h3>
+
+            <p>
+                Collaborative filtering recommends items by
+                analyzing the preferences or behaviour of multiple
+                users.
+            </p>
+
+            <p><strong>Example:</strong> If users with similar interests
+            liked a particular movie, the system may recommend
+            that movie to another user.</p>
+
+            <h3>3. Hybrid Recommender System</h3>
+
+            <p>
+                A hybrid recommender system combines two or more
+                recommendation techniques, such as content-based
+                and collaborative filtering.
+            </p>
+
+            <p><strong>Example:</strong> An online shopping platform
+            may consider both product features and the buying
+            behaviour of similar customers.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Working of Recommender Systems</h2>
+
+            <ol>
+                <li>The system collects relevant user and item data.</li>
+                <li>User preferences and activity are analyzed.</li>
+                <li>The system identifies patterns and similarities.</li>
+                <li>A recommendation algorithm predicts suitable items.</li>
+                <li>Items are ranked according to predicted relevance.</li>
+                <li>Recommendations are displayed to the user.</li>
+                <li>User feedback may be used to improve future recommendations.</li>
+            </ol>
+
+            <div class="code-box">
+                <pre>
+          USER
+            |
+            v
+       DATA COLLECTION
+            |
+            v
+       DATA ANALYSIS
+            |
+            v
+     RECOMMENDATION MODEL
+            |
+            v
+       ITEM RANKING
+            |
+            v
+    RECOMMENDED CONTENT
+            |
+            v
+       USER FEEDBACK
+            |
+            v
+      MODEL IMPROVEMENT
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Data Used by Recommender Systems</h2>
+
+            <ul>
+                <li><strong>User Data:</strong> User preferences, interests and profile information.</li>
+                <li><strong>Rating Data:</strong> Ratings given to products, movies or services.</li>
+                <li><strong>Behavioural Data:</strong> Clicks, searches, views and purchase history.</li>
+                <li><strong>Item Data:</strong> Product descriptions, categories and features.</li>
+                <li><strong>Feedback Data:</strong> Likes, dislikes, reviews and user responses.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Example of a Recommender System</h2>
+
+            <p>
+                Consider an online shopping website. A customer
+                searches for and purchases a laptop.
+            </p>
+
+            <p>
+                The recommender system may suggest:
+            </p>
+
+            <ul>
+                <li>Laptop bags</li>
+                <li>Wireless mouse</li>
+                <li>Keyboard</li>
+                <li>Headphones</li>
+                <li>Laptop accessories</li>
+            </ul>
+
+            <p>
+                These suggestions help customers discover products
+                related to their interests and previous activity.
+            </p>
+
+            <h3>Simple JavaScript Recommendation Example</h3>
+
+            <div class="code-box">
+                <pre>
+const products = [
+    { name: "Laptop", category: "Electronics" },
+    { name: "Mouse", category: "Electronics" },
+    { name: "Keyboard", category: "Electronics" },
+    { name: "Book", category: "Education" }
+];
+
+const userInterest = "Electronics";
+
+const recommendations = products.filter(
+    product => product.category === userInterest
+);
+
+console.log(recommendations);
+                </pre>
+            </div>
+
+            <p>
+                <strong>Explanation:</strong> This simple example
+                filters products according to a selected category.
+                Real recommender systems use more advanced algorithms
+                and larger datasets.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Advantages of Recommender Systems</h2>
+
+            <ul>
+                <li>Provide personalized suggestions.</li>
+                <li>Save users' time and effort.</li>
+                <li>Improve customer satisfaction.</li>
+                <li>Help users discover new products and services.</li>
+                <li>Increase user engagement.</li>
+                <li>Can help businesses increase sales.</li>
+                <li>Support better content discovery.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Disadvantages of Recommender Systems</h2>
+
+            <ul>
+                <li><strong>Cold Start Problem:</strong> New users or items may have insufficient data for accurate recommendations.</li>
+                <li><strong>Privacy Issues:</strong> Personal data may be collected and analyzed.</li>
+                <li><strong>Data Dependency:</strong> Poor or limited data can reduce recommendation quality.</li>
+                <li><strong>Filter Bubble:</strong> Users may repeatedly receive similar types of content.</li>
+                <li><strong>Scalability:</strong> Large datasets can require significant computing resources.</li>
+                <li><strong>Bias:</strong> Recommendations may reflect biases present in the data or algorithms.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Applications of Recommender Systems</h2>
+
+            <ul>
+                <li><strong>E-Commerce:</strong> Amazon recommends products based on user activity.</li>
+                <li><strong>Entertainment:</strong> Netflix recommends movies and television shows.</li>
+                <li><strong>Music:</strong> Spotify suggests songs and playlists.</li>
+                <li><strong>Social Media:</strong> Platforms recommend posts, videos and accounts.</li>
+                <li><strong>Education:</strong> Learning platforms suggest courses and study materials.</li>
+                <li><strong>Travel:</strong> Websites suggest hotels and destinations.</li>
+                <li><strong>News:</strong> Platforms recommend articles based on user interests.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Difference Between Content-Based and Collaborative Filtering</h2>
+
+            <table>
+                <tr>
+                    <th>Content-Based Filtering</th>
+                    <th>Collaborative Filtering</th>
+                </tr>
+
+                <tr>
+                    <td>Uses item features and an individual user's preferences.</td>
+                    <td>Uses behaviour or preferences of multiple users.</td>
+                </tr>
+
+                <tr>
+                    <td>Recommends similar items.</td>
+                    <td>Recommends items liked by similar users.</td>
+                </tr>
+
+                <tr>
+                    <td>Can work without data from other users.</td>
+                    <td>Usually needs interaction data from multiple users.</td>
+                </tr>
+
+                <tr>
+                    <td>May have limited recommendation diversity.</td>
+                    <td>Can discover items with different characteristics.</td>
+                </tr>
+
+                <tr>
+                    <td>Example: Suggesting similar action movies.</td>
+                    <td>Example: Suggesting movies liked by similar users.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Role of Artificial Intelligence in Recommender Systems</h2>
+
+            <p>
+                Artificial Intelligence and Machine Learning help
+                recommender systems analyze large amounts of data
+                and identify complex patterns in user behaviour.
+            </p>
+
+            <ul>
+                <li>Machine Learning predicts user preferences.</li>
+                <li>Deep Learning identifies complex patterns.</li>
+                <li>Natural Language Processing analyzes text reviews.</li>
+                <li>Data Mining discovers useful patterns in datasets.</li>
+                <li>Recommendation algorithms improve personalization.</li>
+            </ul>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+
+            <ul>
+                <li>A recommender system suggests relevant items to users.</li>
+                <li>It uses user preferences and behavioural data.</li>
+                <li>Content-based filtering recommends similar items.</li>
+                <li>Collaborative filtering uses information from multiple users.</li>
+                <li>Hybrid systems combine recommendation techniques.</li>
+                <li>Cold start is a major challenge.</li>
+                <li>Netflix, Amazon and Spotify use recommendation systems.</li>
+                <li>AI and Machine Learning improve recommendation quality.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Important Exam Questions</h2>
+
+            <ol>
+                <li>What is a recommender system? Explain its objectives.</li>
+                <li>Explain the features of recommender systems.</li>
+                <li>Describe different types of recommender systems.</li>
+                <li>Explain the working of a recommender system with a diagram.</li>
+                <li>What types of data are used by recommender systems?</li>
+                <li>Write the advantages and disadvantages of recommender systems.</li>
+                <li>Explain the applications of recommender systems.</li>
+                <li>Differentiate between content-based and collaborative filtering.</li>
+                <li>Explain the role of AI and Machine Learning in recommender systems.</li>
+                <li>What is the cold start problem?</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+
+            <p><strong>Recommender System:</strong> Suggests items according to user interests and preferences.</p>
+            <p><strong>Main Types:</strong> Content-Based, Collaborative and Hybrid.</p>
+            <p><strong>Data:</strong> User profiles, ratings, clicks and purchase history.</p>
+            <p><strong>Working:</strong> Data Collection → Analysis → Prediction → Recommendation.</p>
+            <p><strong>Examples:</strong> Netflix, Amazon and Spotify.</p>
+            <p><strong>Advantages:</strong> Personalization and improved content discovery.</p>
+            <p><strong>Challenges:</strong> Cold start, privacy, bias and filter bubbles.</p>
+            <p><strong>Technologies:</strong> Artificial Intelligence and Machine Learning.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit4-search-engines.html">← Previous Topic</a>
+            <a href="unit4.html">Back to Unit 4</a>
+            <a href="unit4-blockchain-edge-computing.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 4</p>
+    </footer>
+
+</body>
+</html>

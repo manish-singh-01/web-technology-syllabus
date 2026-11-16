@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode in Web Development</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit4.html">← Back to Unit 4</a>
+        <a href="unit4-blockchain-edge-computing.html">Previous Topic</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Dark Mode in Web Development</h1>
+            <p>Unit 4 – Web 2.0, Web 3.0 and Emerging Web Technologies</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to Dark Mode</h2>
+
+            <p>
+                Dark Mode is a user interface design feature in which
+                the background of a website or application uses dark
+                colours, while text and other elements use lighter colours.
+            </p>
+
+            <p>
+                It provides an alternative to the traditional light
+                mode and gives users the option to choose a visual
+                appearance according to their preferences.
+            </p>
+
+            <p>
+                Dark Mode is commonly used in websites, mobile
+                applications, operating systems and software tools.
+            </p>
+
+            <p>
+                <strong>Example:</strong> YouTube, Instagram, WhatsApp
+                and many other applications provide a Dark Mode option.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Features of Dark Mode</h2>
+
+            <ul>
+                <li><strong>Dark Background:</strong> Uses dark colours such as black, grey and dark blue.</li>
+                <li><strong>Light Text:</strong> Displays text in white or light shades.</li>
+                <li><strong>Eye Comfort:</strong> Some users find dark interfaces more comfortable in low-light environments.</li>
+                <li><strong>Customization:</strong> Allows users to select their preferred appearance.</li>
+                <li><strong>Battery Saving:</strong> Can reduce power consumption on OLED and AMOLED displays when dark pixels are used.</li>
+                <li><strong>Modern Design:</strong> Provides a different visual style for websites and applications.</li>
+                <li><strong>System Integration:</strong> Websites can follow the user's operating system theme preference.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Importance of Dark Mode</h2>
+
+            <ul>
+                <li>Improves user customization and experience.</li>
+                <li>Provides an alternative interface for low-light environments.</li>
+                <li>May help reduce screen power consumption on OLED displays.</li>
+                <li>Supports modern website design practices.</li>
+                <li>Can make applications visually comfortable for some users.</li>
+                <li>Helps websites support different user preferences.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Difference Between Light Mode and Dark Mode</h2>
+
+            <table>
+                <tr>
+                    <th>Light Mode</th>
+                    <th>Dark Mode</th>
+                </tr>
+
+                <tr>
+                    <td>Uses a light background.</td>
+                    <td>Uses a dark background.</td>
+                </tr>
+
+                <tr>
+                    <td>Usually uses dark text.</td>
+                    <td>Usually uses light text.</td>
+                </tr>
+
+                <tr>
+                    <td>Commonly suitable for bright environments.</td>
+                    <td>Often preferred in low-light environments.</td>
+                </tr>
+
+                <tr>
+                    <td>May use more power on some OLED displays with bright backgrounds.</td>
+                    <td>May save power on OLED displays.</td>
+                </tr>
+
+                <tr>
+                    <td>Traditional interface appearance.</td>
+                    <td>Alternative modern interface appearance.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Technologies Used to Implement Dark Mode</h2>
+
+            <ul>
+                <li><strong>HTML:</strong> Defines the structure of the webpage.</li>
+                <li><strong>CSS:</strong> Controls background colours, text colours and visual appearance.</li>
+                <li><strong>JavaScript:</strong> Allows users to switch between light and dark themes.</li>
+                <li><strong>CSS Variables:</strong> Store reusable colour values for different themes.</li>
+                <li><strong>Local Storage:</strong> Saves the user's selected theme in the browser.</li>
+                <li><strong>Media Queries:</strong> Detect system-level theme preferences.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Creating Dark Mode Using HTML and CSS</h2>
+
+            <p>
+                CSS can be used to create a dark interface by changing
+                the background and text colours.
+            </p>
+
+            <div class="code-box">
+                <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: lightblue;
+}
+
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h1&gt;Welcome to Dark Mode&lt;/h1&gt;
+&lt;p&gt;This is a dark theme webpage.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+            </div>
+
+            <p>
+                In this example, the body background becomes dark
+                and the text colour becomes white.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Creating a Dark Mode Toggle Using JavaScript</h2>
+
+            <p>
+                JavaScript can be used to switch between light and
+                dark themes when a user clicks a button.
+            </p>
+
+            <div class="code-box">
+                <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+
+&lt;style&gt;
+
+body {
+    background: white;
+    color: black;
+    font-family: Arial;
+    transition: 0.3s;
+}
+
+.dark {
+    background: #121212;
+    color: white;
+}
+
+&lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h2&gt;Dark Mode Example&lt;/h2&gt;
+
+&lt;button onclick="toggleMode()"&gt;
+    Toggle Dark Mode
+&lt;/button&gt;
+
+&lt;script&gt;
+
+function toggleMode() {
+    document.body.classList.toggle("dark");
+}
+
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+            </div>
+
+            <p>
+                <strong>Explanation:</strong> When the user clicks
+                the button, JavaScript adds or removes the dark
+                class from the body element.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Using CSS Variables for Dark Mode</h2>
+
+            <p>
+                CSS variables make it easier to manage colours
+                and maintain consistent themes across a website.
+            </p>
+
+            <div class="code-box">
+                <pre>
+:root {
+    --background: white;
+    --text: black;
+}
+
+.dark {
+    --background: #121212;
+    --text: white;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+}
+                </pre>
+            </div>
+
+            <p>
+                CSS variables allow developers to change multiple
+                design properties by updating a small set of values.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Advantages of Dark Mode</h2>
+
+            <ul>
+                <li>Provides users with theme customization.</li>
+                <li>Can improve visual comfort in low-light environments for some users.</li>
+                <li>May reduce battery usage on OLED and AMOLED displays.</li>
+                <li>Provides an alternative modern appearance.</li>
+                <li>Can improve the experience for users who prefer dark interfaces.</li>
+                <li>Can be implemented using HTML, CSS and JavaScript.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Disadvantages of Dark Mode</h2>
+
+            <ul>
+                <li>Some users find light text on dark backgrounds difficult to read.</li>
+                <li>Poor colour contrast can reduce accessibility.</li>
+                <li>Images and graphics may require separate styling adjustments.</li>
+                <li>Developers need to test both themes properly.</li>
+                <li>Dark Mode does not guarantee better battery life on every display.</li>
+                <li>Some colours may appear different in dark themes.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Best Practices for Dark Mode</h2>
+
+            <ul>
+                <li>Maintain sufficient contrast between text and background.</li>
+                <li>Use readable font sizes and styles.</li>
+                <li>Provide a clear option to switch between themes.</li>
+                <li>Save the user's theme preference when appropriate.</li>
+                <li>Test buttons, forms, images and links in both themes.</li>
+                <li>Use CSS variables to manage theme colours.</li>
+                <li>Respect the operating system's theme preference.</li>
+                <li>Ensure that the design remains accessible.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Applications of Dark Mode</h2>
+
+            <ul>
+                <li><strong>Social Media:</strong> Instagram, Facebook and YouTube.</li>
+                <li><strong>Messaging:</strong> WhatsApp and Telegram.</li>
+                <li><strong>Development Tools:</strong> Visual Studio Code and code editors.</li>
+                <li><strong>Operating Systems:</strong> Windows, Android and macOS.</li>
+                <li><strong>Websites:</strong> Blogs, dashboards and online platforms.</li>
+                <li><strong>Entertainment:</strong> Video and music streaming applications.</li>
+            </ul>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+
+            <ul>
+                <li>Dark Mode is an alternative dark-coloured user interface.</li>
+                <li>HTML, CSS and JavaScript can be used to implement Dark Mode.</li>
+                <li>CSS controls the visual appearance of the theme.</li>
+                <li>JavaScript can switch themes dynamically.</li>
+                <li>Local Storage can save user theme preferences.</li>
+                <li>CSS variables make theme management easier.</li>
+                <li>Dark Mode may save power on OLED displays.</li>
+                <li>Accessibility and colour contrast are important considerations.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Important Exam Questions</h2>
+
+            <ol>
+                <li>What is Dark Mode in Web Development?</li>
+                <li>Explain the features and importance of Dark Mode.</li>
+                <li>Differentiate between Light Mode and Dark Mode.</li>
+                <li>Explain the technologies used to implement Dark Mode.</li>
+                <li>How can Dark Mode be implemented using CSS?</li>
+                <li>Explain how JavaScript can be used to toggle Dark Mode.</li>
+                <li>Write the advantages and disadvantages of Dark Mode.</li>
+                <li>Explain the best practices for implementing Dark Mode.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+
+            <p><strong>Dark Mode:</strong> A user interface with a dark background and light-coloured text.</p>
+            <p><strong>HTML:</strong> Defines webpage structure.</p>
+            <p><strong>CSS:</strong> Controls theme colours and appearance.</p>
+            <p><strong>JavaScript:</strong> Switches between themes.</p>
+            <p><strong>Local Storage:</strong> Saves user theme preferences.</p>
+            <p><strong>CSS Variables:</strong> Help manage reusable theme colours.</p>
+            <p><strong>Main Benefits:</strong> Customization and possible power savings on OLED displays.</p>
+            <p><strong>Important Practice:</strong> Maintain good colour contrast and accessibility.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit4-blockchain-edge-computing.html">← Previous Topic</a>
+            <a href="unit4.html">Back to Unit 4</a>
+            <a href="index.html">Home →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 4</p>
+    </footer>
+
+</body>
+</html>

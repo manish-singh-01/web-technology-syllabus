@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSDL - Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit3.html">← Back to Unit 3</a>
+        <a href="unit3-soap.html">Previous Topic</a>
+        <a href="unit3-web-services.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>WSDL (Web Services Description Language)</h1>
+            <p>Unit 3 – Web Services, AJAX and CORBA</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to WSDL</h2>
+            <p>
+                WSDL stands for Web Services Description Language. It is an
+                XML-based language used to describe the functionality and
+                communication details of a web service.
+            </p>
+            <p>
+                WSDL tells a client what operations a web service provides,
+                what input and output messages it uses, and how and where
+                the service can be accessed.
+            </p>
+            <p>
+                It acts like a contract between a web service provider
+                and a service consumer.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Purpose of WSDL</h2>
+            <ul>
+                <li>To describe the operations provided by a web service.</li>
+                <li>To define the input and output messages.</li>
+                <li>To specify the data types used by the service.</li>
+                <li>To describe the communication protocol and message format.</li>
+                <li>To provide the service endpoint address.</li>
+                <li>To help client applications communicate with web services.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Features of WSDL</h2>
+            <ul>
+                <li><strong>XML-Based:</strong> WSDL documents are written in XML.</li>
+                <li><strong>Platform Independent:</strong> It can describe services used by different platforms.</li>
+                <li><strong>Language Independent:</strong> It is not restricted to a particular programming language.</li>
+                <li><strong>Standard Format:</strong> It provides a structured description of web services.</li>
+                <li><strong>Service Description:</strong> It describes available operations and messages.</li>
+                <li><strong>Communication Details:</strong> It specifies bindings and service endpoints.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Structure of a WSDL Document</h2>
+            <p>
+                A WSDL document contains different elements that describe
+                the interface and access details of a web service.
+            </p>
+
+            <h3>Main Elements of WSDL</h3>
+            <ul>
+                <li><strong>Definitions:</strong> The root element of a WSDL document. It contains the service description and related declarations.</li>
+                <li><strong>Types:</strong> Defines the data types used in messages, commonly through XML Schema.</li>
+                <li><strong>Message:</strong> Describes the data exchanged between the client and the service.</li>
+                <li><strong>PortType:</strong> Defines the abstract operations offered by the web service.</li>
+                <li><strong>Binding:</strong> Specifies the concrete protocol and message format used for communication.</li>
+                <li><strong>Service:</strong> Groups related endpoints through which the service can be accessed.</li>
+                <li><strong>Port:</strong> Defines an endpoint by combining a binding with a network address.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>WSDL Structure</h3>
+                <pre>
+          WSDL Document
+                 |
+          Definitions
+                 |
+       +---------+---------+
+       |         |         |
+      Types   Message   PortType
+                           |
+                        Binding
+                           |
+                         Service
+                           |
+                          Port
+                           |
+                     Service URL
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Example of a WSDL Document</h2>
+            <p>
+                The following simplified WSDL 1.1 example describes a
+                calculator service that provides an operation to add
+                two numbers.
+            </p>
+
+            <div class="code-box">
+                <pre>
+&lt;?xml version="1.0"?&gt;
+
+&lt;definitions
+    name="CalculatorService"
+    targetNamespace="http://example.com/calculator"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:tns="http://example.com/calculator"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"&gt;
+
+    &lt;types&gt;
+        &lt;xsd:schema
+            targetNamespace="http://example.com/calculator"&gt;
+
+            &lt;xsd:element name="AddRequest"&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name="a" type="xsd:int"/&gt;
+                        &lt;xsd:element name="b" type="xsd:int"/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+            &lt;xsd:element name="AddResponse"&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name="result" type="xsd:int"/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+        &lt;/xsd:schema&gt;
+    &lt;/types&gt;
+
+    &lt;message name="AddInput"&gt;
+        &lt;part name="parameters" element="tns:AddRequest"/&gt;
+    &lt;/message&gt;
+
+    &lt;message name="AddOutput"&gt;
+        &lt;part name="parameters" element="tns:AddResponse"/&gt;
+    &lt;/message&gt;
+
+    &lt;portType name="CalculatorPortType"&gt;
+        &lt;operation name="Add"&gt;
+            &lt;input message="tns:AddInput"/&gt;
+            &lt;output message="tns:AddOutput"/&gt;
+        &lt;/operation&gt;
+    &lt;/portType&gt;
+
+    &lt;binding name="CalculatorBinding"
+             type="tns:CalculatorPortType"&gt;
+        &lt;soap:binding
+            style="document"
+            transport="http://schemas.xmlsoap.org/soap/http"/&gt;
+
+        &lt;operation name="Add"&gt;
+            &lt;soap:operation soapAction="Add"/&gt;
+            &lt;input&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+    &lt;/binding&gt;
+
+    &lt;service name="CalculatorService"&gt;
+        &lt;port name="CalculatorPort"
+              binding="tns:CalculatorBinding"&gt;
+            &lt;soap:address
+                location="http://example.com/calculator"/&gt;
+        &lt;/port&gt;
+    &lt;/service&gt;
+
+&lt;/definitions&gt;
+                </pre>
+            </div>
+
+            <p>
+                In this example, the CalculatorService provides an Add
+                operation. The client sends two integer values, and
+                the service returns their sum.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Working of WSDL</h2>
+            <p>WSDL helps a client understand and use a web service.</p>
+            <ol>
+                <li>The service provider creates and publishes a WSDL document.</li>
+                <li>The client obtains the WSDL document.</li>
+                <li>The client reads the available operations and data types.</li>
+                <li>The client identifies the required endpoint and communication binding.</li>
+                <li>The client sends a request using the described message format.</li>
+                <li>The web service processes the request and returns a response.</li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2>7. WSDL and SOAP Relationship</h2>
+            <p>
+                WSDL and SOAP are commonly used together in SOAP-based
+                web services.
+            </p>
+            <ul>
+                <li><strong>WSDL:</strong> Describes what the service does and how to access it.</li>
+                <li><strong>SOAP:</strong> Provides the message format and rules for exchanging information.</li>
+            </ul>
+
+            <div class="code-box">
+                <pre>
++----------------------+
+|      WSDL File       |
+| Service Description  |
++----------------------+
+           |
+           v
++----------------------+
+|    Client Reads      |
+|  Service Information |
++----------------------+
+           |
+           v
++----------------------+
+|    SOAP Request      |
++----------------------+
+           |
+           v
++----------------------+
+|    Web Service       |
++----------------------+
+           |
+           v
++----------------------+
+|    SOAP Response     |
++----------------------+
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Types of WSDL Operations</h2>
+            <p>
+                WSDL 1.1 defines four common operation message patterns:
+            </p>
+            <ul>
+                <li><strong>One-Way:</strong> The client sends a message and does not receive a response message.</li>
+                <li><strong>Request-Response:</strong> The client sends a request and receives a response.</li>
+                <li><strong>Solicit-Response:</strong> The service sends a message and receives a response.</li>
+                <li><strong>Notification:</strong> The service sends a message without expecting a response message.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Advantages of WSDL</h2>
+            <ul>
+                <li>Provides a standard description of web services.</li>
+                <li>Supports platform and language independence.</li>
+                <li>Clearly defines operations and message formats.</li>
+                <li>Helps developers create client applications.</li>
+                <li>Supports automated client code generation through development tools.</li>
+                <li>Works well with SOAP-based web services.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Disadvantages of WSDL</h2>
+            <ul>
+                <li>XML documents can become lengthy and complex.</li>
+                <li>Understanding large WSDL files can be difficult for beginners.</li>
+                <li>Changes to service definitions may require client updates.</li>
+                <li>It is often associated with more complex SOAP-based service setups.</li>
+                <li>It does not itself execute or provide the web service.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Difference Between WSDL, SOAP and UDDI</h2>
+
+            <table>
+                <tr>
+                    <th>WSDL</th>
+                    <th>SOAP</th>
+                    <th>UDDI</th>
+                </tr>
+                <tr>
+                    <td>Describes a web service.</td>
+                    <td>Exchanges structured messages.</td>
+                    <td>Helps publish and discover services.</td>
+                </tr>
+                <tr>
+                    <td>XML-based description language.</td>
+                    <td>XML-based messaging protocol.</td>
+                    <td>Registry standard.</td>
+                </tr>
+                <tr>
+                    <td>Defines operations and endpoints.</td>
+                    <td>Defines message structure.</td>
+                    <td>Stores service information.</td>
+                </tr>
+                <tr>
+                    <td>Tells how to access a service.</td>
+                    <td>Carries request and response data.</td>
+                    <td>Helps users find services.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Applications of WSDL</h2>
+            <ul>
+                <li>Banking and financial web services.</li>
+                <li>Enterprise application integration.</li>
+                <li>Online payment systems.</li>
+                <li>Travel and booking services.</li>
+                <li>Business-to-business communication.</li>
+                <li>Distributed software applications.</li>
+            </ul>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+            <ul>
+                <li>WSDL stands for Web Services Description Language.</li>
+                <li>It is an XML-based language.</li>
+                <li>It describes the functionality and access details of a web service.</li>
+                <li>Types defines data types.</li>
+                <li>Message describes exchanged data.</li>
+                <li>PortType defines abstract operations.</li>
+                <li>Binding specifies communication protocol and message format.</li>
+                <li>Service and Port describe service endpoints.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Important Exam Questions</h2>
+            <ol>
+                <li>What is WSDL? Explain its purpose.</li>
+                <li>Describe the features of WSDL.</li>
+                <li>Explain the structure and elements of a WSDL document.</li>
+                <li>Write and explain a simple WSDL document.</li>
+                <li>Explain the working of WSDL.</li>
+                <li>Describe the relationship between WSDL and SOAP.</li>
+                <li>Explain the four types of WSDL operations.</li>
+                <li>Differentiate between WSDL, SOAP and UDDI.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <p><strong>WSDL:</strong> Web Services Description Language.</p>
+            <p><strong>Types:</strong> Defines data types.</p>
+            <p><strong>Message:</strong> Describes exchanged data.</p>
+            <p><strong>PortType:</strong> Defines abstract operations.</p>
+            <p><strong>Binding:</strong> Specifies protocol and message format.</p>
+            <p><strong>Service:</strong> Groups service endpoints.</p>
+            <p><strong>Port:</strong> Defines a service endpoint.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit3-soap.html">← Previous Topic</a>
+            <a href="unit3-web-services.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 3</p>
+    </footer>
+
+</body>
+</html>

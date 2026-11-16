@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Models - Unit 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit2.html">← Back to Unit 2</a>
+        <a href="unit2-xml-schemas.html">Previous Topic</a>
+        <a href="unit2-presenting-xml.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Object Models</h1>
+            <p>Unit 2 | Topic 09</p>
+            <p>Understand how web documents are represented and manipulated using object models.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to Object Models</h2>
+            <p>
+                An Object Model represents a document or application
+                as a collection of objects. Each object contains
+                properties and methods that allow programs to access
+                and manipulate information.
+            </p>
+            <p>
+                In web technology, object models help JavaScript
+                interact with HTML documents, browser windows,
+                forms and other webpage components.
+            </p>
+
+            <div class="important-points">
+                <h3>Important Points</h3>
+                <ul>
+                    <li>An object represents an element or component.</li>
+                    <li>Properties describe an object's characteristics.</li>
+                    <li>Methods define the actions an object can perform.</li>
+                    <li>Object models allow dynamic interaction with webpages.</li>
+                    <li>DOM and BOM are important browser object models.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Types of Object Models</h2>
+
+            <h3>A. Document Object Model (DOM)</h3>
+            <p>
+                DOM stands for Document Object Model. It represents
+                an HTML or XML document as a hierarchical tree of objects.
+                JavaScript can use the DOM to access and modify document
+                content, structure and styles.
+            </p>
+
+            <h3>B. Browser Object Model (BOM)</h3>
+            <p>
+                BOM stands for Browser Object Model. It provides objects
+                that allow JavaScript to interact with the browser
+                environment outside the document itself.
+            </p>
+
+            <h3>C. Event Model</h3>
+            <p>
+                The event model allows programs to respond to user
+                actions such as mouse clicks, keyboard input and
+                form submissions.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Document Object Model (DOM)</h2>
+            <p>
+                The DOM is a programming interface for HTML and XML
+                documents. It represents the document as a tree
+                of nodes and objects.
+            </p>
+
+            <h3>Features of DOM</h3>
+            <ul>
+                <li>Represents documents in a tree structure.</li>
+                <li>Provides access to HTML elements.</li>
+                <li>Allows modification of document content.</li>
+                <li>Allows HTML attributes to be changed.</li>
+                <li>Supports dynamic webpage updates.</li>
+                <li>Supports event handling.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. DOM Tree Structure</h2>
+            <p>
+                The DOM represents an HTML document in the form
+                of a tree. Each part of the document is represented
+                by a node.
+            </p>
+
+            <h3>Example HTML Document</h3>
+            <div class="code-box">
+                <pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My Website&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;h1&gt;Welcome&lt;/h1&gt;
+        &lt;p&gt;Hello World&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <h3>DOM Tree Representation</h3>
+            <div class="important-points">
+                <pre><code>             Document
+                 |
+               html
+              /    \
+           head    body
+            |      /  \
+          title   h1   p
+            |      |   |
+        My Website Welcome Hello World</code></pre>
+            </div>
+
+            <p>
+                In this structure, the document is the root,
+                html is its child, and head and body are
+                child elements of html.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Types of DOM Nodes</h2>
+            <p>
+                A DOM node is an individual component of the
+                document tree.
+            </p>
+
+            <ul>
+                <li><b>Document Node:</b> Represents the entire document.</li>
+                <li><b>Element Node:</b> Represents an HTML element.</li>
+                <li><b>Text Node:</b> Represents text inside an element.</li>
+                <li><b>Attribute Node:</b> Represents an element attribute.</li>
+                <li><b>Comment Node:</b> Represents an HTML comment.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>6. DOM Properties</h2>
+            <p>
+                Properties provide information about DOM objects
+                and allow access to their values.
+            </p>
+
+            <ul>
+                <li><b>innerHTML:</b> Gets or sets HTML content.</li>
+                <li><b>textContent:</b> Gets or sets text content.</li>
+                <li><b>id:</b> Gets or sets an element's ID.</li>
+                <li><b>className:</b> Gets or sets an element's class name.</li>
+                <li><b>style:</b> Accesses an element's inline CSS styles.</li>
+                <li><b>parentElement:</b> Returns the parent element.</li>
+                <li><b>children:</b> Returns an element's child elements.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>let heading = document.getElementById("title");
+
+heading.textContent = "New Heading";
+
+heading.style.color = "blue";</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>7. DOM Methods</h2>
+            <p>
+                Methods are functions provided by DOM objects
+                to perform operations on a document.
+            </p>
+
+            <ul>
+                <li><b>getElementById():</b> Selects an element using its ID.</li>
+                <li><b>getElementsByTagName():</b> Selects elements by tag name.</li>
+                <li><b>getElementsByClassName():</b> Selects elements by class name.</li>
+                <li><b>querySelector():</b> Selects the first matching CSS selector.</li>
+                <li><b>querySelectorAll():</b> Selects all matching CSS selectors.</li>
+                <li><b>createElement():</b> Creates a new element.</li>
+                <li><b>appendChild():</b> Adds a child node.</li>
+                <li><b>removeChild():</b> Removes a child node.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>let element = document.getElementById("demo");
+
+element.textContent = "Hello DOM!";</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Browser Object Model (BOM)</h2>
+            <p>
+                BOM stands for Browser Object Model. It provides
+                JavaScript with objects to interact with the
+                browser window and its environment.
+            </p>
+
+            <h3>Important BOM Objects</h3>
+            <ul>
+                <li><b>window:</b> Represents the browser window.</li>
+                <li><b>navigator:</b> Provides information about the browser environment.</li>
+                <li><b>location:</b> Provides information about the current URL.</li>
+                <li><b>history:</b> Provides access to browser session history.</li>
+                <li><b>screen:</b> Provides information about the display screen.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Window Object</h2>
+            <p>
+                The window object represents the browser window.
+                It is the global object in a browser's JavaScript
+                environment.
+            </p>
+
+            <h3>Common Window Methods</h3>
+            <ul>
+                <li><b>alert():</b> Displays an alert message.</li>
+                <li><b>confirm():</b> Displays a confirmation dialog.</li>
+                <li><b>prompt():</b> Displays a dialog asking for user input.</li>
+                <li><b>setTimeout():</b> Executes a function after a delay.</li>
+                <li><b>setInterval():</b> Repeatedly executes a function at intervals.</li>
+                <li><b>open():</b> Opens a new browser window or tab, subject to browser rules.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>window.alert("Welcome to JavaScript!");
+
+let answer = window.confirm("Are you sure?");
+
+let name = window.prompt("Enter your name");</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Navigator Object</h2>
+            <p>
+                The navigator object provides information about
+                the browser environment and its capabilities.
+            </p>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>console.log(navigator.userAgent);
+
+console.log(navigator.language);
+
+console.log(navigator.onLine);</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Location Object</h2>
+            <p>
+                The location object contains information about
+                the current URL and can be used for navigation.
+            </p>
+
+            <h3>Common Properties and Methods</h3>
+            <ul>
+                <li><b>href:</b> Returns or sets the complete URL.</li>
+                <li><b>hostname:</b> Returns the hostname.</li>
+                <li><b>pathname:</b> Returns the path of the URL.</li>
+                <li><b>protocol:</b> Returns the URL protocol.</li>
+                <li><b>reload():</b> Reloads the current page.</li>
+                <li><b>assign():</b> Loads a new URL.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>console.log(location.href);
+
+console.log(location.hostname);
+
+console.log(location.pathname);</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>12. History Object</h2>
+            <p>
+                The history object provides access to the browser's
+                session history.
+            </p>
+
+            <h3>Common Methods</h3>
+            <ul>
+                <li><b>back():</b> Moves to the previous page in history.</li>
+                <li><b>forward():</b> Moves to the next page in history.</li>
+                <li><b>go():</b> Moves to a specific position in history.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>history.back();
+
+history.forward();
+
+history.go(-1);</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Screen Object</h2>
+            <p>
+                The screen object provides information about
+                the user's display screen.
+            </p>
+
+            <h3>Common Properties</h3>
+            <ul>
+                <li><b>width:</b> Returns the screen width.</li>
+                <li><b>height:</b> Returns the screen height.</li>
+                <li><b>availWidth:</b> Returns the available screen width.</li>
+                <li><b>availHeight:</b> Returns the available screen height.</li>
+                <li><b>colorDepth:</b> Returns the screen color depth.</li>
+            </ul>
+
+            <div class="code-box">
+                <h3>Example</h3>
+                <pre><code>console.log(screen.width);
+
+console.log(screen.height);
+
+console.log(screen.colorDepth);</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>14. Difference Between DOM and BOM</h2>
+
+            <table>
+                <tr>
+                    <th>DOM</th>
+                    <th>BOM</th>
+                </tr>
+                <tr>
+                    <td>Document Object Model.</td>
+                    <td>Browser Object Model.</td>
+                </tr>
+                <tr>
+                    <td>Represents the webpage document.</td>
+                    <td>Represents the browser environment.</td>
+                </tr>
+                <tr>
+                    <td>Used to manipulate HTML and XML content.</td>
+                    <td>Used to interact with browser features.</td>
+                </tr>
+                <tr>
+                    <td>Uses objects such as document and elements.</td>
+                    <td>Uses objects such as window, location and history.</td>
+                </tr>
+                <tr>
+                    <td>Example: document.getElementById().</td>
+                    <td>Example: window.alert().</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>15. Practical Example: DOM Manipulation</h2>
+            <p>
+                This example demonstrates how JavaScript uses
+                the DOM to change the content of a webpage.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;DOM Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h2 id="heading"&gt;Welcome to Web Technology&lt;/h2&gt;
+
+    &lt;button onclick="changeText()"&gt;
+        Change Text
+    &lt;/button&gt;
+
+    &lt;script&gt;
+        function changeText() {
+            document.getElementById("heading")
+                .textContent = "DOM Manipulation Successful!";
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>16. Advantages of Object Models</h2>
+            <ul>
+                <li>Provide structured access to webpage elements.</li>
+                <li>Allow dynamic modification of document content.</li>
+                <li>Support interactive web applications.</li>
+                <li>Make event handling easier.</li>
+                <li>Help JavaScript interact with browser features.</li>
+                <li>Support reusable and organized programming.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>17. Important Exam Questions</h2>
+            <ol>
+                <li>What is an Object Model in web technology?</li>
+                <li>Explain the Document Object Model (DOM).</li>
+                <li>Describe the DOM tree structure with an example.</li>
+                <li>Explain different types of DOM nodes.</li>
+                <li>What are DOM properties and methods?</li>
+                <li>What is the Browser Object Model (BOM)?</li>
+                <li>Explain the window object and its methods.</li>
+                <li>Describe navigator, location and history objects.</li>
+                <li>Differentiate between DOM and BOM.</li>
+                <li>Write a JavaScript program to manipulate an HTML element using DOM.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <ul>
+                <li>Object Model – Represents components as objects.</li>
+                <li>DOM – Document Object Model.</li>
+                <li>BOM – Browser Object Model.</li>
+                <li>DOM Tree – Hierarchical representation of a document.</li>
+                <li>Node – Individual component of a DOM tree.</li>
+                <li>Document – Represents the complete webpage document.</li>
+                <li>Window – Represents the browser window.</li>
+                <li>Navigator – Provides browser environment information.</li>
+                <li>Location – Provides current URL information.</li>
+                <li>History – Provides access to session history.</li>
+                <li>Screen – Provides display screen information.</li>
+                <li>getElementById() – Selects an element using its ID.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology | Unit 2 | Object Models</p>
+    </footer>
+
+</body>
+</html>

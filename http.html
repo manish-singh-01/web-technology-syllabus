@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP | Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit1.html">← Back to Unit 1</a>
+        <div>
+            <span>UNIT 01 • TOPIC 04</span>
+            <h1>HTTP</h1>
+        </div>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <p class="topic-label">TOPIC 04</p>
+            <h2>HTTP</h2>
+            <p>
+                HTTP stands for HyperText Transfer Protocol.
+                It is an application-layer protocol used for
+                communication between web clients and servers.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">01 • INTRODUCTION</p>
+            <h3>What is HTTP?</h3>
+            <p>
+                HTTP defines how a client, such as a web browser,
+                sends requests to a web server and how the server
+                returns responses. It is a stateless protocol:
+                each request is independent unless additional
+                mechanisms maintain session information.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">02 • WORKING</p>
+            <h3>How HTTP Works</h3>
+            <div class="sequence">
+                <span>Browser</span><b>→</b>
+                <span>HTTP Request</span><b>→</b>
+                <span>Web Server</span><b>→</b>
+                <span>HTTP Response</span>
+            </div>
+            <ul class="important-points">
+                <li>The browser sends an HTTP request.</li>
+                <li>The server processes the request.</li>
+                <li>The server returns a status code, headers and possibly a response body.</li>
+                <li>The browser processes and displays the response when appropriate.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">03 • HTTP METHODS</p>
+            <h3>Common HTTP Methods</h3>
+            <ul class="important-points">
+                <li><strong>GET:</strong> Retrieves a resource.</li>
+                <li><strong>POST:</strong> Sends data for processing or resource creation.</li>
+                <li><strong>PUT:</strong> Creates or replaces a resource at a specified URI.</li>
+                <li><strong>DELETE:</strong> Requests deletion of a resource.</li>
+                <li><strong>PATCH:</strong> Applies a partial modification to a resource.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">04 • STATUS CODES</p>
+            <h3>HTTP Status Codes</h3>
+            <ul class="important-points">
+                <li><strong>200 OK:</strong> Request succeeded.</li>
+                <li><strong>301 Moved Permanently:</strong> Resource has a new permanent URL.</li>
+                <li><strong>400 Bad Request:</strong> Server cannot process the request due to a client error.</li>
+                <li><strong>404 Not Found:</strong> Requested resource was not found.</li>
+                <li><strong>500 Internal Server Error:</strong> Unexpected server-side error.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">05 • HTTP VS HTTPS</p>
+            <h3>Difference Between HTTP and HTTPS</h3>
+            <ul class="important-points">
+                <li><strong>HTTP:</strong> Does not itself provide transport encryption.</li>
+                <li><strong>HTTPS:</strong> Uses TLS to protect data in transit and authenticate the server.</li>
+                <li>HTTPS is recommended for websites, especially when transmitting sensitive information.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <p class="section-label">06 • EXAM PREPARATION</p>
+            <h3>Important Questions with Answers</h3>
+
+            <details class="question-item">
+                <summary>1. Define HTTP.</summary>
+                <p>
+                    HTTP is an application-layer protocol that
+                    defines request and response communication
+                    between web clients and servers.
+                </p>
+            </details>
+
+            <details class="question-item">
+                <summary>2. Why is HTTP called stateless?</summary>
+                <p>
+                    HTTP does not automatically remember the
+                    state of previous requests. Cookies, sessions
+                    and tokens can be used to maintain application
+                    state.
+                </p>
+            </details>
+
+            <details class="question-item">
+                <summary>3. Differentiate HTTP and HTTPS.</summary>
+                <p>
+                    HTTPS protects HTTP communication using TLS,
+                    providing encryption, integrity protection
+                    and server authentication. Plain HTTP does
+                    not provide these protections by itself.
+                </p>
+            </details>
+
+            <details class="question-item">
+                <summary>4. Explain HTTP request and response.</summary>
+                <p>
+                    A request contains a method, target and
+                    headers, and may contain a body. The response
+                    contains a status code, headers and may
+                    contain a body.
+                </p>
+            </details>
+        </section>
+
+        <section class="revision-box">
+            <p class="section-label">QUICK REVISION</p>
+            <h3>Remember</h3>
+            <div class="sequence">
+                <span>HTTP</span><b>→</b>
+                <span>Request</span><b>→</b>
+                <span>Server</span><b>→</b>
+                <span>Response</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology • CS35302</p>
+        <p>Topic 04 • HTTP</p>
+    </footer>
+
+</body>
+</html>

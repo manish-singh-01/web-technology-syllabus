@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDDI - Unit 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit3.html">← Back to Unit 3</a>
+        <a href="unit3-introduction-web-services.html">Previous Topic</a>
+        <a href="unit3-soap.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>UDDI</h1>
+            <p>Unit 3 | Topic 02</p>
+            <p>Universal Description, Discovery and Integration</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to UDDI</h2>
+            <p>
+                UDDI stands for Universal Description, Discovery
+                and Integration. It is a standard for publishing
+                and discovering information about web services.
+            </p>
+
+            <p>
+                UDDI provides a registry where organizations can
+                publish information about their web services.
+                Other applications or developers can search this
+                registry to discover available services.
+            </p>
+
+            <div class="important-points">
+                <h3>Important Points</h3>
+                <ul>
+                    <li>UDDI is used for discovering web services.</li>
+                    <li>It provides a registry for service information.</li>
+                    <li>Service providers can publish their services.</li>
+                    <li>Service users can search for required services.</li>
+                    <li>It is associated with XML, SOAP and WSDL technologies.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Definition of UDDI</h2>
+            <p>
+                UDDI is an XML-based standard that defines a
+                framework for describing, publishing and discovering
+                web services.
+            </p>
+
+            <p>
+                It acts like a directory of web services in which
+                service providers publish their service information
+                and service requesters search for suitable services.
+            </p>
+
+            <div class="important-points">
+                <h3>Simple Example</h3>
+                <p>
+                    Suppose a company provides an online payment
+                    web service. It can publish information about
+                    that service in a UDDI registry. An e-commerce
+                    developer can search the registry to find
+                    the payment service.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Main Purpose of UDDI</h2>
+            <ul>
+                <li><b>Publishing:</b> Allows providers to publish service details.</li>
+                <li><b>Discovery:</b> Helps users find available web services.</li>
+                <li><b>Description:</b> Stores information about organizations and services.</li>
+                <li><b>Integration:</b> Helps applications locate services for integration.</li>
+                <li><b>Standardization:</b> Provides a common structure for service information.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. UDDI Architecture</h2>
+            <p>
+                UDDI architecture involves three main participants:
+                service provider, service registry and service requester.
+            </p>
+
+            <h3>1. Service Provider</h3>
+            <p>
+                A service provider is an organization or developer
+                that creates and publishes a web service.
+            </p>
+
+            <h3>2. Service Registry</h3>
+            <p>
+                A service registry stores information about
+                published web services. UDDI provides the
+                standard structure for this registry.
+            </p>
+
+            <h3>3. Service Requester</h3>
+            <p>
+                A service requester is an application or user
+                that searches for and uses a web service.
+            </p>
+
+            <h3>UDDI Architecture Diagram</h3>
+            <div class="important-points">
+                <pre><code>       Service Provider
+              |
+              | Publish
+              v
+         UDDI Registry
+              |
+              | Find
+              v
+       Service Requester
+              |
+              | Bind / Use
+              v
+         Web Service</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Working of UDDI</h2>
+            <p>
+                UDDI follows a publish, find and bind process
+                for web service discovery and use.
+            </p>
+
+            <h3>Step 1: Publish</h3>
+            <p>
+                The service provider publishes information about
+                its web service in the UDDI registry.
+            </p>
+
+            <h3>Step 2: Find</h3>
+            <p>
+                The service requester searches the registry
+                to find a suitable web service.
+            </p>
+
+            <h3>Step 3: Obtain Description</h3>
+            <p>
+                The requester obtains the service description,
+                commonly represented using WSDL in SOAP-based services.
+            </p>
+
+            <h3>Step 4: Bind</h3>
+            <p>
+                The requester uses the service description and
+                endpoint information to communicate with the
+                service provider.
+            </p>
+
+            <div class="important-points">
+                <h3>Remember: Publish – Find – Bind</h3>
+                <pre><code>Provider
+    |
+ Publish
+    |
+    v
+UDDI Registry
+    |
+  Find
+    |
+    v
+Requester
+    |
+  Bind
+    |
+    v
+Web Service</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>6. UDDI Data Structures</h2>
+            <p>
+                UDDI uses four major data structures to organize
+                information about web services.
+            </p>
+
+            <h3>1. businessEntity</h3>
+            <p>
+                Represents a business or service provider.
+                It contains information such as the business name,
+                description and contact details.
+            </p>
+
+            <h3>2. businessService</h3>
+            <p>
+                Describes a web service offered by a business.
+                It groups information about a particular service.
+            </p>
+
+            <h3>3. bindingTemplate</h3>
+            <p>
+                Contains technical information required to access
+                a particular service, including its access endpoint.
+            </p>
+
+            <h3>4. tModel</h3>
+            <p>
+                Represents a technical model or reference used
+                to describe service specifications and technical
+                requirements.
+            </p>
+
+            <div class="important-points">
+                <h3>UDDI Data Structure Hierarchy</h3>
+                <pre><code>       businessEntity
+              |
+              v
+       businessService
+              |
+              v
+       bindingTemplate
+              |
+              v
+            tModel</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Categories of Information in UDDI</h2>
+
+            <h3>White Pages</h3>
+            <p>
+                White Pages contain basic business information
+                such as organization name, address and contact details.
+            </p>
+
+            <h3>Yellow Pages</h3>
+            <p>
+                Yellow Pages classify businesses according to
+                industry, product and service categories.
+            </p>
+
+            <h3>Green Pages</h3>
+            <p>
+                Green Pages contain technical information about
+                services, including access details and technical
+                specifications.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Relationship Between UDDI, SOAP and WSDL</h2>
+            <p>
+                UDDI, SOAP and WSDL are commonly discussed
+                together in traditional SOAP-based web service
+                architecture.
+            </p>
+
+            <ul>
+                <li><b>UDDI:</b> Helps publish and discover web services.</li>
+                <li><b>WSDL:</b> Describes the service interface and operations.</li>
+                <li><b>SOAP:</b> Provides the messaging format for communication.</li>
+            </ul>
+
+            <div class="important-points">
+                <h3>Relationship Diagram</h3>
+                <pre><code>        UDDI
+         |
+   Discovers Service
+         |
+        WSDL
+         |
+  Describes Service
+         |
+        SOAP
+         |
+  Exchanges Messages
+         |
+    Web Service</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Advantages of UDDI</h2>
+            <ul>
+                <li>Provides a standard service discovery mechanism.</li>
+                <li>Helps service providers publish service details.</li>
+                <li>Allows requesters to search for services.</li>
+                <li>Organizes business and technical information.</li>
+                <li>Supports integration between different applications.</li>
+                <li>Promotes service reuse.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Limitations of UDDI</h2>
+            <ul>
+                <li>Setting up and maintaining registries can be complex.</li>
+                <li>Published service information must remain accurate.</li>
+                <li>Finding a service does not guarantee its availability.</li>
+                <li>Security and access control need proper implementation.</li>
+                <li>Public UDDI registries did not achieve widespread adoption.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Applications of UDDI</h2>
+            <ul>
+                <li>Discovering payment services.</li>
+                <li>Finding business partner services.</li>
+                <li>Locating online booking services.</li>
+                <li>Discovering enterprise web services.</li>
+                <li>Organizing service information in private registries.</li>
+                <li>Supporting application integration.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Difference Between UDDI, SOAP and WSDL</h2>
+
+            <table>
+                <tr>
+                    <th>UDDI</th>
+                    <th>SOAP</th>
+                    <th>WSDL</th>
+                </tr>
+                <tr>
+                    <td>Service discovery standard.</td>
+                    <td>Messaging protocol.</td>
+                    <td>Service description language.</td>
+                </tr>
+                <tr>
+                    <td>Publishes and discovers services.</td>
+                    <td>Exchanges structured messages.</td>
+                    <td>Describes service operations and endpoints.</td>
+                </tr>
+                <tr>
+                    <td>Uses a registry model.</td>
+                    <td>Uses an envelope-based message structure.</td>
+                    <td>Uses XML-based descriptions.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Important Exam Questions</h2>
+            <ol>
+                <li>What is UDDI? Explain its full form.</li>
+                <li>Explain the main purpose of UDDI.</li>
+                <li>Describe UDDI architecture with a diagram.</li>
+                <li>Explain the working of UDDI.</li>
+                <li>What are the three main steps of UDDI?</li>
+                <li>Explain the four main UDDI data structures.</li>
+                <li>What are White Pages, Yellow Pages and Green Pages?</li>
+                <li>Explain the relationship between UDDI, SOAP and WSDL.</li>
+                <li>Write the advantages and limitations of UDDI.</li>
+                <li>Explain the applications of UDDI.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <ul>
+                <li>UDDI – Universal Description, Discovery and Integration.</li>
+                <li>Purpose – Publishing and discovering web services.</li>
+                <li>Service Provider – Publishes a service.</li>
+                <li>Service Registry – Stores service information.</li>
+                <li>Service Requester – Searches for and uses a service.</li>
+                <li>Publish – Adds service information to a registry.</li>
+                <li>Find – Searches for a service.</li>
+                <li>Bind – Connects to and uses a service.</li>
+                <li>businessEntity – Business information.</li>
+                <li>businessService – Service information.</li>
+                <li>bindingTemplate – Technical access information.</li>
+                <li>tModel – Technical model or specification reference.</li>
+                <li>White Pages – Business contact information.</li>
+                <li>Yellow Pages – Business categories.</li>
+                <li>Green Pages – Technical service information.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology | Unit 3 | UDDI</p>
+    </footer>
+
+</body>
+</html>

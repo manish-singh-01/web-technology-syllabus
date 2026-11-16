@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presenting XML - Unit 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit2.html">← Back to Unit 2</a>
+        <a href="unit2-object-models.html">Previous Topic</a>
+        <a href="unit2-dom-sax.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Presenting XML</h1>
+            <p>Unit 2 | Topic 10</p>
+            <p>Learn how XML documents are displayed, formatted and transformed.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to Presenting XML</h2>
+            <p>
+                XML stands for Extensible Markup Language. It is used
+                to store and transport structured data. XML focuses
+                on describing data rather than displaying it.
+            </p>
+            <p>
+                Presenting XML means displaying XML data in a
+                readable and understandable format. XML can be
+                presented using CSS, XSLT and other processing
+                techniques.
+            </p>
+
+            <div class="important-points">
+                <h3>Important Points</h3>
+                <ul>
+                    <li>XML stores and describes structured data.</li>
+                    <li>XML does not define how data should look on a webpage.</li>
+                    <li>CSS can be used to style XML elements.</li>
+                    <li>XSLT can transform XML into HTML or other formats.</li>
+                    <li>Browsers can display XML documents directly.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Methods of Presenting XML</h2>
+            <p>
+                There are different methods used to present XML
+                documents in a readable format.
+            </p>
+
+            <h3>1. Direct Browser Display</h3>
+            <p>
+                Modern web browsers can display XML documents
+                directly. They generally show the document structure
+                in a tree-like format.
+            </p>
+
+            <h3>2. Using CSS</h3>
+            <p>
+                CSS (Cascading Style Sheets) is used to control
+                the appearance of XML elements, including colors,
+                fonts, spacing and display properties.
+            </p>
+
+            <h3>3. Using XSLT</h3>
+            <p>
+                XSLT (Extensible Stylesheet Language Transformations)
+                is used to transform XML documents into HTML,
+                plain text or other XML documents.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Direct Display of XML in a Browser</h2>
+            <p>
+                An XML file can be opened directly in a modern
+                web browser. The browser displays the XML tags
+                and their corresponding data.
+            </p>
+
+            <div class="code-box">
+                <h3>Example: student.xml</h3>
+                <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;student&gt;
+    &lt;name&gt;Rahul&lt;/name&gt;
+    &lt;rollno&gt;101&lt;/rollno&gt;
+    &lt;course&gt;B.Tech CSE&lt;/course&gt;
+    &lt;university&gt;Quantum University&lt;/university&gt;
+&lt;/student&gt;</code></pre>
+            </div>
+
+            <p>
+                When this file is opened in a browser, the browser
+                displays the XML structure and its data.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Presenting XML Using CSS</h2>
+            <p>
+                CSS can be linked with an XML document to define
+                the visual presentation of its elements.
+            </p>
+
+            <h3>Steps to Apply CSS to XML</h3>
+            <ol>
+                <li>Create an XML document.</li>
+                <li>Create a CSS stylesheet.</li>
+                <li>Link the CSS file using an XML stylesheet processing instruction.</li>
+                <li>Open the XML document in a compatible browser.</li>
+            </ol>
+
+            <div class="code-box">
+                <h3>Example: student.xml</h3>
+                <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-stylesheet type="text/css" href="style.css"?&gt;
+
+&lt;student&gt;
+    &lt;name&gt;Rahul&lt;/name&gt;
+    &lt;course&gt;B.Tech CSE&lt;/course&gt;
+    &lt;rollno&gt;101&lt;/rollno&gt;
+&lt;/student&gt;</code></pre>
+            </div>
+
+            <div class="code-box">
+                <h3>Example: style.css</h3>
+                <pre><code>student {
+    display: block;
+    background-color: lightyellow;
+    padding: 20px;
+    font-family: Arial;
+}
+
+name {
+    display: block;
+    color: blue;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+course, rollno {
+    display: block;
+    color: green;
+    margin-top: 10px;
+}</code></pre>
+            </div>
+
+            <p>
+                In this example, CSS changes the appearance
+                of XML elements by applying colors, fonts
+                and spacing.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Presenting XML Using XSLT</h2>
+            <p>
+                XSLT stands for Extensible Stylesheet Language
+                Transformations. It is a language used to transform
+                XML documents into other formats.
+            </p>
+
+            <h3>Uses of XSLT</h3>
+            <ul>
+                <li>Transforms XML data into HTML webpages.</li>
+                <li>Changes the structure of XML documents.</li>
+                <li>Selects specific information from XML data.</li>
+                <li>Sorts and filters XML data.</li>
+                <li>Can produce text or another XML document.</li>
+            </ul>
+
+            <div class="important-points">
+                <h3>Basic XSLT Components</h3>
+                <ul>
+                    <li><b>xsl:stylesheet:</b> Defines an XSLT stylesheet.</li>
+                    <li><b>xsl:template:</b> Defines a template for matching nodes.</li>
+                    <li><b>xsl:value-of:</b> Extracts the value of a selected node.</li>
+                    <li><b>xsl:for-each:</b> Processes each selected node.</li>
+                    <li><b>xsl:apply-templates:</b> Applies templates to selected nodes.</li>
+                    <li><b>xsl:sort:</b> Sorts selected nodes.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>6. XML to HTML Transformation Using XSLT</h2>
+            <p>
+                XSLT can convert XML data into an HTML table
+                so that users can view the information easily.
+            </p>
+
+            <div class="code-box">
+                <h3>Step 1: students.xml</h3>
+                <pre><code>&lt;?xml version="1.0"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="students.xsl"?&gt;
+
+&lt;students&gt;
+    &lt;student&gt;
+        &lt;name&gt;Rahul&lt;/name&gt;
+        &lt;rollno&gt;101&lt;/rollno&gt;
+        &lt;course&gt;CSE&lt;/course&gt;
+    &lt;/student&gt;
+
+    &lt;student&gt;
+        &lt;name&gt;Amit&lt;/name&gt;
+        &lt;rollno&gt;102&lt;/rollno&gt;
+        &lt;course&gt;IT&lt;/course&gt;
+    &lt;/student&gt;
+&lt;/students&gt;</code></pre>
+            </div>
+
+            <div class="code-box">
+                <h3>Step 2: students.xsl</h3>
+                <pre><code>&lt;?xml version="1.0"?&gt;
+
+&lt;xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+    &lt;xsl:template match="/"&gt;
+        &lt;html&gt;
+        &lt;body&gt;
+            &lt;h2&gt;Student Information&lt;/h2&gt;
+
+            &lt;table border="1"&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Name&lt;/th&gt;
+                    &lt;th&gt;Roll No&lt;/th&gt;
+                    &lt;th&gt;Course&lt;/th&gt;
+                &lt;/tr&gt;
+
+                &lt;xsl:for-each select="students/student"&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;xsl:value-of select="name"/&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;xsl:value-of select="rollno"/&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;xsl:value-of select="course"/&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/xsl:for-each&gt;
+            &lt;/table&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</code></pre>
+            </div>
+
+            <p>
+                When the XML file is opened in a browser that supports
+                XSLT processing, the XML data is transformed into
+                an HTML table.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Difference Between CSS and XSLT</h2>
+
+            <table>
+                <tr>
+                    <th>CSS</th>
+                    <th>XSLT</th>
+                </tr>
+                <tr>
+                    <td>CSS stands for Cascading Style Sheets.</td>
+                    <td>XSLT stands for Extensible Stylesheet Language Transformations.</td>
+                </tr>
+                <tr>
+                    <td>Controls the appearance of elements.</td>
+                    <td>Transforms XML into another format.</td>
+                </tr>
+                <tr>
+                    <td>Does not normally change document structure.</td>
+                    <td>Can change the structure and arrangement of data.</td>
+                </tr>
+                <tr>
+                    <td>Used for colors, fonts and layouts.</td>
+                    <td>Used for filtering, sorting and transforming data.</td>
+                </tr>
+                <tr>
+                    <td>Uses CSS selectors.</td>
+                    <td>Uses XPath expressions to select XML nodes.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Advantages of Presenting XML</h2>
+            <ul>
+                <li>Makes structured data easier to understand.</li>
+                <li>Improves the readability of XML documents.</li>
+                <li>Allows XML data to be displayed in webpages.</li>
+                <li>Supports data transformation into different formats.</li>
+                <li>Separates data from its presentation.</li>
+                <li>Helps in sharing data between different applications.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Applications of XML Presentation</h2>
+            <ul>
+                <li>Displaying student records.</li>
+                <li>Presenting product information in e-commerce systems.</li>
+                <li>Displaying data from web services.</li>
+                <li>Generating reports from XML files.</li>
+                <li>Converting structured data into HTML pages.</li>
+                <li>Sharing information between different systems.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Important Exam Questions</h2>
+            <ol>
+                <li>What is meant by presenting XML?</li>
+                <li>Explain different methods of presenting XML.</li>
+                <li>How can CSS be used to display XML documents?</li>
+                <li>What is XSLT? Explain its uses.</li>
+                <li>Explain XML to HTML transformation using XSLT.</li>
+                <li>Differentiate between CSS and XSLT.</li>
+                <li>Explain the important elements of XSLT.</li>
+                <li>Write the advantages of presenting XML.</li>
+                <li>What is the role of xsl:value-of and xsl:for-each?</li>
+                <li>Explain how XML documents can be displayed in a web browser.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <ul>
+                <li>XML – Extensible Markup Language.</li>
+                <li>Presenting XML – Displaying XML data in a readable format.</li>
+                <li>CSS – Used to style XML elements.</li>
+                <li>XSLT – Used to transform XML documents.</li>
+                <li>XPath – Used to select nodes in XML documents.</li>
+                <li>xsl:template – Defines a transformation template.</li>
+                <li>xsl:value-of – Extracts node values.</li>
+                <li>xsl:for-each – Processes selected nodes repeatedly.</li>
+                <li>XML + XSLT – Can produce HTML output.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology | Unit 2 | Presenting XML</p>
+    </footer>
+
+</body>
+</html>

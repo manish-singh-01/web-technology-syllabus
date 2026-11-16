@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS | Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit1.html">← Back to Unit 1</a>
+        <div>
+            <span>UNIT 01 • TOPIC 09</span>
+            <h1>DNS</h1>
+        </div>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <p class="topic-label">TOPIC 09</p>
+            <h2>Domain Name System</h2>
+            <p>
+                Understand how DNS translates human-readable domain
+                names into IP addresses so that browsers can locate
+                websites on the Internet.
+            </p>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <p class="section-label">01 • INTRODUCTION</p>
+            <h3>What is DNS?</h3>
+
+            <p>
+                DNS stands for Domain Name System. It is a
+                hierarchical and distributed naming system that
+                translates domain names into IP addresses and
+                provides other information about domain names.
+            </p>
+
+            <p>
+                Humans find names such as www.example.com easier
+                to remember than numerical IP addresses. DNS helps
+                computers locate the correct server using a domain name.
+            </p>
+
+            <div class="important-points">
+                <h4>Important Points</h4>
+                <ul>
+                    <li>Full form: Domain Name System.</li>
+                    <li>DNS is often called the phonebook of the Internet.</li>
+                    <li>It helps resolve domain names to IP addresses.</li>
+                    <li>DNS is hierarchical and distributed.</li>
+                    <li>It can also store mail-server and other records.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Need -->
+        <section class="content-section">
+            <p class="section-label">02 • PURPOSE</p>
+            <h3>Why Do We Need DNS?</h3>
+
+            <p>
+                Computers communicate over networks using IP addresses.
+                Remembering the addresses of every website would be
+                difficult for users. DNS makes Internet access easier
+                by allowing people to use domain names.
+            </p>
+
+            <ul>
+                <li>Makes websites easier to access.</li>
+                <li>Maps domain names to IP addresses.</li>
+                <li>Allows server addresses to change without requiring users to remember new IP addresses.</li>
+                <li>Supports email routing through mail-related records.</li>
+                <li>Uses caching to reduce repeated lookups.</li>
+            </ul>
+        </section>
+
+        <!-- Working -->
+        <section class="content-section">
+            <p class="section-label">03 • WORKING</p>
+            <h3>How Does DNS Work?</h3>
+
+            <p>
+                When a user enters a domain name into a browser,
+                the computer checks available cached information.
+                If it does not have the answer, a DNS resolver
+                finds the required record.
+            </p>
+
+            <div class="sequence">
+                <p>1. The user enters www.example.com in a browser.</p>
+                <p>2. The device checks its DNS cache.</p>
+                <p>3. A DNS resolver searches for the required record if needed.</p>
+                <p>4. The resolver may query a root DNS server.</p>
+                <p>5. The resolver may query the appropriate top-level domain (TLD) server.</p>
+                <p>6. The authoritative DNS server provides the requested record.</p>
+                <p>7. The resolver returns the answer to the device.</p>
+                <p>8. The browser connects to the server using the resulting IP address.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>Example</h4>
+                <p>
+                    When you enter www.example.com, DNS can return
+                    an IP address associated with that name. The
+                    browser then uses the address to connect to the
+                    website's server.
+                </p>
+            </div>
+        </section>
+
+        <!-- Hierarchy -->
+        <section class="content-section">
+            <p class="section-label">04 • DNS HIERARCHY</p>
+            <h3>DNS Hierarchy</h3>
+
+            <p>
+                DNS is organized into a hierarchy. Different servers
+                are responsible for different parts of the domain
+                name system.
+            </p>
+
+            <div class="sequence">
+                <p><strong>1. Root DNS Servers</strong><br>
+                Direct resolvers toward the relevant top-level domain servers.</p>
+
+                <p><strong>2. TLD DNS Servers</strong><br>
+                Handle extensions such as .com, .org, and .in.</p>
+
+                <p><strong>3. Authoritative DNS Servers</strong><br>
+                Provide the DNS records for the domains they manage.</p>
+
+                <p><strong>4. Recursive Resolver</strong><br>
+                Finds answers on behalf of the user's device and may cache them.</p>
+            </div>
+        </section>
+
+        <!-- Domain structure -->
+        <section class="content-section">
+            <p class="section-label">05 • DOMAIN STRUCTURE</p>
+            <h3>Structure of a Domain Name</h3>
+
+            <p>Consider the example:</p>
+
+            <div class="code-box">
+                <pre><code>www.example.com</code></pre>
+            </div>
+
+            <ul>
+                <li><strong>www:</strong> A subdomain or host label.</li>
+                <li><strong>example:</strong> The registered domain label in this example.</li>
+                <li><strong>.com:</strong> The top-level domain (TLD).</li>
+            </ul>
+
+            <p>
+                Domain names are read from right to left when
+                considering their hierarchy, with the root at the top.
+            </p>
+        </section>
+
+        <!-- Records -->
+        <section class="content-section">
+            <p class="section-label">06 • DNS RECORDS</p>
+            <h3>Types of DNS Records</h3>
+
+            <div class="important-points">
+                <h4>A Record</h4>
+                <p>Maps a hostname to an IPv4 address.</p>
+                <p><strong>Example:</strong> example.com → IPv4 address</p>
+            </div>
+
+            <div class="important-points">
+                <h4>AAAA Record</h4>
+                <p>Maps a hostname to an IPv6 address.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>CNAME Record</h4>
+                <p>Creates an alias from one domain name to another domain name.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>MX Record</h4>
+                <p>Identifies mail servers responsible for receiving email for a domain.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>NS Record</h4>
+                <p>Identifies the name servers for a DNS zone.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>TXT Record</h4>
+                <p>Stores text information, often used for domain verification and email security policies.</p>
+            </div>
+
+            <div class="important-points">
+                <h4>PTR Record</h4>
+                <p>Used for reverse DNS lookups, mapping an IP address to a domain name.</p>
+            </div>
+        </section>
+
+        <!-- Ports -->
+        <section class="content-section">
+            <p class="section-label">07 • PORTS</p>
+            <h3>DNS Port Numbers</h3>
+
+            <div class="important-points">
+                <ul>
+                    <li><strong>Port 53 UDP:</strong> Commonly used for DNS queries and responses.</li>
+                    <li><strong>Port 53 TCP:</strong> Used for DNS operations that require TCP, including zone transfers and some large responses.</li>
+                </ul>
+            </div>
+
+            <p>
+                DNS commonly uses UDP for ordinary queries, but TCP
+                is also an important part of DNS operation.
+            </p>
+        </section>
+
+        <!-- Advantages -->
+        <section class="content-section">
+            <p class="section-label">08 • ADVANTAGES</p>
+            <h3>Advantages of DNS</h3>
+
+            <ul>
+                <li>Users can remember domain names instead of IP addresses.</li>
+                <li>DNS caching can make repeated lookups faster.</li>
+                <li>Changes to server addresses can be managed through DNS records.</li>
+                <li>Supports email routing and other network services.</li>
+                <li>Its distributed design supports a very large number of domains.</li>
+            </ul>
+        </section>
+
+        <!-- Limitations -->
+        <section class="content-section">
+            <p class="section-label">09 • LIMITATIONS</p>
+            <h3>Limitations and Security Issues</h3>
+
+            <ul>
+                <li>DNS failures can make websites difficult to reach by name.</li>
+                <li>Incorrect records can direct users to the wrong server.</li>
+                <li>DNS spoofing or cache poisoning can create security risks.</li>
+                <li>Changes may take time to appear because of caching and TTL values.</li>
+            </ul>
+
+            <p>
+                DNSSEC can help protect DNS data integrity and
+                authenticity, but it does not encrypt ordinary DNS
+                queries by itself.
+            </p>
+        </section>
+
+        <!-- Exam Questions -->
+        <section class="content-section">
+            <p class="section-label">10 • EXAM PREPARATION</p>
+            <h3>Important Exam Questions</h3>
+
+            <div class="important-points">
+                <h4>Short Answer Questions</h4>
+                <ol>
+                    <li>What is DNS? Write its full form.</li>
+                    <li>Why is DNS required?</li>
+                    <li>What is an IP address?</li>
+                    <li>What is the function of a DNS resolver?</li>
+                    <li>Which port is used by DNS?</li>
+                    <li>What are A and MX records?</li>
+                </ol>
+            </div>
+
+            <div class="important-points">
+                <h4>Long Answer Questions</h4>
+                <ol>
+                    <li>Explain DNS working with a suitable example.</li>
+                    <li>Describe the DNS hierarchy.</li>
+                    <li>Explain the different types of DNS records.</li>
+                    <li>Discuss the advantages and security issues of DNS.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Quick Revision -->
+        <section class="revision-box">
+            <h3>Quick Revision</h3>
+
+            <p><strong>Full Form:</strong> Domain Name System</p>
+            <p><strong>Main Function:</strong> Resolves domain names into IP addresses.</p>
+            <p><strong>Common Port:</strong> 53 (UDP and TCP)</p>
+            <p><strong>A Record:</strong> IPv4 address</p>
+            <p><strong>AAAA Record:</strong> IPv6 address</p>
+            <p><strong>MX Record:</strong> Mail server</p>
+            <p><strong>CNAME Record:</strong> Domain name alias</p>
+            <p><strong>DNS Hierarchy:</strong> Root → TLD → Authoritative server</p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology • CS35302</p>
+        <p>Topic 09 • DNS</p>
+    </footer>
+
+</body>
+</html>

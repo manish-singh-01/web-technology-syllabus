@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Services - Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit3.html">← Back to Unit 3</a>
+        <a href="unit3-wsdl.html">Previous Topic</a>
+        <a href="unit3-web-services-architecture.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Web Services</h1>
+            <p>Unit 3 – Web Services, AJAX and CORBA</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to Web Services</h2>
+            <p>
+                A Web Service is a software system that allows different
+                applications to communicate and exchange data over a network.
+                It provides a standard way for applications to interact
+                with each other, even when they are developed using different
+                programming languages or platforms.
+            </p>
+            <p>
+                Web services are commonly used to connect websites, mobile
+                applications, databases and enterprise software systems.
+            </p>
+            <p>
+                For example, a shopping website may use a payment web service
+                to process online payments.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Definition of Web Services</h2>
+            <p>
+                A web service is a network-accessible software component
+                that performs a specific task and allows other applications
+                to access its functionality through standard communication
+                protocols and data formats.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Characteristics of Web Services</h2>
+            <ul>
+                <li><strong>Interoperability:</strong> Different applications can communicate with each other.</li>
+                <li><strong>Platform Independent:</strong> Web services can work across different operating systems.</li>
+                <li><strong>Language Independent:</strong> They can connect applications written in different programming languages.</li>
+                <li><strong>Reusability:</strong> A service can be used by multiple applications.</li>
+                <li><strong>Standard Communication:</strong> They use common web protocols and data formats.</li>
+                <li><strong>Loose Coupling:</strong> The client and service are connected through a defined interface rather than depending on each other's internal implementation.</li>
+                <li><strong>Discoverability:</strong> Services can be described and, in some systems, discovered through registries.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. How Web Services Work</h2>
+            <p>
+                Web services generally work through communication between
+                a service provider and a service consumer.
+            </p>
+
+            <div class="code-box">
+                <pre>
++----------------------+
+|   Service Consumer   |
+|   (Client / User)    |
++----------------------+
+           |
+           | Request
+           v
++----------------------+
+|    Web Service       |
+|      (Server)        |
++----------------------+
+           |
+           | Processing
+           v
++----------------------+
+|      Database        |
++----------------------+
+           |
+           | Result
+           v
++----------------------+
+|   Service Consumer   |
+|    Gets Response     |
++----------------------+
+                </pre>
+            </div>
+
+            <h3>Working Steps</h3>
+            <ol>
+                <li>The client sends a request to the web service.</li>
+                <li>The web service receives the request.</li>
+                <li>The service processes the requested operation.</li>
+                <li>It may retrieve or update information in a database.</li>
+                <li>The service prepares a response.</li>
+                <li>The response is returned to the client.</li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Components and Technologies of Web Services</h2>
+
+            <h3>1. XML (Extensible Markup Language)</h3>
+            <p>
+                XML is used to represent and exchange structured data.
+                It is commonly used in SOAP-based web services.
+            </p>
+
+            <h3>2. SOAP (Simple Object Access Protocol)</h3>
+            <p>
+                SOAP is an XML-based messaging protocol used to exchange
+                structured information between applications.
+            </p>
+
+            <h3>3. WSDL (Web Services Description Language)</h3>
+            <p>
+                WSDL describes the operations, messages, bindings and
+                endpoints of a web service.
+            </p>
+
+            <h3>4. UDDI (Universal Description, Discovery and Integration)</h3>
+            <p>
+                UDDI is a registry standard that helps publish and discover
+                web services.
+            </p>
+
+            <h3>5. HTTP and HTTPS</h3>
+            <p>
+                HTTP and HTTPS are commonly used to transfer web service
+                requests and responses over a network.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Types of Web Services</h2>
+
+            <h3>1. SOAP Web Services</h3>
+            <p>
+                SOAP web services use the SOAP messaging protocol.
+                They commonly exchange XML-based messages and can use
+                WSDL to describe their interfaces.
+            </p>
+
+            <h3>2. RESTful Web Services</h3>
+            <p>
+                RESTful web services follow the REST architectural style.
+                They commonly use HTTP methods such as GET, POST, PUT
+                and DELETE to work with resources.
+            </p>
+            <p>
+                REST APIs frequently use JSON for data exchange, although
+                other formats can also be used.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Example of a Web Service</h2>
+            <p>
+                Consider a weather application. The application needs
+                current weather information for a particular city.
+            </p>
+
+            <div class="code-box">
+                <pre>
+User enters city name
+         |
+         v
+Weather Application
+         |
+         v
+Sends Request to Weather API
+         |
+         v
+Weather Web Service
+         |
+         v
+Returns Weather Data
+         |
+         v
+Application Displays Result
+                </pre>
+            </div>
+
+            <p>
+                The weather service receives the city name and returns
+                information such as temperature, humidity and weather
+                conditions.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Web Service Request and Response Example</h2>
+            <p>
+                The following is a simplified REST API example that
+                retrieves information about a user.
+            </p>
+
+            <div class="code-box">
+                <h3>Request</h3>
+                <pre>
+GET /api/users/101 HTTP/1.1
+Host: example.com
+Accept: application/json
+                </pre>
+            </div>
+
+            <div class="code-box">
+                <h3>Response</h3>
+                <pre>
+{
+    "id": 101,
+    "name": "Rahul",
+    "course": "B.Tech",
+    "department": "Computer Science"
+}
+                </pre>
+            </div>
+
+            <p>
+                Here, the client requests user information using an HTTP
+                GET request. The service returns the data in JSON format.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Advantages of Web Services</h2>
+            <ul>
+                <li>Allow communication between different applications.</li>
+                <li>Support platform and programming language independence.</li>
+                <li>Promote software reusability.</li>
+                <li>Reduce integration difficulties between systems.</li>
+                <li>Support distributed application development.</li>
+                <li>Can be accessed over networks and the internet.</li>
+                <li>Help organizations connect different software systems.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Disadvantages of Web Services</h2>
+            <ul>
+                <li>Depend on network availability and connectivity.</li>
+                <li>May introduce communication delays.</li>
+                <li>Require security measures to protect data.</li>
+                <li>Integration and configuration can be complex.</li>
+                <li>Service failures can affect dependent applications.</li>
+                <li>Large messages and frequent requests may increase resource usage.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Applications of Web Services</h2>
+            <ul>
+                <li><strong>Banking:</strong> Online transactions and account services.</li>
+                <li><strong>E-Commerce:</strong> Payment gateways and order processing.</li>
+                <li><strong>Travel:</strong> Flight booking and hotel reservation systems.</li>
+                <li><strong>Weather:</strong> Weather information and forecasts.</li>
+                <li><strong>Healthcare:</strong> Sharing information between healthcare systems.</li>
+                <li><strong>Education:</strong> Student portals and online learning systems.</li>
+                <li><strong>Social Media:</strong> Sharing data between applications through APIs.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Difference Between Web Services and Web Applications</h2>
+
+            <table>
+                <tr>
+                    <th>Web Services</th>
+                    <th>Web Applications</th>
+                </tr>
+                <tr>
+                    <td>Allow applications to communicate with each other.</td>
+                    <td>Provide functionality to users through a user interface.</td>
+                </tr>
+                <tr>
+                    <td>Usually exchange structured data.</td>
+                    <td>Usually display interactive pages and content.</td>
+                </tr>
+                <tr>
+                    <td>Often accessed through APIs.</td>
+                    <td>Usually accessed through a web browser.</td>
+                </tr>
+                <tr>
+                    <td>May not have a graphical user interface.</td>
+                    <td>Usually have a graphical user interface.</td>
+                </tr>
+                <tr>
+                    <td>Example: Payment API.</td>
+                    <td>Example: Online shopping website.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Difference Between SOAP and RESTful Web Services</h2>
+
+            <table>
+                <tr>
+                    <th>SOAP</th>
+                    <th>REST</th>
+                </tr>
+                <tr>
+                    <td>Messaging protocol.</td>
+                    <td>Architectural style.</td>
+                </tr>
+                <tr>
+                    <td>Uses XML-based SOAP messages.</td>
+                    <td>Can use JSON, XML and other formats.</td>
+                </tr>
+                <tr>
+                    <td>Defines a strict message structure.</td>
+                    <td>Uses resources and standard HTTP methods.</td>
+                </tr>
+                <tr>
+                    <td>Supports different transport protocols.</td>
+                    <td>Commonly uses HTTP/HTTPS.</td>
+                </tr>
+                <tr>
+                    <td>Often used in enterprise integrations.</td>
+                    <td>Commonly used in web and mobile APIs.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+            <ul>
+                <li>A web service allows applications to communicate over a network.</li>
+                <li>Web services support interoperability.</li>
+                <li>They are generally platform and language independent.</li>
+                <li>SOAP and REST are common approaches for building web services.</li>
+                <li>WSDL describes SOAP-based service interfaces.</li>
+                <li>UDDI supports service publishing and discovery.</li>
+                <li>Web services commonly use HTTP or HTTPS.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>14. Important Exam Questions</h2>
+            <ol>
+                <li>What are web services? Explain with an example.</li>
+                <li>Explain the characteristics of web services.</li>
+                <li>Describe the working of web services with a diagram.</li>
+                <li>Explain the technologies used in web services.</li>
+                <li>Differentiate between SOAP and RESTful web services.</li>
+                <li>Write the advantages and disadvantages of web services.</li>
+                <li>Explain the applications of web services.</li>
+                <li>Differentiate between web services and web applications.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <p><strong>Web Service:</strong> Enables communication between applications.</p>
+            <p><strong>SOAP:</strong> XML-based messaging protocol.</p>
+            <p><strong>REST:</strong> Architectural style for network-based services.</p>
+            <p><strong>WSDL:</strong> Describes web service interfaces.</p>
+            <p><strong>UDDI:</strong> Helps publish and discover services.</p>
+            <p><strong>HTTP/HTTPS:</strong> Common communication protocols.</p>
+            <p><strong>JSON:</strong> Common data format used by REST APIs.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit3-wsdl.html">← Previous Topic</a>
+            <a href="unit3-web-services-architecture.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 3</p>
+    </footer>
+
+</body>
+</html>

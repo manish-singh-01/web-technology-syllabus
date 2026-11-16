@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Services Architecture - Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit3.html">← Back to Unit 3</a>
+        <a href="unit3-web-services.html">Previous Topic</a>
+        <a href="unit3-develop-deploy-web-services.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Web Services Architecture</h1>
+            <p>Unit 3 – Web Services, AJAX and CORBA</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to Web Services Architecture</h2>
+            <p>
+                Web Services Architecture is a framework that describes how
+                different applications communicate and exchange information
+                through web services over a network.
+            </p>
+            <p>
+                It defines the roles of service providers, service requesters
+                and service registries, along with the operations used to
+                publish, find and bind web services.
+            </p>
+            <p>
+                It helps applications developed using different programming
+                languages and platforms communicate with each other.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Basic Components of Web Services Architecture</h2>
+
+            <h3>1. Service Provider</h3>
+            <p>
+                A service provider is an organization or application that
+                creates and offers a web service to other applications.
+            </p>
+            <p>Example: A company providing a payment gateway API.</p>
+
+            <h3>2. Service Requester</h3>
+            <p>
+                A service requester is a client application that searches
+                for and uses a web service.
+            </p>
+            <p>Example: An online shopping application using a payment service.</p>
+
+            <h3>3. Service Registry</h3>
+            <p>
+                A service registry is a directory where information about
+                available web services can be published and discovered.
+                UDDI is a standard associated with this registry model.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Web Services Architecture Diagram</h2>
+
+            <div class="code-box">
+                <pre>
+             +----------------------+
+             |   Service Provider   |
+             |   (Creates Service)  |
+             +----------------------+
+                       |
+                       | Publish
+                       v
+             +----------------------+
+             |   Service Registry   |
+             |       (UDDI)         |
+             +----------------------+
+                       ^
+                       | Find
+                       |
+             +----------------------+
+             |  Service Requester   |
+             |      (Client)        |
+             +----------------------+
+                       |
+                       | Bind / Use
+                       v
+             +----------------------+
+             |   Web Service        |
+             |   (Provider)         |
+             +----------------------+
+                </pre>
+            </div>
+
+            <p>
+                The diagram shows how a service provider publishes a service,
+                a requester discovers it through a registry and then uses
+                the service.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Three Main Operations of Web Services</h2>
+
+            <h3>1. Publish</h3>
+            <p>
+                The service provider publishes information about its web
+                service in a service registry.
+            </p>
+
+            <h3>2. Find</h3>
+            <p>
+                The service requester searches the registry to find a
+                suitable web service.
+            </p>
+
+            <h3>3. Bind</h3>
+            <p>
+                The requester uses the service description and endpoint
+                information to connect to and invoke the selected service.
+            </p>
+
+            <div class="code-box">
+                <pre>
+Service Provider
+       |
+       | Publish
+       v
+Service Registry
+       |
+       | Find
+       v
+Service Requester
+       |
+       | Bind / Invoke
+       v
+Web Service
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Technologies Used in Web Services Architecture</h2>
+
+            <h3>1. XML (Extensible Markup Language)</h3>
+            <p>
+                XML is used to represent structured data and is commonly
+                used in SOAP-based web services.
+            </p>
+
+            <h3>2. SOAP (Simple Object Access Protocol)</h3>
+            <p>
+                SOAP is an XML-based messaging protocol used to exchange
+                structured information between applications.
+            </p>
+
+            <h3>3. WSDL (Web Services Description Language)</h3>
+            <p>
+                WSDL describes the operations, messages, bindings and
+                endpoints of a web service.
+            </p>
+
+            <h3>4. UDDI (Universal Description, Discovery and Integration)</h3>
+            <p>
+                UDDI is a registry standard used to publish and discover
+                web services.
+            </p>
+
+            <h3>5. HTTP and HTTPS</h3>
+            <p>
+                HTTP and HTTPS are commonly used to transfer web service
+                messages between clients and servers.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Working of Web Services Architecture</h2>
+            <p>The working process generally follows these steps:</p>
+
+            <ol>
+                <li>The service provider develops and deploys a web service.</li>
+                <li>The provider describes the service using a service description such as WSDL.</li>
+                <li>The provider publishes service information in a registry when a registry is used.</li>
+                <li>The service requester searches the registry to find the required service.</li>
+                <li>The requester obtains the service description and endpoint details.</li>
+                <li>The requester sends a request to the service.</li>
+                <li>The service processes the request and sends back a response.</li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Role of SOAP, WSDL and UDDI</h2>
+
+            <table>
+                <tr>
+                    <th>Technology</th>
+                    <th>Role</th>
+                </tr>
+                <tr>
+                    <td>SOAP</td>
+                    <td>Provides a structured message format for communication.</td>
+                </tr>
+                <tr>
+                    <td>WSDL</td>
+                    <td>Describes the web service and how to access it.</td>
+                </tr>
+                <tr>
+                    <td>UDDI</td>
+                    <td>Helps publish and discover web services through a registry.</td>
+                </tr>
+                <tr>
+                    <td>XML</td>
+                    <td>Represents structured data in XML-based messages.</td>
+                </tr>
+                <tr>
+                    <td>HTTP/HTTPS</td>
+                    <td>Commonly transports requests and responses.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Types of Web Services Architecture</h2>
+
+            <h3>1. SOAP-Based Architecture</h3>
+            <p>
+                SOAP-based architecture uses SOAP messages for communication.
+                WSDL commonly describes the service interface, while HTTP
+                or other supported transport protocols carry messages.
+            </p>
+
+            <h3>2. REST-Based Architecture</h3>
+            <p>
+                REST-based architecture follows the REST architectural style.
+                It uses resources identified by URLs and commonly uses HTTP
+                methods such as GET, POST, PUT and DELETE.
+            </p>
+            <p>
+                REST APIs frequently exchange data in JSON format, although
+                XML and other formats can also be used.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Example of Web Services Architecture</h2>
+            <p>
+                Consider an online shopping website that uses an external
+                payment service to complete customer transactions.
+            </p>
+
+            <div class="code-box">
+                <pre>
+Customer
+   |
+   v
+Shopping Website
+   |
+   | Payment Request
+   v
+Payment Web Service
+   |
+   v
+Bank / Payment Gateway
+   |
+   | Payment Status
+   v
+Shopping Website
+   |
+   v
+Customer Receives Result
+                </pre>
+            </div>
+
+            <p>
+                In this example, the shopping website acts as a service
+                requester, while the payment system provides the service.
+                The payment service processes the transaction and returns
+                its status.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Advantages of Web Services Architecture</h2>
+            <ul>
+                <li>Supports communication between different applications.</li>
+                <li>Provides platform and language independence.</li>
+                <li>Promotes software reusability.</li>
+                <li>Supports distributed application development.</li>
+                <li>Allows services to be discovered and accessed through defined interfaces.</li>
+                <li>Helps integrate different business systems.</li>
+                <li>Can be extended according to application requirements.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Disadvantages of Web Services Architecture</h2>
+            <ul>
+                <li>Requires proper network connectivity.</li>
+                <li>Communication may introduce network delays.</li>
+                <li>Security must be carefully implemented.</li>
+                <li>Integration may become complex in large systems.</li>
+                <li>Service failures can affect dependent applications.</li>
+                <li>Managing multiple services requires monitoring and maintenance.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Applications of Web Services Architecture</h2>
+            <ul>
+                <li><strong>Banking:</strong> Connecting banking applications and payment systems.</li>
+                <li><strong>E-Commerce:</strong> Integrating shopping, payment and delivery services.</li>
+                <li><strong>Healthcare:</strong> Sharing information between healthcare applications.</li>
+                <li><strong>Travel:</strong> Connecting flight and hotel booking systems.</li>
+                <li><strong>Education:</strong> Integrating student portals and learning platforms.</li>
+                <li><strong>Business:</strong> Connecting enterprise applications and services.</li>
+            </ul>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+            <ul>
+                <li>Web Services Architecture defines how applications communicate through web services.</li>
+                <li>It has three main roles: provider, requester and registry.</li>
+                <li>Publish, Find and Bind are its three important operations.</li>
+                <li>SOAP is used for structured message exchange.</li>
+                <li>WSDL describes the service interface.</li>
+                <li>UDDI supports service publishing and discovery.</li>
+                <li>REST is another common architectural style for web APIs.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Important Exam Questions</h2>
+            <ol>
+                <li>What is Web Services Architecture?</li>
+                <li>Explain the three main components of web services architecture.</li>
+                <li>Draw and explain the web services architecture diagram.</li>
+                <li>Explain Publish, Find and Bind operations.</li>
+                <li>Describe the role of SOAP, WSDL and UDDI.</li>
+                <li>Explain the working of web services architecture.</li>
+                <li>Write the advantages and disadvantages of web services architecture.</li>
+                <li>Explain the applications of web services architecture.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <p><strong>Service Provider:</strong> Creates and offers a web service.</p>
+            <p><strong>Service Requester:</strong> Searches for and uses a service.</p>
+            <p><strong>Service Registry:</strong> Stores service information for discovery.</p>
+            <p><strong>Publish:</strong> Provider publishes service information.</p>
+            <p><strong>Find:</strong> Requester searches for a service.</p>
+            <p><strong>Bind:</strong> Requester connects to and invokes the service.</p>
+            <p><strong>SOAP:</strong> Message exchange protocol.</p>
+            <p><strong>WSDL:</strong> Service description language.</p>
+            <p><strong>UDDI:</strong> Service registry standard.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit3-web-services.html">← Previous Topic</a>
+            <a href="unit3-develop-deploy-web-services.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 3</p>
+    </footer>
+
+</body>
+</html>

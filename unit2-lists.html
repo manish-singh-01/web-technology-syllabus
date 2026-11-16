@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Lists | Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit2.html">← Back to Unit 2</a>
+        <div>
+            <span>UNIT 02 • TOPIC 01</span>
+            <h1>HTML Lists</h1>
+        </div>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <p class="topic-label">TOPIC 01</p>
+            <h2>Lists in HTML</h2>
+            <p>
+                Learn how to organize information using ordered,
+                unordered, description, and nested lists in HTML.
+            </p>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <p class="section-label">01 • INTRODUCTION</p>
+            <h3>What is an HTML List?</h3>
+
+            <p>
+                An HTML list is used to display a collection of
+                related items in an organized format. Lists make
+                webpage content easier to read and understand.
+            </p>
+
+            <div class="important-points">
+                <h4>Types of HTML Lists</h4>
+                <ul>
+                    <li>Ordered List — uses numbers or letters.</li>
+                    <li>Unordered List — uses bullets.</li>
+                    <li>Description List — displays terms and their descriptions.</li>
+                    <li>Nested List — places one list inside another list item.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Ordered List -->
+        <section class="content-section">
+            <p class="section-label">02 • ORDERED LIST</p>
+            <h3>Ordered List (ol)</h3>
+
+            <p>
+                An ordered list displays items in a particular
+                sequence, usually using numbers or letters.
+                It uses the &lt;ol&gt; tag, with each item inside
+                an &lt;li&gt; tag.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;ol&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+
+            <div class="important-points">
+                <h4>Output</h4>
+                <ol>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ol>
+            </div>
+
+            <h3>Ordered List Types</h3>
+
+            <div class="code-box">
+                <pre><code>&lt;ol type="1"&gt;...&lt;/ol&gt;
+&lt;ol type="A"&gt;...&lt;/ol&gt;
+&lt;ol type="a"&gt;...&lt;/ol&gt;
+&lt;ol type="I"&gt;...&lt;/ol&gt;
+&lt;ol type="i"&gt;...&lt;/ol&gt;</code></pre>
+            </div>
+
+            <ul>
+                <li><code>1</code> — Numbers: 1, 2, 3</li>
+                <li><code>A</code> — Uppercase letters: A, B, C</li>
+                <li><code>a</code> — Lowercase letters: a, b, c</li>
+                <li><code>I</code> — Uppercase Roman numerals: I, II, III</li>
+                <li><code>i</code> — Lowercase Roman numerals: i, ii, iii</li>
+            </ul>
+
+            <p>
+                The <code>start</code> attribute can specify the
+                starting number of an ordered list.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;ol start="5"&gt;
+    &lt;li&gt;First displayed item&lt;/li&gt;
+    &lt;li&gt;Second displayed item&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- Unordered List -->
+        <section class="content-section">
+            <p class="section-label">03 • UNORDERED LIST</p>
+            <h3>Unordered List (ul)</h3>
+
+            <p>
+                An unordered list displays items with bullet
+                markers instead of a numbered sequence. It uses
+                the &lt;ul&gt; tag and &lt;li&gt; elements.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;ul&gt;
+    &lt;li&gt;C++&lt;/li&gt;
+    &lt;li&gt;Python&lt;/li&gt;
+    &lt;li&gt;Java&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+
+            <div class="important-points">
+                <h4>Output</h4>
+                <ul>
+                    <li>C++</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                </ul>
+            </div>
+
+            <p>
+                CSS can customize bullet appearance using the
+                <code>list-style-type</code> property.
+            </p>
+
+            <div class="code-box">
+                <pre><code>ul {
+    list-style-type: square;
+}
+
+/* Other values:
+   disc
+   circle
+   none
+*/</code></pre>
+            </div>
+        </section>
+
+        <!-- Description List -->
+        <section class="content-section">
+            <p class="section-label">04 • DESCRIPTION LIST</p>
+            <h3>Description List (dl)</h3>
+
+            <p>
+                A description list displays terms and their
+                descriptions. It uses three tags:
+            </p>
+
+            <ul>
+                <li><code>&lt;dl&gt;</code> — Defines the list.</li>
+                <li><code>&lt;dt&gt;</code> — Defines a term.</li>
+                <li><code>&lt;dd&gt;</code> — Provides the description.</li>
+            </ul>
+
+            <div class="code-box">
+                <pre><code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Defines webpage structure.&lt;/dd&gt;
+
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Controls webpage presentation.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+            </div>
+
+            <div class="important-points">
+                <h4>Output</h4>
+                <dl>
+                    <dt><strong>HTML</strong></dt>
+                    <dd>Defines webpage structure.</dd>
+                    <dt><strong>CSS</strong></dt>
+                    <dd>Controls webpage presentation.</dd>
+                </dl>
+            </div>
+        </section>
+
+        <!-- Nested List -->
+        <section class="content-section">
+            <p class="section-label">05 • NESTED LIST</p>
+            <h3>Nested Lists</h3>
+
+            <p>
+                A nested list is a list placed inside a list item
+                of another list. It helps organize categories
+                and subcategories.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;ul&gt;
+    &lt;li&gt;Frontend
+        &lt;ul&gt;
+            &lt;li&gt;HTML&lt;/li&gt;
+            &lt;li&gt;CSS&lt;/li&gt;
+            &lt;li&gt;JavaScript&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+
+    &lt;li&gt;Backend&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+
+            <div class="important-points">
+                <h4>Output</h4>
+                <ul>
+                    <li>Frontend
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </li>
+                    <li>Backend</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Attributes -->
+        <section class="content-section">
+            <p class="section-label">06 • ATTRIBUTES</p>
+            <h3>Important List Attributes</h3>
+
+            <div class="important-points">
+                <h4>type</h4>
+                <p>Specifies the marker style for an ordered list.</p>
+                <code>&lt;ol type="A"&gt;</code>
+            </div>
+
+            <div class="important-points">
+                <h4>start</h4>
+                <p>Sets the starting value for an ordered list.</p>
+                <code>&lt;ol start="3"&gt;</code>
+            </div>
+
+            <div class="important-points">
+                <h4>reversed</h4>
+                <p>Displays an ordered list in descending order.</p>
+                <code>&lt;ol reversed&gt;</code>
+            </div>
+
+            <div class="important-points">
+                <h4>list-style-type</h4>
+                <p>CSS property used to customize list markers.</p>
+                <code>list-style-type: circle;</code>
+            </div>
+        </section>
+
+        <!-- Practical Example -->
+        <section class="content-section">
+            <p class="section-label">07 • PRACTICAL EXAMPLE</p>
+            <h3>Student Skills List</h3>
+
+            <p>
+                The following example combines an ordered list
+                with a nested unordered list.
+            </p>
+
+            <div class="code-box">
+                <pre><code>&lt;h2&gt;My Learning Plan&lt;/h2&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Programming
+        &lt;ul&gt;
+            &lt;li&gt;C++&lt;/li&gt;
+            &lt;li&gt;Java&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Web Development&lt;/li&gt;
+    &lt;li&gt;Database Management&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- Exam Questions -->
+        <section class="content-section">
+            <p class="section-label">08 • EXAM PREPARATION</p>
+            <h3>Important Exam Questions</h3>
+
+            <div class="important-points">
+                <h4>Short Answer Questions</h4>
+                <ol>
+                    <li>What is an HTML list?</li>
+                    <li>Differentiate between ordered and unordered lists.</li>
+                    <li>What are the uses of the &lt;ol&gt; and &lt;ul&gt; tags?</li>
+                    <li>What is a description list?</li>
+                    <li>What is a nested list?</li>
+                </ol>
+            </div>
+
+            <div class="important-points">
+                <h4>Long Answer Questions</h4>
+                <ol>
+                    <li>Explain the different types of HTML lists with examples.</li>
+                    <li>Write HTML code to create a nested list.</li>
+                    <li>Explain the important attributes of an ordered list.</li>
+                    <li>Explain the description list with a suitable example.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Revision -->
+        <section class="revision-box">
+            <h3>Quick Revision</h3>
+
+            <p><strong>Ordered List:</strong> &lt;ol&gt;</p>
+            <p><strong>Unordered List:</strong> &lt;ul&gt;</p>
+            <p><strong>List Item:</strong> &lt;li&gt;</p>
+            <p><strong>Description List:</strong> &lt;dl&gt;</p>
+            <p><strong>Description Term:</strong> &lt;dt&gt;</p>
+            <p><strong>Description Details:</strong> &lt;dd&gt;</p>
+            <p><strong>Marker Styling:</strong> CSS list-style-type</p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology • CS35302</p>
+        <p>Unit 02 • Topic 01: HTML Lists</p>
+    </footer>
+
+</body>
+</html>

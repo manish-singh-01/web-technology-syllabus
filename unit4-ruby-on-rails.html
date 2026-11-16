@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby on Rails</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit4.html">← Back to Unit 4</a>
+        <a href="unit4-rss.html">Previous Topic</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Ruby on Rails</h1>
+            <p>Unit 4 – Web 2.0, Web 3.0 and Emerging Web Technologies</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to Ruby on Rails</h2>
+
+            <p>
+                Ruby on Rails, commonly known as Rails, is an open-source
+                web application framework written in the Ruby programming
+                language.
+            </p>
+
+            <p>
+                It is used to develop database-driven and dynamic web
+                applications quickly and efficiently. Rails provides
+                built-in tools, libraries and conventions that simplify
+                web development.
+            </p>
+
+            <p>
+                Ruby on Rails follows the principle of Convention over
+                Configuration (CoC) and the Don't Repeat Yourself (DRY)
+                principle.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. What is Ruby?</h2>
+
+            <p>
+                Ruby is a high-level, interpreted, general-purpose
+                programming language. It was designed to be simple,
+                readable and productive for programmers.
+            </p>
+
+            <h3>Features of Ruby</h3>
+
+            <ul>
+                <li>Simple and readable syntax.</li>
+                <li>Object-oriented programming language.</li>
+                <li>Dynamic typing.</li>
+                <li>Supports automatic memory management.</li>
+                <li>Provides a large collection of libraries.</li>
+                <li>Can be used for web development and scripting.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Features of Ruby on Rails</h2>
+
+            <ul>
+                <li><strong>Open Source:</strong> Rails is freely available and can be modified.</li>
+                <li><strong>MVC Architecture:</strong> Separates application logic into Model, View and Controller.</li>
+                <li><strong>Convention over Configuration:</strong> Reduces the need for unnecessary configuration.</li>
+                <li><strong>DRY Principle:</strong> Avoids repeating the same code unnecessarily.</li>
+                <li><strong>Database Support:</strong> Provides tools for database operations.</li>
+                <li><strong>Built-in Libraries:</strong> Offers reusable components for common tasks.</li>
+                <li><strong>Rapid Development:</strong> Helps developers build applications efficiently.</li>
+                <li><strong>Routing System:</strong> Maps incoming web requests to application actions.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. MVC Architecture in Ruby on Rails</h2>
+
+            <p>
+                Ruby on Rails follows the Model-View-Controller (MVC)
+                architectural pattern. It separates an application
+                into three main components.
+            </p>
+
+            <h3>1. Model</h3>
+            <p>
+                The Model manages application data and business logic.
+                It communicates with the database and handles data-related
+                operations.
+            </p>
+
+            <h3>2. View</h3>
+            <p>
+                The View represents the user interface. It displays
+                information to users through HTML templates and other
+                presentation elements.
+            </p>
+
+            <h3>3. Controller</h3>
+            <p>
+                The Controller receives user requests, communicates
+                with the Model and selects the appropriate View
+                to generate a response.
+            </p>
+
+            <div class="code-box">
+                <pre>
+             USER
+               |
+               v
+          CONTROLLER
+           /       \
+          v         v
+       MODEL      VIEW
+          |         |
+          v         |
+       DATABASE     |
+          |         |
+          v         v
+       DATA     RESPONSE
+          \         /
+           \       /
+             USER
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Important Principles of Rails</h2>
+
+            <h3>1. Convention over Configuration (CoC)</h3>
+
+            <p>
+                This principle means that Rails provides default
+                conventions and standard rules so developers do not
+                need to configure every part of an application manually.
+            </p>
+
+            <h3>2. Don't Repeat Yourself (DRY)</h3>
+
+            <p>
+                DRY means that the same information or code should not
+                be repeated unnecessarily. Reusable code makes
+                applications easier to maintain.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Important Components of Ruby on Rails</h2>
+
+            <ul>
+                <li><strong>Active Record:</strong> Handles database operations and object-relational mapping (ORM).</li>
+                <li><strong>Action Controller:</strong> Processes incoming requests and controls application flow.</li>
+                <li><strong>Action View:</strong> Handles the presentation layer and templates.</li>
+                <li><strong>Action Routing:</strong> Maps URLs to controller actions.</li>
+                <li><strong>Active Support:</strong> Provides useful extensions and helper methods for Ruby.</li>
+                <li><strong>Migration:</strong> Manages changes to database structure.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Working of Ruby on Rails</h2>
+
+            <ol>
+                <li>The user sends a request through a web browser.</li>
+                <li>The Rails routing system identifies the correct route.</li>
+                <li>The Controller receives and processes the request.</li>
+                <li>The Controller communicates with the Model if data is required.</li>
+                <li>The Model interacts with the database.</li>
+                <li>The Controller selects the appropriate View.</li>
+                <li>The View generates the response for the browser.</li>
+            </ol>
+
+            <div class="code-box">
+                <pre>
+      USER REQUEST
+            |
+            v
+         ROUTER
+            |
+            v
+       CONTROLLER
+            |
+            v
+          MODEL
+            |
+            v
+        DATABASE
+            |
+            v
+       CONTROLLER
+            |
+            v
+          VIEW
+            |
+            v
+      HTML RESPONSE
+            |
+            v
+          USER
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Simple Ruby on Rails Example</h2>
+
+            <p>
+                The following Ruby code defines a simple method
+                that displays a welcome message.
+            </p>
+
+            <div class="code-box">
+                <pre>
+def welcome
+    puts "Welcome to Ruby on Rails"
+end
+
+welcome
+                </pre>
+            </div>
+
+            <p>
+                <strong>Output:</strong>
+            </p>
+
+            <div class="code-box">
+                <pre>
+Welcome to Ruby on Rails
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Advantages of Ruby on Rails</h2>
+
+            <ul>
+                <li>Speeds up web application development.</li>
+                <li>Provides reusable components and libraries.</li>
+                <li>Follows the MVC architecture.</li>
+                <li>Supports database integration.</li>
+                <li>Reduces repetitive programming work.</li>
+                <li>Has a large developer community.</li>
+                <li>Supports testing and application maintenance.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Disadvantages of Ruby on Rails</h2>
+
+            <ul>
+                <li>May consume more resources for some applications.</li>
+                <li>Can have a learning curve for beginners.</li>
+                <li>Performance may require optimization for demanding workloads.</li>
+                <li>Some projects may require additional libraries or configuration.</li>
+                <li>Its conventions may feel restrictive in highly customized applications.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Applications of Ruby on Rails</h2>
+
+            <ul>
+                <li><strong>E-commerce:</strong> Online shopping applications.</li>
+                <li><strong>Social Platforms:</strong> Community and networking applications.</li>
+                <li><strong>Content Management:</strong> Websites that manage digital content.</li>
+                <li><strong>Business Applications:</strong> Internal management systems.</li>
+                <li><strong>Web Portals:</strong> Dynamic websites and online services.</li>
+                <li><strong>Startups:</strong> Rapid development of web application prototypes.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Ruby on Rails vs Traditional Web Development</h2>
+
+            <table>
+                <tr>
+                    <th>Ruby on Rails</th>
+                    <th>Traditional Development</th>
+                </tr>
+
+                <tr>
+                    <td>Provides a ready-made web framework.</td>
+                    <td>May require developers to build more components manually.</td>
+                </tr>
+
+                <tr>
+                    <td>Follows MVC architecture.</td>
+                    <td>Architecture depends on the chosen development approach.</td>
+                </tr>
+
+                <tr>
+                    <td>Uses conventions to reduce configuration.</td>
+                    <td>May require more manual configuration.</td>
+                </tr>
+
+                <tr>
+                    <td>Includes tools for database operations.</td>
+                    <td>Database integration depends on selected technologies.</td>
+                </tr>
+
+                <tr>
+                    <td>Encourages rapid development.</td>
+                    <td>Development speed depends on the tools and framework used.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+
+            <ul>
+                <li>Ruby on Rails is an open-source web application framework.</li>
+                <li>It is written in the Ruby programming language.</li>
+                <li>Rails follows the MVC architecture.</li>
+                <li>MVC stands for Model, View and Controller.</li>
+                <li>CoC stands for Convention over Configuration.</li>
+                <li>DRY stands for Don't Repeat Yourself.</li>
+                <li>Active Record handles database-related operations.</li>
+                <li>Rails supports rapid web application development.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Important Exam Questions</h2>
+
+            <ol>
+                <li>What is Ruby on Rails? Explain its features.</li>
+                <li>Explain MVC architecture in Ruby on Rails with a diagram.</li>
+                <li>What is the Ruby programming language?</li>
+                <li>Explain the principles of Convention over Configuration and DRY.</li>
+                <li>Describe the important components of Ruby on Rails.</li>
+                <li>Explain the working of Ruby on Rails.</li>
+                <li>Write the advantages and disadvantages of Ruby on Rails.</li>
+                <li>Explain the applications of Ruby on Rails.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+
+            <p><strong>Ruby on Rails:</strong> Open-source web application framework.</p>
+            <p><strong>Language:</strong> Ruby.</p>
+            <p><strong>Architecture:</strong> MVC.</p>
+            <p><strong>Model:</strong> Handles data and business logic.</p>
+            <p><strong>View:</strong> Displays the user interface.</p>
+            <p><strong>Controller:</strong> Handles requests and application flow.</p>
+            <p><strong>CoC:</strong> Convention over Configuration.</p>
+            <p><strong>DRY:</strong> Don't Repeat Yourself.</p>
+            <p><strong>Active Record:</strong> Database interaction and ORM.</p>
+            <p><strong>Purpose:</strong> Rapid development of web applications.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit4-rss.html">← Previous Topic</a>
+            <a href="unit4.html">Back to Unit 4</a>
+            <a href="unit4-open-apis.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 4</p>
+    </footer>
+
+</body>
+</html>

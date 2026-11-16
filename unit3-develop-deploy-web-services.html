@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developing and Deploying Web Services - Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit3.html">← Back to Unit 3</a>
+        <a href="unit3-web-services-architecture.html">Previous Topic</a>
+        <a href="unit3-ajax-performance.html">Next Topic →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Developing and Deploying Web Services</h1>
+            <p>Unit 3 – Web Services, AJAX and CORBA</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction</h2>
+            <p>
+                Developing and deploying web services involves designing,
+                creating, testing and making software services available
+                over a network.
+            </p>
+            <p>
+                Web services allow different applications to communicate
+                and exchange information regardless of their programming
+                languages or operating systems.
+            </p>
+            <p>
+                For example, an online shopping website can use a payment
+                web service to process customer transactions.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. What is Web Service Development?</h2>
+            <p>
+                Web service development is the process of creating a
+                software component that provides specific functionality
+                to other applications through a defined interface.
+            </p>
+            <p>
+                It includes designing service operations, writing program
+                code, handling requests and responses, and testing the
+                service.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Requirements for Developing Web Services</h2>
+            <ul>
+                <li><strong>Programming Language:</strong> Java, Python, C#, JavaScript or PHP.</li>
+                <li><strong>Web Framework:</strong> Spring Boot, Flask, Django, Express.js or ASP.NET.</li>
+                <li><strong>Communication Protocol:</strong> HTTP or HTTPS.</li>
+                <li><strong>Data Format:</strong> JSON or XML.</li>
+                <li><strong>Database:</strong> MySQL, MongoDB or PostgreSQL when data storage is required.</li>
+                <li><strong>Development Tools:</strong> VS Code, IntelliJ IDEA or Eclipse.</li>
+                <li><strong>Testing Tools:</strong> Postman or automated testing frameworks.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Steps for Developing Web Services</h2>
+
+            <h3>Step 1: Identify Requirements</h3>
+            <p>
+                Identify the purpose of the service and the operations
+                it needs to perform.
+            </p>
+
+            <h3>Step 2: Design the Service</h3>
+            <p>
+                Define the service interface, endpoints, input parameters,
+                output data and communication format.
+            </p>
+
+            <h3>Step 3: Select Technologies</h3>
+            <p>
+                Choose a programming language, framework, database and
+                communication protocol according to project requirements.
+            </p>
+
+            <h3>Step 4: Write the Code</h3>
+            <p>
+                Implement the service logic to process incoming requests
+                and generate appropriate responses.
+            </p>
+
+            <h3>Step 5: Connect the Database</h3>
+            <p>
+                If the application requires persistent data, connect the
+                service to a suitable database.
+            </p>
+
+            <h3>Step 6: Test the Service</h3>
+            <p>
+                Test endpoints, input validation, responses, error handling
+                and security.
+            </p>
+
+            <h3>Step 7: Deploy the Service</h3>
+            <p>
+                Publish the tested service on a server or cloud platform
+                so that authorized clients can access it.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Development Process Diagram</h2>
+
+            <div class="code-box">
+                <pre>
++--------------------------+
+|   Requirement Analysis   |
++--------------------------+
+             |
+             v
++--------------------------+
+|     Service Design       |
++--------------------------+
+             |
+             v
++--------------------------+
+|  Technology Selection    |
++--------------------------+
+             |
+             v
++--------------------------+
+|     Coding / Creation    |
++--------------------------+
+             |
+             v
++--------------------------+
+|   Database Integration   |
++--------------------------+
+             |
+             v
++--------------------------+
+|        Testing           |
++--------------------------+
+             |
+             v
++--------------------------+
+|       Deployment         |
++--------------------------+
+             |
+             v
++--------------------------+
+|   Monitoring & Updates   |
++--------------------------+
+                </pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Example of Developing a Web Service Using Python</h2>
+            <p>
+                Flask is a lightweight Python framework that can be used
+                to develop RESTful web services.
+            </p>
+
+            <h3>Step 1: Install Flask</h3>
+            <div class="code-box">
+                <pre>
+pip install flask
+                </pre>
+            </div>
+
+            <h3>Step 2: Create a Python File</h3>
+            <p>Create a file named <strong>app.py</strong>.</p>
+
+            <div class="code-box">
+                <pre>
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route("/api/student", methods=["GET"])
+def get_student():
+    student = {
+        "id": 101,
+        "name": "Rahul",
+        "course": "B.Tech",
+        "department": "CSE"
+    }
+
+    return jsonify(student)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+                </pre>
+            </div>
+
+            <h3>Step 3: Run the Application</h3>
+            <div class="code-box">
+                <pre>
+python app.py
+                </pre>
+            </div>
+
+            <h3>Step 4: Access the API</h3>
+            <p>Open this address in your browser or API testing tool:</p>
+            <div class="code-box">
+                <pre>
+http://127.0.0.1:5000/api/student
+                </pre>
+            </div>
+
+            <h3>Expected Output</h3>
+            <div class="code-box">
+                <pre>
+{
+    "course": "B.Tech",
+    "department": "CSE",
+    "id": 101,
+    "name": "Rahul"
+}
+                </pre>
+            </div>
+
+            <p>
+                This example creates a simple web service that returns
+                student information in JSON format.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>7. What is Web Service Deployment?</h2>
+            <p>
+                Web service deployment is the process of making a developed
+                and tested web service available on a server or cloud platform
+                so that clients can access it over a network.
+            </p>
+            <p>
+                A deployed service can be accessed through its endpoint URL,
+                subject to its security and access configuration.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Steps for Deploying Web Services</h2>
+
+            <h3>1. Prepare the Application</h3>
+            <p>
+                Complete the code, configuration and required dependencies.
+            </p>
+
+            <h3>2. Select a Hosting Platform</h3>
+            <p>
+                Choose a server or cloud platform such as AWS, Microsoft
+                Azure, Google Cloud or another hosting provider.
+            </p>
+
+            <h3>3. Configure the Environment</h3>
+            <p>
+                Set up the runtime, environment variables, database
+                connections and other application requirements.
+            </p>
+
+            <h3>4. Upload or Publish the Application</h3>
+            <p>
+                Transfer the application to the hosting environment or
+                deploy it through a suitable deployment pipeline.
+            </p>
+
+            <h3>5. Configure Networking and Security</h3>
+            <p>
+                Configure the service endpoint, firewall rules, HTTPS
+                certificates and authentication where required.
+            </p>
+
+            <h3>6. Test the Deployed Service</h3>
+            <p>
+                Verify that the service is reachable and that its
+                operations return the expected responses.
+            </p>
+
+            <h3>7. Monitor and Maintain</h3>
+            <p>
+                Monitor performance, errors, availability and security.
+                Apply updates when needed.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Deployment Architecture</h2>
+
+            <div class="code-box">
+                <pre>
++----------------------+
+|   Client Application |
++----------------------+
+           |
+           | HTTP / HTTPS
+           v
++----------------------+
+|    Web Server        |
++----------------------+
+           |
+           v
++----------------------+
+|   Web Service        |
+|   Application        |
++----------------------+
+           |
+           v
++----------------------+
+|      Database        |
++----------------------+
+           |
+           v
++----------------------+
+|   Response to Client |
++----------------------+
+                </pre>
+            </div>
+
+            <p>
+                In this architecture, the client sends a request to the
+                deployed application. The web service processes the
+                request, communicates with the database when needed
+                and returns a response.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Types of Deployment</h2>
+
+            <h3>1. Local Deployment</h3>
+            <p>
+                The web service runs on a local computer or development
+                machine. It is mainly used for development and testing.
+            </p>
+
+            <h3>2. On-Premises Deployment</h3>
+            <p>
+                The organization hosts the service on its own servers
+                and manages its infrastructure.
+            </p>
+
+            <h3>3. Cloud Deployment</h3>
+            <p>
+                The web service is hosted on cloud infrastructure.
+                Cloud platforms provide computing resources, storage
+                and networking facilities.
+            </p>
+
+            <h3>4. Container-Based Deployment</h3>
+            <p>
+                The application and its dependencies are packaged into
+                containers using tools such as Docker. This helps maintain
+                consistent environments across systems.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Tools and Platforms for Deployment</h2>
+
+            <table>
+                <tr>
+                    <th>Tool / Platform</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td>AWS</td>
+                    <td>Cloud hosting and infrastructure services.</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Azure</td>
+                    <td>Cloud application hosting and management.</td>
+                </tr>
+                <tr>
+                    <td>Google Cloud</td>
+                    <td>Cloud computing and application deployment.</td>
+                </tr>
+                <tr>
+                    <td>Docker</td>
+                    <td>Packaging applications into containers.</td>
+                </tr>
+                <tr>
+                    <td>Postman</td>
+                    <td>Testing API requests and responses.</td>
+                </tr>
+                <tr>
+                    <td>Git</td>
+                    <td>Source code version control.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Security in Web Services</h2>
+            <p>
+                Security is important because web services exchange data
+                over networks and may handle sensitive information.
+            </p>
+            <ul>
+                <li><strong>Authentication:</strong> Verifies the identity of a user or application.</li>
+                <li><strong>Authorization:</strong> Controls which resources a user or application can access.</li>
+                <li><strong>HTTPS:</strong> Protects data during transmission through encryption.</li>
+                <li><strong>Input Validation:</strong> Checks incoming data to prevent invalid or harmful input.</li>
+                <li><strong>Access Control:</strong> Restricts access to authorized clients.</li>
+                <li><strong>Regular Updates:</strong> Helps fix vulnerabilities and improve security.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Advantages of Developing and Deploying Web Services</h2>
+            <ul>
+                <li>Enables communication between different applications.</li>
+                <li>Supports software reuse and modular development.</li>
+                <li>Can be accessed by clients over a network.</li>
+                <li>Supports integration with databases and external systems.</li>
+                <li>Cloud deployment can provide flexible computing resources.</li>
+                <li>Services can be updated and maintained independently.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>14. Challenges in Development and Deployment</h2>
+            <ul>
+                <li>Choosing suitable technologies and frameworks.</li>
+                <li>Managing network failures and response delays.</li>
+                <li>Protecting data and preventing unauthorized access.</li>
+                <li>Handling increasing user traffic.</li>
+                <li>Managing configuration across environments.</li>
+                <li>Monitoring service availability and performance.</li>
+            </ul>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+            <ul>
+                <li>Development means creating and testing a web service.</li>
+                <li>Deployment means making the service available to clients.</li>
+                <li>Python Flask can be used to create RESTful web services.</li>
+                <li>HTTP and HTTPS are commonly used for communication.</li>
+                <li>Postman is used to test APIs.</li>
+                <li>AWS, Azure and Google Cloud are cloud deployment platforms.</li>
+                <li>Authentication, authorization and HTTPS help secure web services.</li>
+                <li>Monitoring is important after deployment.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>15. Important Exam Questions</h2>
+            <ol>
+                <li>What is web service development?</li>
+                <li>Explain the steps involved in developing a web service.</li>
+                <li>Write a simple Python program to create a web service.</li>
+                <li>What is web service deployment?</li>
+                <li>Explain the steps involved in deploying web services.</li>
+                <li>Draw and explain web service deployment architecture.</li>
+                <li>Explain different types of deployment.</li>
+                <li>Describe the tools and platforms used for deployment.</li>
+                <li>Explain the importance of security in web services.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <p><strong>Development:</strong> Creating and testing a web service.</p>
+            <p><strong>Deployment:</strong> Making a service available over a network.</p>
+            <p><strong>Flask:</strong> Python framework for building web applications and APIs.</p>
+            <p><strong>Postman:</strong> Tool for testing APIs.</p>
+            <p><strong>Docker:</strong> Tool for containerizing applications.</p>
+            <p><strong>Cloud:</strong> Provides hosting and computing resources.</p>
+            <p><strong>HTTPS:</strong> Encrypts data during transmission.</p>
+            <p><strong>Monitoring:</strong> Checks service health and performance.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit3-web-services-architecture.html">← Previous Topic</a>
+            <a href="unit3-ajax-performance.html">Next Topic →</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 3</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORBA - Web Technology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit3.html">← Back to Unit 3</a>
+        <a href="unit3-ajax-programming.html">Previous Topic</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>CORBA</h1>
+            <p>Unit 3 – Web Services, AJAX and CORBA</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to CORBA</h2>
+
+            <p>
+                CORBA stands for Common Object Request Broker Architecture.
+                It is a standard developed by the Object Management Group
+                (OMG) to enable communication between software objects
+                running on different platforms and programming languages.
+            </p>
+
+            <p>
+                CORBA allows applications written in different programming
+                languages to communicate with each other through a common
+                interface. It hides the complexity of network communication
+                from the application developer.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Objectives of CORBA</h2>
+
+            <ul>
+                <li>To support communication between distributed objects.</li>
+                <li>To provide platform independence.</li>
+                <li>To support different programming languages.</li>
+                <li>To simplify communication between applications.</li>
+                <li>To provide a standard architecture for distributed systems.</li>
+                <li>To hide the complexity of remote object communication.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Important Components of CORBA</h2>
+
+            <h3>1. Object Request Broker (ORB)</h3>
+            <p>
+                ORB is the main component of CORBA. It manages communication
+                between client and server objects and helps clients access
+                remote objects.
+            </p>
+
+            <h3>2. IDL (Interface Definition Language)</h3>
+            <p>
+                IDL defines the interfaces of objects. It describes the
+                operations and data types that can be accessed by clients.
+                It is independent of any specific programming language.
+            </p>
+
+            <h3>3. Client Stub</h3>
+            <p>
+                A client stub acts as a local representative of a remote
+                object. It sends client requests to the ORB.
+            </p>
+
+            <h3>4. Server Skeleton</h3>
+            <p>
+                A server skeleton receives requests from the ORB and passes
+                them to the actual server object for processing.
+            </p>
+
+            <h3>5. Object Adapter</h3>
+            <p>
+                The Object Adapter connects the ORB with the implementation
+                of server objects and manages object references and requests.
+            </p>
+
+            <h3>6. GIOP and IIOP</h3>
+            <p>
+                GIOP (General Inter-ORB Protocol) defines how ORBs communicate.
+                IIOP (Internet Inter-ORB Protocol) is a version of GIOP that
+                works over TCP/IP networks.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Architecture of CORBA</h2>
+
+            <p>
+                CORBA architecture allows a client application to access
+                remote objects through the Object Request Broker (ORB).
+            </p>
+
+            <div class="code-box">
+                <pre>
+       CLIENT APPLICATION
+               |
+               v
+          CLIENT STUB
+               |
+               v
+       OBJECT REQUEST BROKER
+              (ORB)
+               |
+               v
+         SERVER SKELETON
+               |
+               v
+        SERVER OBJECT
+               |
+               v
+         RESULT TO CLIENT
+                </pre>
+            </div>
+
+            <p>
+                The ORB manages communication between the client and server.
+                The client does not need to know the internal implementation
+                or location of the remote object.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Working of CORBA</h2>
+
+            <p>The working of CORBA involves the following steps:</p>
+
+            <ol>
+                <li>
+                    <strong>Interface Definition:</strong>
+                    The developer defines the remote object's interface using IDL.
+                </li>
+
+                <li>
+                    <strong>Code Generation:</strong>
+                    IDL compilers generate client stubs and server skeletons
+                    for supported programming languages.
+                </li>
+
+                <li>
+                    <strong>Client Request:</strong>
+                    The client calls a method through the client stub.
+                </li>
+
+                <li>
+                    <strong>ORB Communication:</strong>
+                    The ORB transfers the request to the appropriate server object.
+                </li>
+
+                <li>
+                    <strong>Server Processing:</strong>
+                    The server skeleton passes the request to the server object.
+                </li>
+
+                <li>
+                    <strong>Response:</strong>
+                    The result is returned to the client through the ORB.
+                </li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Features of CORBA</h2>
+
+            <ul>
+                <li><strong>Language Independence:</strong> Supports applications written in different programming languages.</li>
+                <li><strong>Platform Independence:</strong> Supports communication across different operating systems and hardware platforms.</li>
+                <li><strong>Location Transparency:</strong> Clients can access remote objects without managing their physical location.</li>
+                <li><strong>Object-Oriented:</strong> Uses objects and interfaces for communication.</li>
+                <li><strong>Distributed Communication:</strong> Enables objects on different computers to interact.</li>
+                <li><strong>Interoperability:</strong> Provides standard protocols for communication between ORBs.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Advantages of CORBA</h2>
+
+            <ul>
+                <li>Supports communication between different programming languages.</li>
+                <li>Provides platform-independent communication.</li>
+                <li>Supports distributed application development.</li>
+                <li>Hides complex network communication details.</li>
+                <li>Promotes software reusability.</li>
+                <li>Provides a standard architecture for object communication.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Disadvantages of CORBA</h2>
+
+            <ul>
+                <li>Its architecture can be complex to understand and implement.</li>
+                <li>Configuration and maintenance may require specialized knowledge.</li>
+                <li>Communication overhead can affect performance.</li>
+                <li>Different implementations may create interoperability challenges.</li>
+                <li>It can be difficult to integrate with some modern web technologies.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Applications of CORBA</h2>
+
+            <ul>
+                <li><strong>Banking Systems:</strong> Communication between distributed banking applications.</li>
+                <li><strong>Telecommunication:</strong> Communication between network management systems.</li>
+                <li><strong>Airline Systems:</strong> Interaction between reservation and booking applications.</li>
+                <li><strong>Enterprise Applications:</strong> Communication between different business systems.</li>
+                <li><strong>Industrial Systems:</strong> Interaction between distributed control applications.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. CORBA vs Web Services</h2>
+
+            <table>
+                <tr>
+                    <th>CORBA</th>
+                    <th>Web Services</th>
+                </tr>
+
+                <tr>
+                    <td>Based on distributed object architecture.</td>
+                    <td>Based on service-oriented communication.</td>
+                </tr>
+
+                <tr>
+                    <td>Uses ORB for communication.</td>
+                    <td>Uses web protocols such as HTTP/HTTPS.</td>
+                </tr>
+
+                <tr>
+                    <td>Uses IDL to define interfaces.</td>
+                    <td>May use WSDL to describe SOAP services.</td>
+                </tr>
+
+                <tr>
+                    <td>Commonly uses IIOP for ORB communication.</td>
+                    <td>May use SOAP or REST-based communication.</td>
+                </tr>
+
+                <tr>
+                    <td>Often used in distributed enterprise systems.</td>
+                    <td>Widely used in web and application integration.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Difference Between CORBA and RMI</h2>
+
+            <table>
+                <tr>
+                    <th>CORBA</th>
+                    <th>Java RMI</th>
+                </tr>
+
+                <tr>
+                    <td>Language-independent architecture.</td>
+                    <td>Primarily designed for Java applications.</td>
+                </tr>
+
+                <tr>
+                    <td>Uses IDL.</td>
+                    <td>Uses Java interfaces.</td>
+                </tr>
+
+                <tr>
+                    <td>Uses ORB for communication.</td>
+                    <td>Uses Java Remote Method Invocation mechanisms.</td>
+                </tr>
+
+                <tr>
+                    <td>Supports different programming languages.</td>
+                    <td>Primarily supports communication between Java objects.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="important-points">
+            <h2>Important Points for Exams</h2>
+
+            <ul>
+                <li>CORBA stands for Common Object Request Broker Architecture.</li>
+                <li>CORBA was developed by OMG.</li>
+                <li>ORB stands for Object Request Broker.</li>
+                <li>IDL stands for Interface Definition Language.</li>
+                <li>GIOP stands for General Inter-ORB Protocol.</li>
+                <li>IIOP stands for Internet Inter-ORB Protocol.</li>
+                <li>Client Stub represents a remote object on the client side.</li>
+                <li>Server Skeleton handles incoming requests on the server side.</li>
+                <li>CORBA supports language and platform independence.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. Important Exam Questions</h2>
+
+            <ol>
+                <li>What is CORBA? Explain its objectives.</li>
+                <li>Explain the architecture of CORBA with a diagram.</li>
+                <li>What is ORB? Explain its role in CORBA.</li>
+                <li>Explain the role of IDL in CORBA.</li>
+                <li>Explain the working of CORBA step by step.</li>
+                <li>What are the main components of CORBA?</li>
+                <li>Write the advantages and disadvantages of CORBA.</li>
+                <li>Differentiate between CORBA and Web Services.</li>
+                <li>Differentiate between CORBA and Java RMI.</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+
+            <p><strong>CORBA:</strong> Common Object Request Broker Architecture.</p>
+            <p><strong>OMG:</strong> Object Management Group.</p>
+            <p><strong>ORB:</strong> Object Request Broker.</p>
+            <p><strong>IDL:</strong> Interface Definition Language.</p>
+            <p><strong>Stub:</strong> Client-side representative of a remote object.</p>
+            <p><strong>Skeleton:</strong> Receives requests on the server side.</p>
+            <p><strong>GIOP:</strong> General Inter-ORB Protocol.</p>
+            <p><strong>IIOP:</strong> Internet Inter-ORB Protocol.</p>
+            <p><strong>Main Purpose:</strong> Communication between distributed objects.</p>
+        </section>
+
+        <div class="topic-navigation">
+            <a href="unit3-ajax-programming.html">← Previous Topic</a>
+            <a href="unit3.html">Back to Unit 3</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology Notes | Unit 3</p>
+    </footer>
+
+</body>
+</html>

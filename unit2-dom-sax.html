@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Processors - DOM and SAX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="topic-navigation">
+        <a href="unit2.html">← Back to Unit 2</a>
+        <a href="unit2-presenting-xml.html">Previous Topic</a>
+        <a href="unit2.html">Back to Unit 2 →</a>
+    </nav>
+
+    <main class="topic-page">
+
+        <section class="topic-header">
+            <h1>Using XML Processors: DOM and SAX</h1>
+            <p>Unit 2 | Topic 11</p>
+            <p>Learn how XML documents are parsed and processed using DOM and SAX parsers.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Introduction to XML Processors</h2>
+            <p>
+                XML processors are software components that read,
+                parse and process XML documents. They help applications
+                access, validate and manipulate XML data.
+            </p>
+
+            <p>
+                XML processors check the structure of an XML document
+                and make its data available to applications.
+            </p>
+
+            <div class="important-points">
+                <h3>Important Points</h3>
+                <ul>
+                    <li>XML processors read XML documents.</li>
+                    <li>They identify elements, attributes and text.</li>
+                    <li>They help applications access XML data.</li>
+                    <li>They can check XML document structure.</li>
+                    <li>DOM and SAX are two common XML parsing approaches.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>2. What is XML Parsing?</h2>
+            <p>
+                XML parsing is the process of reading an XML document
+                and analyzing its structure and content.
+                A parser converts XML data into a form that an
+                application can understand and process.
+            </p>
+
+            <h3>Example XML Document</h3>
+            <div class="code-box">
+                <pre><code>&lt;?xml version="1.0"?&gt;
+
+&lt;student&gt;
+    &lt;name&gt;Rahul&lt;/name&gt;
+    &lt;rollno&gt;101&lt;/rollno&gt;
+    &lt;course&gt;B.Tech CSE&lt;/course&gt;
+&lt;/student&gt;</code></pre>
+            </div>
+
+            <p>
+                An XML parser reads this document and identifies
+                the student element, its child elements and their values.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Types of XML Parsers</h2>
+
+            <h3>1. DOM Parser</h3>
+            <p>
+                DOM stands for Document Object Model. A DOM parser
+                reads the complete XML document and creates an
+                in-memory tree structure.
+            </p>
+
+            <h3>2. SAX Parser</h3>
+            <p>
+                SAX stands for Simple API for XML. A SAX parser
+                reads an XML document sequentially and generates
+                events when it encounters elements, text and other
+                document components.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>4. DOM Parser</h2>
+            <p>
+                DOM is a tree-based XML parsing approach. It loads
+                the XML document into memory and represents it
+                as a hierarchical tree of nodes.
+            </p>
+
+            <h3>Working of DOM Parser</h3>
+            <ol>
+                <li>Reads the XML document.</li>
+                <li>Loads the complete document into memory.</li>
+                <li>Creates a tree structure of nodes.</li>
+                <li>Allows applications to access any node.</li>
+                <li>Allows nodes to be added, modified or deleted.</li>
+            </ol>
+
+            <h3>DOM Tree Example</h3>
+            <div class="important-points">
+                <pre><code>              Document
+                  |
+               Student
+              /   |    \
+           Name Rollno Course
+            |     |      |
+          Rahul  101   B.Tech</code></pre>
+            </div>
+
+            <h3>Features of DOM Parser</h3>
+            <ul>
+                <li>Loads the complete XML document into memory.</li>
+                <li>Provides random access to document nodes.</li>
+                <li>Supports modification of XML content.</li>
+                <li>Represents XML data in tree form.</li>
+                <li>Suitable for smaller and medium-sized documents.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>5. DOM Parser Example Using JavaScript</h2>
+            <p>
+                JavaScript provides DOMParser to parse XML text
+                and create a document object.
+            </p>
+
+            <div class="code-box">
+                <pre><code>let xmlData = `
+&lt;student&gt;
+    &lt;name&gt;Rahul&lt;/name&gt;
+    &lt;rollno&gt;101&lt;/rollno&gt;
+&lt;/student&gt;
+`;
+
+let parser = new DOMParser();
+
+let xmlDoc = parser.parseFromString(
+    xmlData,
+    "text/xml"
+);
+
+let name = xmlDoc
+    .getElementsByTagName("name")[0]
+    .textContent;
+
+console.log(name);</code></pre>
+            </div>
+
+            <p>
+                Output:
+            </p>
+            <div class="important-points">
+                <pre><code>Rahul</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Advantages of DOM Parser</h2>
+            <ul>
+                <li>Provides easy access to all document nodes.</li>
+                <li>Allows random access to XML elements.</li>
+                <li>Supports adding, updating and deleting nodes.</li>
+                <li>Provides a clear tree-based representation.</li>
+                <li>Useful when multiple parts of XML data need to be accessed.</li>
+            </ul>
+
+            <h3>Disadvantages of DOM Parser</h3>
+            <ul>
+                <li>Loads the entire document into memory.</li>
+                <li>Requires more memory for large XML files.</li>
+                <li>May be slower for very large documents.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>7. SAX Parser</h2>
+            <p>
+                SAX stands for Simple API for XML. It is an
+                event-based XML parsing approach.
+            </p>
+
+            <p>
+                Unlike DOM, SAX does not normally load the entire
+                XML document into memory. It reads the document
+                sequentially and generates events when different
+                XML components are encountered.
+            </p>
+
+            <h3>Working of SAX Parser</h3>
+            <ol>
+                <li>Reads the XML document from beginning to end.</li>
+                <li>Identifies XML elements and attributes.</li>
+                <li>Generates events for document components.</li>
+                <li>Calls the appropriate event-handling methods.</li>
+                <li>Continues reading until the end of the document.</li>
+            </ol>
+
+            <h3>Important SAX Events</h3>
+            <ul>
+                <li><b>startDocument():</b> Called when document parsing starts.</li>
+                <li><b>endDocument():</b> Called when document parsing finishes.</li>
+                <li><b>startElement():</b> Called when a start tag is encountered.</li>
+                <li><b>endElement():</b> Called when an end tag is encountered.</li>
+                <li><b>characters():</b> Called when character data is encountered.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>8. SAX Parser Example</h2>
+            <p>
+                The following is a simplified event sequence
+                for parsing an XML document.
+            </p>
+
+            <div class="code-box">
+                <h3>XML Document</h3>
+                <pre><code>&lt;student&gt;
+    &lt;name&gt;Rahul&lt;/name&gt;
+    &lt;rollno&gt;101&lt;/rollno&gt;
+&lt;/student&gt;</code></pre>
+            </div>
+
+            <div class="code-box">
+                <h3>Illustrative SAX Event Output</h3>
+                <pre><code>startDocument()
+
+startElement: student
+
+startElement: name
+characters: Rahul
+endElement: name
+
+startElement: rollno
+characters: 101
+endElement: rollno
+
+endElement: student
+
+endDocument()</code></pre>
+            </div>
+
+            <p>
+                This sequence shows how a SAX parser processes
+                XML data from beginning to end and generates
+                events for each component.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Advantages of SAX Parser</h2>
+            <ul>
+                <li>Uses less memory compared to DOM.</li>
+                <li>Suitable for large XML documents.</li>
+                <li>Processes data sequentially.</li>
+                <li>Can begin processing before the entire document is read.</li>
+                <li>Useful for event-based applications.</li>
+            </ul>
+
+            <h3>Disadvantages of SAX Parser</h3>
+            <ul>
+                <li>Does not provide direct random access to nodes.</li>
+                <li>Does not automatically create a complete document tree.</li>
+                <li>Changing XML data is more difficult.</li>
+                <li>Applications must handle parsing events.</li>
+                <li>Previously processed content may need to be stored separately if required again.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Difference Between DOM and SAX</h2>
+
+            <table>
+                <tr>
+                    <th>DOM Parser</th>
+                    <th>SAX Parser</th>
+                </tr>
+                <tr>
+                    <td>Tree-based parser.</td>
+                    <td>Event-based parser.</td>
+                </tr>
+                <tr>
+                    <td>Loads the complete document into memory.</td>
+                    <td>Reads the document sequentially.</td>
+                </tr>
+                <tr>
+                    <td>Requires more memory for large documents.</td>
+                    <td>Generally requires less memory.</td>
+                </tr>
+                <tr>
+                    <td>Supports random access to nodes.</td>
+                    <td>Does not provide direct random access.</td>
+                </tr>
+                <tr>
+                    <td>Allows easy modification of the document tree.</td>
+                    <td>Does not directly provide document tree modification.</td>
+                </tr>
+                <tr>
+                    <td>Suitable for smaller documents and complex navigation.</td>
+                    <td>Suitable for large documents and sequential processing.</td>
+                </tr>
+                <tr>
+                    <td>Works with a tree of nodes.</td>
+                    <td>Works with parsing events.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Applications of DOM and SAX</h2>
+
+            <h3>Applications of DOM</h3>
+            <ul>
+                <li>Editing XML documents.</li>
+                <li>Accessing specific XML elements.</li>
+                <li>Modifying document structure.</li>
+                <li>Displaying structured data in applications.</li>
+            </ul>
+
+            <h3>Applications of SAX</h3>
+            <ul>
+                <li>Processing large XML files.</li>
+                <li>Reading XML data streams.</li>
+                <li>Extracting selected information from XML.</li>
+                <li>Processing data with limited memory.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>12. How to Choose Between DOM and SAX?</h2>
+
+            <div class="important-points">
+                <h3>Choose DOM When:</h3>
+                <ul>
+                    <li>You need to access different nodes repeatedly.</li>
+                    <li>You want to modify XML document content.</li>
+                    <li>You need a complete tree representation.</li>
+                </ul>
+            </div>
+
+            <div class="important-points">
+                <h3>Choose SAX When:</h3>
+                <ul>
+                    <li>You need to process a large XML document.</li>
+                    <li>You want sequential reading of data.</li>
+                    <li>You want to reduce memory usage.</li>
+                    <li>You only need to extract selected information.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>13. Important Exam Questions</h2>
+            <ol>
+                <li>What is an XML processor?</li>
+                <li>What is XML parsing?</li>
+                <li>Explain the DOM parser with its working.</li>
+                <li>Explain the SAX parser with its working.</li>
+                <li>Write the advantages and disadvantages of DOM.</li>
+                <li>Write the advantages and disadvantages of SAX.</li>
+                <li>Differentiate between DOM and SAX parsers.</li>
+                <li>What are the important events in SAX parsing?</li>
+                <li>Why is SAX suitable for large XML documents?</li>
+                <li>When should we use DOM and SAX?</li>
+            </ol>
+        </section>
+
+        <section class="revision-box">
+            <h2>Quick Revision</h2>
+            <ul>
+                <li>XML – Extensible Markup Language.</li>
+                <li>XML Parser – Reads and processes XML documents.</li>
+                <li>DOM – Document Object Model.</li>
+                <li>SAX – Simple API for XML.</li>
+                <li>DOM – Tree-based parsing approach.</li>
+                <li>SAX – Event-based parsing approach.</li>
+                <li>DOM – Loads the complete document into memory.</li>
+                <li>SAX – Reads XML sequentially.</li>
+                <li>DOM – Supports random access and modification.</li>
+                <li>SAX – Uses less memory for sequential processing.</li>
+                <li>startElement() – SAX start-tag event.</li>
+                <li>endElement() – SAX end-tag event.</li>
+                <li>characters() – SAX text-data event.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Web Technology | Unit 2 | XML Processors: DOM and SAX</p>
+    </footer>
+
+</body>
+</html>
